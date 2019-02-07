@@ -9,7 +9,7 @@
   "scripts": {
     "lint": "eslint .",
     "lint:watch": "esw . -w",
-    "test": "jest --watch --coverage"
+    "test": "jest --watchAll --coverage"
   },
   "peerDependencies": {
     "react": "^16.8.1",
