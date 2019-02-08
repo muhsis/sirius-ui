@@ -1,4 +1,4 @@
-import { is, num, func, get, cascade } from '../'
+import { is, num, func, get, cascade } from '..'
 
 describe('#is', () => {
   it('should return true if defined an not null', () => {

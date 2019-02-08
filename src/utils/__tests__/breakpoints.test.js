@@ -15,7 +15,7 @@ import {
   up,
   down,
   between,
-} from '../'
+} from '..'
 
 describe('breapoints utils', () => {
   let props
