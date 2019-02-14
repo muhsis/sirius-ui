@@ -23,7 +23,6 @@ class Layout extends Component {
           <ThemeProvider theme={theme}>
             <>
               <Normalize />
-              <h1>KargoBurada UI!</h1>
               {this.props.children}
             </>
           </ThemeProvider>

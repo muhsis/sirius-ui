@@ -2,7 +2,7 @@ import React from 'react'
 import { Layout, SEO, Sidebar } from '../components'
 import { Box, Text, Paragraph, boxiconsRegular } from '../../../src'
 
-const IndexPage = () => (
+const ColorsPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <Sidebar />
@@ -22,4 +22,4 @@ const IndexPage = () => (
   </Layout>
 )
 
-export default IndexPage
+export default ColorsPage
