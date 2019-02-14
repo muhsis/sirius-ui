@@ -2,12 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import getElement from '../utils/getElement'
-import { Layout, Sidebar } from '../components'
-
-const PageContent = styled.div`
-  margin-left: 250px;
-  padding: 1rem;
-`
+import { Container, Layout, Sidebar } from '../components'
 
 export default class ElementTemplate extends PureComponent {
   static propTypes = {
@@ -18,9 +13,9 @@ export default class ElementTemplate extends PureComponent {
     return (
       <Layout>
         <Sidebar />
-        <PageContent>
+        <Container>
           <h1>{this.props.pageContext.name}</h1>Hello from element template.
-        </PageContent>
+        </Container>
       </Layout>
     )
   }

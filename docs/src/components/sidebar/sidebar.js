@@ -64,7 +64,16 @@ const ScSidebarNav = styled.nav`
   }
 
   & > a.is-active {
-    font-weight: 600;
+    font-weight: 500;
+    position: relative;
+  }
+
+  & > a.is-active:after {
+    top: -3px;
+    content: '•';
+    position: absolute;
+    right: 5px;
+    color: #007ced;
   }
 
   & > a.is-active:hover {
@@ -95,7 +104,6 @@ export default class Sidebar extends PureComponent {
         links: [
           {
             label: 'Getting Started',
-            exact: true,
             to: '/',
           },
           {
@@ -151,12 +159,7 @@ export default class Sidebar extends PureComponent {
                 )}
                 <ScSidebarNav>
                   {group.links.map(({ label, to, exact }) => (
-                    <Link
-                      key={to}
-                      activeClassName="is-active"
-                      to={to}
-                      exact={exact}
-                    >
+                    <Link key={to} activeClassName="is-active" to={to}>
                       {label}
                     </Link>
                   ))}
