@@ -1,3 +1,7 @@
+commonjs/
+esm/
+.vscode/
+
 # Logs
 logs
 *.log
