@@ -10,6 +10,7 @@ export * from './components/normalize'
 export * from './elements/avatar'
 export * from './elements/badge'
 export * from './elements/box'
+export * from './elements/button'
 export * from './elements/table'
 export * from './elements/typography'
 
