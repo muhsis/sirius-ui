@@ -1,6 +1,7 @@
 commonjs/
 esm/
 .vscode/
+.idea/
 
 # Logs
 logs
