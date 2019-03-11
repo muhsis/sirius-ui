@@ -1,4 +1,4 @@
-import { mix, parseToRgb } from 'polished'
+import { mix, parseToRgb, rgba } from 'polished'
 import { thd, mixin } from '../utils'
 
 export const black = '#000'
@@ -38,6 +38,18 @@ export const brand = {
   light: grays.smoke,
   dark: grays.dark,
 }
+
+function getTints() {
+  const tintObj = {}
+
+  Object.keys(brand).forEach(key => {
+    tintObj[key] = rgba(brand[key], 0.1)
+  })
+
+  return tintObj
+}
+
+export const tints = getTints()
 
 export const primary = blue
 export const secondary = indigo
