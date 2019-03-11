@@ -3,6 +3,7 @@ export { default as styled } from 'styled-components'
 
 // Components
 export * from './components/carousel'
+export * from './components/grid'
 export * from './components/normalize'
 
 // Elements
