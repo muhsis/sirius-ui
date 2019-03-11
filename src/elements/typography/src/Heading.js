@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import styled, { withTheme, css } from 'styled-components'
+
+// TODO@EMRE : Do we really need this here. Can we get it like p => p.theme?
 import {
   headingsMarginBottom,
   headingsFontWeight,
