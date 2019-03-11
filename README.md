@@ -3,6 +3,23 @@
 This is a design system / React UI library. It works with styled-components and
 styled-system.
 
+- [ ] Prepare commit hooks.
+- [ ] Parameterize all themable values
+- [x] Css grid system
+- [ ] Flexbox system?
+- [ ] Elements
+  - [x] avatar -> image avatar, initials avatar
+  - [x] badge
+  - [ ] button
+  - [ ] checkbox
+  - [ ] form?? -> form group, form control, form text
+  - [ ] image
+  - [ ] input?? (should this be under forms)
+  - [ ] radio
+  - [ ] select (regular styled select element)
+  - [ ] table
+  - [ ] typography
+
 ## Git
 
 Here's what you need to watch out while using git in this repository.
