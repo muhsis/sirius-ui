@@ -7,6 +7,7 @@ export * from './components/normalize'
 
 // Elements
 export * from './elements/avatar'
+export * from './elements/badge'
 export * from './elements/box'
 export * from './elements/table'
 export * from './elements/typography'
