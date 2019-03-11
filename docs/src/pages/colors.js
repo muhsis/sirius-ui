@@ -1,24 +1,106 @@
 import React from 'react'
-import { Layout, SEO, Sidebar } from '../components'
-import { Box, Text, Paragraph, boxiconsRegular } from '../../../src'
+import { Layout, SEO, Sidebar, Container, Content } from '../components'
+import { Heading, Paragraph, Grid, Cell, Box, styled } from '../../../src'
+import * as colors from '../../../src/theming/color'
+console.log('Colors', colors)
+
+const ScColorBox = styled.div`
+  background-color: ${p => p.bg};
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  height: 125px;
+`
+
+const ScColorDescription = styled.div`
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  border: 1px solid #ebebeb;
+  border-top: none;
+  padding: 1rem;
+  text-align: center;
+
+  & > strong {
+    display: block;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  & > span {
+    color: ${colors.grays.silver};
+    font-size: 0.875rem;
+  }
+`
 
 const ColorsPage = () => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO title="Colors" keywords={[`gatsby`, `application`, `react`]} />
     <Sidebar />
-    <Box p={3} ml={250}>
-      <Paragraph>
-        Maecenas faucibus mollis interdum. Curabitur blandit tempus porttitor.
-        Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Curabitur
-        blandit tempus porttitor. Vestibulum id ligula porta felis euismod
-        semper.
-      </Paragraph>
-      <Text color="primary" fontSize={1}>
-        Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget
-        lacinia odio sem nec elit. Maecenas sed diam eget risus varius blandit
-        sit amet non magna.
-      </Text>
-    </Box>
+    <Container>
+      <Content>
+        <Heading variant="h2">Colors</Heading>
+        <Paragraph>
+          The color system for a product has many requirements and constraints.
+          There is a need to be intentional and functional with color use.
+        </Paragraph>
+
+        <Box mt={4} mb={3}>
+          <Heading variant="h4" mb={3}>
+            Brand Colors
+          </Heading>
+          <Grid columns={4}>
+            {Object.keys(colors.brand).map(key => {
+              return (
+                <Cell key={key} width={1}>
+                  <ScColorBox bg={colors.brand[key]} />
+                  <ScColorDescription>
+                    <strong>{key}</strong>
+                    <span>{colors.brand[key]}</span>
+                  </ScColorDescription>
+                </Cell>
+              )
+            })}
+          </Grid>
+        </Box>
+
+        <Box mt={4} mb={3}>
+          <Heading variant="h4" mb={3}>
+            Grayscale
+          </Heading>
+          <Grid columns={4}>
+            {Object.keys(colors.grays).map(key => {
+              return (
+                <Cell key={key} width={1}>
+                  <ScColorBox bg={colors.grays[key]} />
+                  <ScColorDescription>
+                    <strong>{key}</strong>
+                    <span>{colors.grays[key]}</span>
+                  </ScColorDescription>
+                </Cell>
+              )
+            })}
+          </Grid>
+        </Box>
+
+        <Box mt={4} mb={3}>
+          <Heading variant="h4" mb={3}>
+            Tint Colors
+          </Heading>
+          <Grid columns={4}>
+            {Object.keys(colors.tints).map(key => {
+              return (
+                <Cell key={key} width={1}>
+                  <ScColorBox bg={colors.tints[key]} />
+                  <ScColorDescription>
+                    <strong>{key}</strong>
+                    <span>{colors.tints[key]}</span>
+                  </ScColorDescription>
+                </Cell>
+              )
+            })}
+          </Grid>
+        </Box>
+      </Content>
+    </Container>
   </Layout>
 )
 

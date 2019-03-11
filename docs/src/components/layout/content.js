@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const ScContent = styled.div`
   margin: 0 auto;
-  max-width: 700px;
+  max-width: 800px;
 `
 
 class Content extends PureComponent {
