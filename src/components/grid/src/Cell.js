@@ -33,7 +33,7 @@ Cell.propTypes = {
   center: PropTypes.bool,
   area: PropTypes.string,
   ...color.propTypes,
-  ...color.propTypes,
+  ...space.propTypes,
 }
 
 export default Cell
