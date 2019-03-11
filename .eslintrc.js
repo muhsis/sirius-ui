@@ -14,6 +14,7 @@ module.exports = {
     'react/sort-comp': 'off',
     'react/destructuring-assignment': 'off',
     'react/forbid-foreign-prop-types': 'off',
+    'react/no-array-index-key': 'off',
 
     'import/prefer-default-export': 'off',
     'import/no-extraneous-dependencies': 'off',
