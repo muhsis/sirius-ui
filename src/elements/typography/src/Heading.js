@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import styled, { withTheme, css } from 'styled-components'
+import { space } from 'styled-system'
 
 // TODO@EMRE : Do we really need this here. Can we get it like p => p.theme?
 import {
@@ -49,6 +50,8 @@ const commonHeadingStyle = () => {
     line-height: ${headingsLineHeight};
     color: ${headingsColor};
     ${fontFamily && `font-family: ${fontFamily}`};
+
+    ${space}
   `
 }
 
@@ -103,14 +106,14 @@ const variantStyles = {
   `,
 }
 
-function createStyledComponent(variant, children) {
+function createStyledComponent(variant, children, props) {
   const element = variantTags[variant]
   const style = variantStyles[variant]
   const ScHeading = styled[element]`
     ${style}
   `
 
-  return <ScHeading>{children}</ScHeading>
+  return <ScHeading {...props}>{children}</ScHeading>
 }
 
 class Heading extends PureComponent {
@@ -135,7 +138,11 @@ class Heading extends PureComponent {
   }
 
   render() {
-    return createStyledComponent(this.props.variant, this.props.children)
+    return createStyledComponent(
+      this.props.variant,
+      this.props.children,
+      this.props,
+    )
   }
 }
 
