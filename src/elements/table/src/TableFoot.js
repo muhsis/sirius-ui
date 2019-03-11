@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
-const TableBody = styled.tbody`
+const TableFoot = styled.tfoot`
   border: inherit;
 `
 
-export default TableBody
+export default TableFoot

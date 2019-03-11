@@ -1,13 +1,14 @@
 import styled from 'styled-components'
 import { color, textAlign } from 'styled-system'
 
-const TableCell = styled.td`
+const TableHeaderCell = styled.th`
+  background-color: ${p => p.theme.grays.snow};
   border: inherit;
+  font-weight: ${p => p.theme.tableHeaderCellFontWeight};
   padding: ${p => p.theme.tableCellPadding};
   vertical-align: middle;
 
-  ${color}
+  ${color};
   ${textAlign}
 `
-
-export default TableCell
+export default TableHeaderCell
