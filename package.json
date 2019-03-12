@@ -17,6 +17,7 @@
     "build": "yarn run build-commonjs && yarn run build-esm",
     "lint": "eslint .",
     "lint:watch": "esw . -w",
+    "svgr": "./node_modules/@svgr/cli/bin/svgr --icon -d . src/icons/assets/*.svg --template src/icons/template.js",
     "test": "jest --watch --coverage"
   },
   "peerDependencies": {
@@ -32,6 +33,7 @@
     "@babel/plugin-transform-modules-commonjs": "^7.2.0",
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
+    "@svgr/cli": "^4.1.0",
     "babel-eslint": "^10.0.1",
     "babel-plugin-annotate-pure-calls": "^0.4.0",
     "enzyme": "^3.8.0",
