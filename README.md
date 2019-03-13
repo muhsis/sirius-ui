@@ -46,7 +46,19 @@ icons/spinner/spinner-icon.svg -> icons/spinner/SpinnerIcon.js
 
 ## Git
 
-Here's what you need to watch out while using git in this repository.
+We only have `_development` and `master` as main branches. Every branch gets checked
+out from master branch and merged to \_development branch after development completes.
+While creating branches please use the following convention to make it easier to
+understand branches' purposes.
+
+```
+epic      A big branch with loads of features in it
+wip       Works in progress; stuff I know won't be finished soon
+feat      Feature I'm adding or expanding
+bug       Bug fix or experiment
+junk      Throwaway branch created to experiment
+chore     General tasks related to build/deployment system
+```
 
 ### Commit Messages
 
