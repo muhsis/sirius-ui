@@ -8,6 +8,7 @@ import {
   Badge,
   Button,
   Carousel,
+  Code,
   Pill,
   Box,
   Heading,
@@ -25,6 +26,19 @@ import {
   styled,
   LinearProgress,
   CircularProgress,
+} from '../../../src'
+
+import {
+  IconAir,
+  IconAircraft,
+  IconCheck,
+  IconTrash,
+  IconTag,
+  IconUser,
+  IconExport,
+  IconAddress,
+  IconArrowLongRight,
+  IconBox,
 } from '../../../src'
 
 const Item = styled.div`
@@ -54,11 +68,14 @@ const IndexPage = () => (
     <Sidebar />
     <Container>
       <Content>
-        <Heading>KargoBurada UI</Heading>
+        <Heading>
+          <IconBox color="primary" mr={2} /> Nitro UI
+        </Heading>
         <Paragraph>
-          Nitro UI is a design system and ui library developed with{' '}
-          <a href="#">Styled Components 💅</a> and <a href="#">Styled System</a>
-          .
+          <IconAir color="secondary" mr={2} />
+          Nitro UI is a design system and ui <Code>inline</Code> library
+          developed with <a href="#">Styled Components 💅</a> and{' '}
+          <a href="#">Styled System</a>.
         </Paragraph>
 
         <Box
@@ -83,33 +100,39 @@ const IndexPage = () => (
               Warning
             </Button>
             <Button mr={1} variant="danger">
+              <IconTrash mr={2} />
               Danger
             </Button>
             <Button mr={1} variant="light">
+              <IconExport mr={1} />
               Light
             </Button>
             <Button mr={1} variant="dark">
+              <IconAddress mr={1} />
               Dark
             </Button>
           </Box>
 
           <Box mb={3}>
             <Button size="sm" mr={1}>
-              Primary
+              <IconCheck /> Primary
             </Button>
             <Button size="sm" mr={1} variant="secondary">
+              <IconTag mr={1} />
               Secondary
             </Button>
             <Button size="sm" mr={1} variant="success">
               Success
             </Button>
             <Button size="sm" mr={1} variant="info">
+              <IconUser mr={1} />
               Info
             </Button>
             <Button size="sm" mr={1} variant="warning">
               Warning
             </Button>
             <Button size="sm" mr={1} variant="danger">
+              <IconTrash mr={1} />
               Danger
             </Button>
             <Button size="sm" mr={1} variant="light">
@@ -122,10 +145,11 @@ const IndexPage = () => (
 
           <Box>
             <Button size="lg" mr={2}>
-              Large Button
+              <IconCheck color="snow" mr={2} /> Large Button
             </Button>
             <Button size="lg" variant="success">
               Large Button
+              <IconArrowLongRight ml={2} />
             </Button>
           </Box>
         </Box>
@@ -309,27 +333,27 @@ const IndexPage = () => (
           </Box>
 
           <Box>
-            <Pill mr={1}>Primary</Pill>
+            <Pill mr={1}>1</Pill>
             <Pill mr={1} variant="secondary">
-              Secondary
+              2
             </Pill>
             <Pill mr={1} variant="success">
-              Success
+              3
             </Pill>
             <Pill mr={1} variant="info">
-              Info
+              4
             </Pill>
             <Pill mr={1} variant="warning">
-              Warning
+              5
             </Pill>
             <Pill mr={1} variant="danger">
-              Danger
+              6
             </Pill>
             <Pill mr={1} variant="light">
-              Light
+              7
             </Pill>
             <Pill mr={1} variant="dark">
-              Dark
+              8
             </Pill>
           </Box>
         </Box>

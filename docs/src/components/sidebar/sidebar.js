@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import elementRoutes from '../../elementRoutes'
+import componentRoutes from '../../componentRoutes'
 import nitroLogo from '../../images/nitro-logo.png'
 import kbLogo from '../../images/kb-logo.svg'
 
@@ -15,13 +16,14 @@ const ScSidebar = styled.aside`
   display: flex;
   flex-direction: column;
   width: 250px;
+  overflow: hidden;
 `
 
 const ScSidebarBrand = styled.div`
   padding: 1.5rem 1rem 0.5rem 1rem;
 
   & img {
-    height: 30px;
+    height: 50px;
   }
 
   & small {
@@ -33,6 +35,9 @@ const ScSidebarBrand = styled.div`
 const ScSidebarContent = styled.aside`
   flex: 1;
   overflow-y: auto;
+  margin-right: -999px;
+  padding-right: 999px;
+  padding-bottom: 1.5rem;
 `
 
 const ScSidebarDivider = styled.hr`
@@ -112,16 +117,20 @@ export default class Sidebar extends PureComponent {
             to: '/colors',
           },
           {
-            label: 'Typography',
-            to: '/typography',
-          },
-          {
             label: 'Layout',
             to: '/layout',
           },
           {
             label: 'System',
             to: '/system',
+          },
+          {
+            label: 'Typography',
+            to: '/typography',
+          },
+          {
+            label: 'Icons',
+            to: '/icons',
           },
           {
             label: 'Theming',
@@ -138,6 +147,15 @@ export default class Sidebar extends PureComponent {
           }
         }),
       },
+      {
+        title: 'Components',
+        links: componentRoutes.map(route => {
+          return {
+            label: route.name,
+            to: route.path,
+          }
+        }),
+      },
     ],
   }
 
@@ -147,7 +165,7 @@ export default class Sidebar extends PureComponent {
     return (
       <ScSidebar {...props}>
         <ScSidebarBrand>
-          <img src={kbLogo} alt="KargoBurada UI" />
+          <img src={nitroLogo} alt="KargoBurada UI" />
           <small>A design system & UI library for React.</small>
         </ScSidebarBrand>
         <ScSidebarDivider />

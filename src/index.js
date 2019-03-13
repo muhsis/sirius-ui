@@ -7,6 +7,7 @@ export * from './components/grid'
 export * from './components/normalize'
 export * from './components/alert'
 export * from './components/progress'
+export * from './components/portal'
 
 // Elements
 export * from './elements/avatar'
