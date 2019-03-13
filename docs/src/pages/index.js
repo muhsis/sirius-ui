@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Container, Content, Layout, SEO, Sidebar } from '../components'
 import {
-  Alert,
   Avatar,
   AvatarInitials,
   Badge,
@@ -161,36 +160,6 @@ const IndexPage = () => (
           borderColor="silver"
           borderRadius="0.25rem"
         >
-          <Box>
-            <Alert mb={1}>Alert Primary</Alert>
-            <Alert mb={1} variant="success">
-              Alert Success
-            </Alert>
-            <Alert mb={1} variant="info">
-              Alert Info
-            </Alert>
-            <Alert mb={1} variant="warning">
-              Alert Warning
-            </Alert>
-            <Alert mb={1} variant="danger">
-              Alert Danger
-            </Alert>
-            <Alert mb={1} variant="light">
-              Alert Light
-            </Alert>
-            <Alert mb={1} variant="dark">
-              Alert Dark
-            </Alert>
-          </Box>
-        </Box>
-
-        <Box
-          my={3}
-          p={3}
-          border="1px solid"
-          borderColor="silver"
-          borderRadius="0.25rem"
-        >
           <Box mr={1}>
             <LinearProgress mb={1} percent={23} />
             <LinearProgress mb={1} percent={24} variant="success" />
@@ -265,7 +234,7 @@ const IndexPage = () => (
               percent={100}
               variant="dark"
             />
-             <CircularProgress
+            <CircularProgress
               radius={100}
               stroke={8}
               percent={100}
