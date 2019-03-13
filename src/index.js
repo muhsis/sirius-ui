@@ -5,6 +5,7 @@ export { default as styled } from 'styled-components'
 export * from './components/carousel'
 export * from './components/grid'
 export * from './components/normalize'
+export * from './components/portal'
 
 // Elements
 export * from './elements/avatar'
