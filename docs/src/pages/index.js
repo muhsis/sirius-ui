@@ -23,6 +23,8 @@ import {
   Grid,
   Cell,
   styled,
+  LinearProgress,
+  CircularProgress,
 } from '../../../src'
 
 import {
@@ -148,6 +150,96 @@ const IndexPage = () => (
               Large Button
               <IconArrowLongRight ml={2} />
             </Button>
+          </Box>
+        </Box>
+
+        <Box
+          my={3}
+          p={3}
+          border="1px solid"
+          borderColor="silver"
+          borderRadius="0.25rem"
+        >
+          <Box mr={1}>
+            <LinearProgress mb={1} percent={23} />
+            <LinearProgress mb={1} percent={24} variant="success" />
+            <LinearProgress mb={1} percent={25} variant="info" />
+            <LinearProgress
+              mb={1}
+              percent={26}
+              variant="warning"
+              striped={true}
+            />
+            <LinearProgress mb={1} percent={70} variant="danger" />
+            <LinearProgress mb={1} size="sm" percent={70} variant="danger" />
+            <LinearProgress
+              mb={1}
+              size="sm"
+              percent={70}
+              variant="danger"
+              striped={true}
+            />
+            <LinearProgress mb={1} percent={28} variant="light" />
+            <LinearProgress percent={29} variant="dark" />
+          </Box>
+        </Box>
+
+        <Box
+          my={3}
+          p={3}
+          border="1px solid"
+          borderColor="silver"
+          borderRadius="0.25rem"
+        >
+          <Box mr={1}>
+            <CircularProgress mb={1} percent={10} radius={60} stroke={4} />
+            <CircularProgress
+              mb={1}
+              percent={25}
+              variant="success"
+              radius={60}
+              stroke={4}
+            />
+            <CircularProgress
+              mb={1}
+              percent={40}
+              variant="info"
+              radius={60}
+              stroke={4}
+            />
+            <CircularProgress
+              mb={1}
+              percent={55}
+              variant="warning"
+              radius={60}
+              stroke={4}
+            />
+            <CircularProgress
+              mb={1}
+              percent={70}
+              variant="danger"
+              radius={60}
+              stroke={4}
+            />
+            <CircularProgress
+              mb={1}
+              radius={60}
+              stroke={4}
+              percent={85}
+              variant="light"
+            />
+            <CircularProgress
+              radius={60}
+              stroke={4}
+              percent={100}
+              variant="dark"
+            />
+            <CircularProgress
+              radius={100}
+              stroke={8}
+              percent={100}
+              variant="dark"
+            />
           </Box>
         </Box>
 
