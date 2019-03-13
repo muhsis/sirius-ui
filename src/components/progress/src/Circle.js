@@ -22,13 +22,16 @@ function createStyledComponent(variant, size, percent, radius, stroke, props) {
     ${p => transitionBase(p)};
     ${sizeStyle};
     ${space}
+
     svg > circle {
       transition: stroke-dashoffset 0.35s;
       transform: rotate(-90deg);
       transform-origin: 50% 50%;
       ${p => circleVariant(variant)(p)};
     }
+
     span {
+      font-weight: 500;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -49,8 +52,6 @@ function createStyledComponent(variant, size, percent, radius, stroke, props) {
           strokeWidth={stroke}
           strokeDasharray={`${circumference} ${circumference}`}
           style={{ strokeDashoffset }}
-          // eslint-disable-next-line react/jsx-no-duplicate-props
-          strokeWidth={stroke}
           r={normalizedRadius}
           cx={radius}
           cy={radius}

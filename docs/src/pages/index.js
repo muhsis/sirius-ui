@@ -192,7 +192,7 @@ const IndexPage = () => (
           borderRadius="0.25rem"
         >
           <Box mr={1}>
-            <CircularProgress mb={1} percent={10} radius={60} stroke={4} />
+            <CircularProgress mb={1} percent={10} radius={60} stroke={10} />
             <CircularProgress
               mb={1}
               percent={25}
@@ -212,7 +212,7 @@ const IndexPage = () => (
               percent={55}
               variant="warning"
               radius={60}
-              stroke={4}
+              stroke={12}
             />
             <CircularProgress
               mb={1}
@@ -224,7 +224,7 @@ const IndexPage = () => (
             <CircularProgress
               mb={1}
               radius={60}
-              stroke={4}
+              stroke={10}
               percent={85}
               variant="light"
             />

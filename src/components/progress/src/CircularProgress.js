@@ -67,6 +67,6 @@ class CircularProgress extends PureComponent {
     )
   }
 }
-CircularProgress.displayName = 'Circular Progress'
+CircularProgress.displayName = 'CircularProgress'
 
 export default withTheme(CircularProgress)

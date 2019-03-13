@@ -50,6 +50,11 @@ module.exports = [
     path: '/components/portal',
   },
   {
+    name: 'Progress',
+    componentName: 'progress',
+    path: '/components/progress',
+  },
+  {
     name: 'Side Sheet',
     componentName: 'side-sheet',
     path: '/components/side-sheet',
