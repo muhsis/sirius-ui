@@ -3,14 +3,22 @@
 This is a design system / React UI library. It works with styled-components and
 styled-system.
 
-- [ ] Prepare commit hooks.
+- [x] Prepare commit hooks.
 - [ ] Parameterize all themable values
+- [ ] Refactor color system
+- [ ] Go over theming system
+- [x] Decision for build system. (Build system is fine.)
+- [ ] Complete gatsby documentation system
+- [ ] Syntax highlighting?
+- [ ] Dynamic prop type tables
+- [x] Icons, icons, icons..
 - [x] Css grid system
 - [ ] Flexbox system?
+- [ ] Create a tool for exporting all icons. (Since we cannot write it by hand.)
 - [ ] Elements
   - [x] avatar -> image avatar, initials avatar
   - [x] badge
-  - [ ] button
+  - [x] button
   - [ ] checkbox
   - [ ] form?? -> form group, form control, form text
   - [ ] image
@@ -19,6 +27,22 @@ styled-system.
   - [ ] select (regular styled select element)
   - [ ] table
   - [ ] typography
+
+## Icons
+
+We use Entypo for our icon library. We transform SVG files to React components to
+inject them into the page. A whole directory can be processed, all SVG files
+(matching .svg or .SVG) are transformed into React components. Just add .svg file
+and run commands below.
+
+```bash
+# Usage: npx @svgr/cli [-d out-dir] [src-dir]
+$ npx @svgr/cli -d icons icons
+icons/web/clock-icon.svg -> icons/web/ClockIcon.js
+icons/web/wifi-icon.svg -> icons/web/WifiIcon.js
+icons/spinner/cog-icon.svg -> icons/spinner/CogIcon.js
+icons/spinner/spinner-icon.svg -> icons/spinner/SpinnerIcon.js
+```
 
 ## Git
 

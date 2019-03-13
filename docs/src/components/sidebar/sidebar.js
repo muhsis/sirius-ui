@@ -23,7 +23,7 @@ const ScSidebarBrand = styled.div`
   padding: 1.5rem 1rem 0.5rem 1rem;
 
   & img {
-    height: 50px;
+    height: 30px;
   }
 
   & small {
@@ -165,7 +165,7 @@ export default class Sidebar extends PureComponent {
     return (
       <ScSidebar {...props}>
         <ScSidebarBrand>
-          <img src={nitroLogo} alt="KargoBurada UI" />
+          <img src={kbLogo} alt="KargoBurada UI" />
           <small>A design system & UI library for React.</small>
         </ScSidebarBrand>
         <ScSidebarDivider />

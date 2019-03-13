@@ -1,8 +1,10 @@
 const path = require('path')
 const webpack = require('webpack')
 const elementRoutes = require('./src/elementRoutes')
+const componentRoutes = require('./src/componentRoutes')
 
 const elementTemplate = path.resolve(`src/templates/element.js`)
+const componentTemplate = path.resolve(`src/templates/component.js`)
 
 // Implement the Gatsby API “createPages”. This is called once the
 // data layer is bootstrapped to let plugins create pages from data.
@@ -14,6 +16,18 @@ exports.createPages = ({ actions }) => {
     createPage({
       path,
       component: elementTemplate,
+      context: {
+        name,
+        componentName,
+      },
+    })
+  })
+
+  // Create a page for each component in componentRoutes.js file
+  componentRoutes.forEach(({ name, componentName, path }) => {
+    createPage({
+      path,
+      component: elementTemplate, // TODO: for now.
       context: {
         name,
         componentName,

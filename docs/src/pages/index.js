@@ -66,11 +66,11 @@ const IndexPage = () => (
     <Container>
       <Content>
         <Heading>
-          <IconBox color="primary" mr={2} /> Nitro UI
+          <IconBox color="warning" mr={2} /> KargoBurada UI
         </Heading>
         <Paragraph>
           <IconAir color="secondary" mr={2} />
-          Nitro UI is a design system and ui <Code>inline</Code> library
+          KargoBurada UI is a design system and ui <Code>inline</Code> library
           developed with <a href="#">Styled Components 💅</a> and{' '}
           <a href="#">Styled System</a>.
         </Paragraph>
