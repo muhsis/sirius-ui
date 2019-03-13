@@ -5,10 +5,10 @@ import { lighten } from 'polished'
 // inline and code block
 
 const Code = styled.code`
-  background-color: ${p => p.theme.tints.info};
+  background-color: ${p => p.theme.tints.primary};
   border-radius: 0.15rem;
-  box-shadow: 0 0 0 1px ${p => lighten(0.4, p.theme.brand.info)};
-  color: ${p => p.theme.brand.info};
+  box-shadow: 0 0 0 1px ${p => lighten(0.4, p.theme.brand.primary)};
+  color: ${p => p.theme.brand.primary};
   font-family: ${p => p.theme.fontFamilyMonospace};
   font-size: 0.875rem;
   font-weight: 500;

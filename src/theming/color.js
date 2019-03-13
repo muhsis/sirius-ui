@@ -15,11 +15,11 @@ export const grays = {
   white: '#ffffff',
 }
 
-export const blue = '#007ced'
+export const blue = '#1070CA'
 export const indigo = '#6610f2'
 export const purple = '#6f42c1'
 export const pink = '#e83e8c'
-export const red = '#dc3545'
+export const red = '#EC4C47'
 export const brick = '#bd4932'
 export const orange = '#fd7e14'
 export const yellow = '#ffc107'
