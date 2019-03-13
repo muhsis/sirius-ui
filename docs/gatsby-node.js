@@ -24,6 +24,7 @@ exports.createPages = ({ actions }) => {
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
+    node: { fs: 'empty' },
     module: {
       rules: [
         {
