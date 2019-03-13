@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { ThemeProvider } from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
+import '../../css/index.css' // eslint-disable-line import/no-unassigned-import
 
 import { theme, Normalize } from '../../../../src'
 console.log('Active theme', theme)
