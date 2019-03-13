@@ -35,7 +35,7 @@ export const brand = {
   info: cyan,
   warning: yellow,
   danger: red,
-  light: grays.smoke,
+  light: grays.silver,
   dark: grays.dark,
 }
 
@@ -57,7 +57,7 @@ export const success = green
 export const info = cyan
 export const warning = yellow
 export const danger = red
-export const light = grays.smoke
+export const light = grays.silver
 export const { dark } = grays
 
 export const colorVariants = thd('colorVariants', [
