@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import getElement from '../utils/getElement'
-import { Container, Layout, Sidebar } from '../components'
+import { Container, Content, Layout, Sidebar, SEO, Readme } from '../components'
 
 export default class ElementTemplate extends PureComponent {
   static propTypes = {
@@ -10,11 +10,19 @@ export default class ElementTemplate extends PureComponent {
   }
 
   render() {
+    const { name, introduction } = getElement(
+      this.props.pageContext.componentName,
+    )
+    console.log(name, introduction)
+
     return (
       <Layout>
+        <SEO title={`${this.props.pageContext.name} Element`} />
         <Sidebar />
         <Container>
-          <h1>{this.props.pageContext.name}</h1>Hello from element template.
+          <Content>
+            <Readme name={name} introduction={introduction} />
+          </Content>
         </Container>
       </Layout>
     )
