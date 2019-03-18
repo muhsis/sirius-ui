@@ -1,0 +1,24 @@
+<>
+  <Pill mr={1}>1</Pill>
+  <Pill mr={1} variant="secondary">
+    2
+  </Pill>
+  <Pill mr={1} variant="success">
+    3
+  </Pill>
+  <Pill mr={1} variant="info">
+    4
+  </Pill>
+  <Pill mr={1} variant="warning">
+    5
+  </Pill>
+  <Pill mr={1} variant="danger">
+    6
+  </Pill>
+  <Pill mr={1} variant="light">
+    7
+  </Pill>
+  <Pill mr={1} variant="dark">
+    8
+  </Pill>
+</>

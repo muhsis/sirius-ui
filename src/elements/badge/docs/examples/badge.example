@@ -1,0 +1,24 @@
+<>
+  <Badge mr={1}>Primary</Badge>
+  <Badge mr={1} variant="secondary">
+    Secondary
+  </Badge>
+  <Badge mr={1} variant="success">
+    Success
+  </Badge>
+  <Badge mr={1} variant="info">
+    Info
+  </Badge>
+  <Badge mr={1} variant="warning">
+    Warning
+  </Badge>
+  <Badge mr={1} variant="danger">
+    Danger
+  </Badge>
+  <Badge mr={1} variant="light">
+    Light
+  </Badge>
+  <Badge mr={1} variant="dark">
+    Dark
+  </Badge>
+</>
