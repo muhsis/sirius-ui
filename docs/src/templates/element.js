@@ -10,7 +10,7 @@ export default class ElementTemplate extends PureComponent {
   }
 
   render() {
-    const { name, introduction } = getElement(
+    const { name, introduction, components } = getElement(
       this.props.pageContext.componentName,
     )
     console.log(name, introduction)
@@ -21,7 +21,11 @@ export default class ElementTemplate extends PureComponent {
         <Sidebar />
         <Container>
           <Content>
-            <Readme name={name} introduction={introduction} />
+            <Readme
+              name={name}
+              introduction={introduction}
+              components={components}
+            />
           </Content>
         </Container>
       </Layout>
