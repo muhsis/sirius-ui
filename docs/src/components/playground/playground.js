@@ -8,7 +8,7 @@ import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 const ScPlayground = styled.div`
   background-color: #234361;
   color: #fff;
-  margin-bottom: 50px;
+  margin-bottom: 2rem;
   overflow: hidden;
   border-radius: 0.25rem;
 `
@@ -33,6 +33,13 @@ const ScPlaygroundError = styled.div`
     padding-bottom: 0.5rem;
     padding-top: 0.5rem;
   }
+`
+
+const ScPlaygroundTitle = styled.h3`
+  margin: 0 0 1rem 0;
+  line-height: normal;
+  padding: 0;
+  font-weight: 500;
 `
 
 const ScCodeToggle = styled.div`
@@ -90,38 +97,43 @@ class Playground extends Component {
   }
 
   render() {
-    const { scope } = this.props
+    const { title, description, scope } = this.props
     const { codeText, isCodeCollapsed, hasError, uniqueId } = this.state
 
     if (hasError) return this.renderError()
 
     return (
-      <LiveProvider
-        scope={{ ReactDOM, ...scope }}
-        code={codeText}
-        mountStylesheet={false}
-      >
-        <ScPlayground data-iscodecollapsed={isCodeCollapsed}>
-          <div>
-            <ScPlaygroundError>
-              <LiveError />
-            </ScPlaygroundError>
+      <>
+        <ScPlaygroundTitle>{title}</ScPlaygroundTitle>
+        {description}
+        <LiveProvider
+          scope={{ ReactDOM, ...scope }}
+          code={codeText}
+          mountStylesheet={false}
+        >
+          <ScPlayground data-iscodecollapsed={isCodeCollapsed}>
+            <div>
+              <ScPlaygroundError>
+                <LiveError />
+              </ScPlaygroundError>
 
-            <ScPlaygroundPreview id={`code-playground-${uniqueId}`}>
-              <LivePreview />
-            </ScPlaygroundPreview>
-            {!isCodeCollapsed && <LiveEditor onChange={this.handleChange} />}
-          </div>
-          <ScCodeToggle
-            aria-expanded={!isCodeCollapsed}
-            role="button"
-            aria-controls={`code-playground-${uniqueId}`}
-            onClick={this.handleToggle}
-          >
-            {isCodeCollapsed ? 'Show code' : 'Hide code'}
-          </ScCodeToggle>
-        </ScPlayground>
-      </LiveProvider>
+              <ScPlaygroundPreview id={`code-playground-${uniqueId}`}>
+                <LivePreview />
+              </ScPlaygroundPreview>
+              {!isCodeCollapsed && <LiveEditor onChange={this.handleChange} />}
+            </div>
+
+            <ScCodeToggle
+              aria-expanded={!isCodeCollapsed}
+              role="button"
+              aria-controls={`code-playground-${uniqueId}`}
+              onClick={this.handleToggle}
+            >
+              {isCodeCollapsed ? 'Show code' : 'Hide code'}
+            </ScCodeToggle>
+          </ScPlayground>
+        </LiveProvider>
+      </>
     )
   }
 }
