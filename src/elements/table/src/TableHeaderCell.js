@@ -6,6 +6,7 @@ const TableHeaderCell = styled.th`
   border: inherit;
   font-weight: ${p => p.theme.tableHeaderCellFontWeight};
   padding: ${p => p.theme.tableCellPadding};
+  text-align: left;
   vertical-align: middle;
 
   ${color};
