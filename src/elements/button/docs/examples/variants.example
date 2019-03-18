@@ -1,0 +1,24 @@
+<Box>
+  <Button mr={1}>Primary</Button>
+  <Button mr={1} variant="secondary">
+    Secondary
+  </Button>
+  <Button mr={1} variant="success">
+    Success
+  </Button>
+  <Button mr={1} variant="info">
+    Info
+  </Button>
+  <Button mr={1} variant="warning">
+    Warning
+  </Button>
+  <Button mr={1} variant="danger">
+    Danger
+  </Button>
+  <Button mr={1} variant="light">
+    Light
+  </Button>
+  <Button variant="dark">
+    Dark
+  </Button>
+</Box>
