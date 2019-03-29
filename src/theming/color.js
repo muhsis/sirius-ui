@@ -15,25 +15,26 @@ export const grays = {
   white: '#ffffff',
 }
 
-export const blue = '#1070CA'
+export const blue = '#2557AB'
+export const bunting = '#1A1B52'
 export const indigo = '#6610f2'
 export const purple = '#6f42c1'
 export const pink = '#e83e8c'
-export const red = '#EC4C47'
+export const red = '#F83A30'
 export const brick = '#bd4932'
-export const orange = '#fd7e14'
+export const orange = '#FF653F'
 export const yellow = '#ffc107'
-export const green = '#28a745'
+export const green = '#24BB5D'
 export const teal = '#20c997'
-export const cyan = '#17a2b8'
+export const cyan = '#079CFF'
 export const universe = '#fff8e7'
 
 export const brand = {
   primary: blue,
-  secondary: indigo,
+  secondary: bunting,
   success: green,
   info: cyan,
-  warning: yellow,
+  warning: orange,
   danger: red,
   light: grays.silver,
   dark: grays.dark,
@@ -52,10 +53,10 @@ function getTints() {
 export const tints = getTints()
 
 export const primary = blue
-export const secondary = indigo
+export const secondary = bunting
 export const success = green
 export const info = cyan
-export const warning = yellow
+export const warning = orange
 export const danger = red
 export const light = grays.silver
 export const { dark } = grays

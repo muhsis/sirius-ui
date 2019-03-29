@@ -2,7 +2,11 @@
 
 Here you can find a list of tasks that are too small to open a Jira story/task.
 
-- [ ] Remove unnecessary packages.
+- [x] Remove unnecessary packages.
+- [ ] Refactor color system. Final decision on Sketch, and transfer here.
+- [ ] Better grayscale system.
+- [ ] Better tint bgs system.
+- [ ] Change default font sizes.
 
 ## Documentation Topics
 

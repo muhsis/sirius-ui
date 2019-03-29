@@ -5,6 +5,8 @@ import { Link } from 'gatsby'
 import elementRoutes from '../../elementRoutes'
 import componentRoutes from '../../componentRoutes'
 import logo from '../../images/logo.svg'
+import { theme } from '../../../../src'
+console.log('Theme', theme)
 
 const ScSidebar = styled.aside`
   border-right: 2px solid #ebebeb;
@@ -22,7 +24,7 @@ const ScSidebarBrand = styled.div`
   padding: 1.5rem 1rem 0.5rem 1rem;
 
   & img {
-    height: 30px;
+    height: 40px;
   }
 
   & small {
@@ -57,6 +59,7 @@ const ScSidebarNav = styled.nav`
   padding: 0 1rem;
 
   & > a {
+    color: ${theme.colors.slate};
     font-size: 15px;
     display: block;
     margin-bottom: 0.25rem;
@@ -69,16 +72,17 @@ const ScSidebarNav = styled.nav`
   }
 
   & > a.is-active {
+    color: ${theme.colors.info};
     font-weight: 500;
     position: relative;
   }
 
   & > a.is-active:after {
+    color: ${theme.colors.info};
     top: -3px;
     content: '•';
     position: absolute;
     right: 5px;
-    color: #007ced;
   }
 
   & > a.is-active:hover {
@@ -164,7 +168,7 @@ export default class Sidebar extends PureComponent {
     return (
       <ScSidebar {...props}>
         <ScSidebarBrand>
-          <img src={logo} alt="Muhsis UI" />
+          {/* <img src={logo} alt="Muhsis UI" /> */}
           <small>A design system & UI library for React.</small>
         </ScSidebarBrand>
         <ScSidebarDivider />

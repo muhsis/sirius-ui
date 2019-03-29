@@ -25,6 +25,11 @@ module.exports = [
     path: '/elements/checkbox',
   },
   {
+    name: 'Divider',
+    componentName: 'divider',
+    path: '/elements/divider',
+  },
+  {
     name: 'Form Elements',
     componentName: 'form',
     path: '/elements/form',
