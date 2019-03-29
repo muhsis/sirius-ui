@@ -4,8 +4,7 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 import elementRoutes from '../../elementRoutes'
 import componentRoutes from '../../componentRoutes'
-import nitroLogo from '../../images/nitro-logo.png'
-import kbLogo from '../../images/kb-logo.svg'
+import muhsisLogo from '../../images/muhsis-logo.png'
 
 const ScSidebar = styled.aside`
   border-right: 2px solid #ebebeb;
@@ -165,7 +164,7 @@ export default class Sidebar extends PureComponent {
     return (
       <ScSidebar {...props}>
         <ScSidebarBrand>
-          <img src={kbLogo} alt="KargoBurada UI" />
+          <img src={muhsisLogo} alt="Muhsis UI" />
           <small>A design system & UI library for React.</small>
         </ScSidebarBrand>
         <ScSidebarDivider />
