@@ -1,9 +1,9 @@
 {
-  "name": "nitro-ui-docs",
+  "name": "mcrm-ui-docs",
   "private": true,
   "description": "Design system & UI library for React",
   "version": "0.1.0",
-  "author": "Emre Kılınç <emre@nitro.io>",
+  "author": "Emre Kılınç <emre@muhsis.com>, Ozan Çakın<ozan@muhsis.com>, Emre Sandıkçı<emre.sandikci@muhsis.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.0.116",
@@ -32,7 +32,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "dev": "gatsby develop -p 1923",
+    "dev": "gatsby develop -p 2010",
     "start": "npm run dev",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""

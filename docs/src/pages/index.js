@@ -68,11 +68,11 @@ const IndexPage = () => (
     <Container>
       <Content>
         <Heading>
-          <IconBox color="warning" mr={2} /> KargoBurada UI
+          <IconBox color="warning" mr={2} /> Muhsis UI
         </Heading>
         <Paragraph>
           <IconAir color="secondary" mr={2} />
-          KargoBurada UI is a design system and ui <Code>inline</Code> library
+          Muhsis UI is a design system and ui <Code>inline</Code> library
           developed with <a href="#">Styled Components 💅</a> and{' '}
           <a href="#">Styled System</a>.
         </Paragraph>

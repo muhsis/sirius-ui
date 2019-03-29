@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Nitro UI`,
+    title: `MCRM UI`,
     description: `Design system & UI library for React.`,
-    author: `@nitroio`,
+    author: `dev@muhsis`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -25,7 +25,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/nitro-symbol.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
   ],

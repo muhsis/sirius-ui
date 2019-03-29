@@ -1,4 +1,4 @@
-# nitro-ui
+# mcrm-ui
 
 This is a design system / React UI library. It works with styled-components and
 styled-system.
@@ -84,11 +84,11 @@ Here's the list for commit tags:
 
 Here you can find some sample commit messages.
 
-`fix(addScope): only throw when defaultScope is defined`
-`docs: changelog for 5.0.0-beta.10`
-`chore(package): update @semantic-release/npm to version 4.0.0`
-`feat: association hooks`
-`feat(postgres): drop enum support`
-`feat(validation): improve validation for type`
-`refactor: indexes and uniqueKey`
-`performance: remove terraformer-wkt-parser dependency`
+- `fix(addScope): only throw when defaultScope is defined`
+- `docs: changelog for 5.0.0-beta.10`
+- `chore(package): update @semantic-release/npm to version 4.0.0`
+- `feat: association hooks`
+- `feat(postgres): drop enum support`
+- `feat(validation): improve validation for type`
+- `refactor: indexes and uniqueKey`
+- `performance: remove terraformer-wkt-parser dependency`

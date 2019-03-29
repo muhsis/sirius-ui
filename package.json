@@ -1,5 +1,5 @@
 {
-  "name": "@nitro/ui",
+  "name": "@mcrm/ui",
   "version": "0.1.0",
   "description": "Design system & UI library for React",
   "main": "commonjs/index.js",
@@ -8,7 +8,7 @@
     "commonjs",
     "esm"
   ],
-  "author": "Emre Kılınç <emre@nitro.io>",
+  "author": "Emre Kılınç <emre@muhsis.com>, Ozan Çakın <ozan@muhsis.com>, Emre Sandıkçı<emre.sandikci@muhsis.com>",
   "license": "MIT",
   "private": true,
   "scripts": {
