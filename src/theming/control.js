@@ -1,4 +1,4 @@
-import { transparentize, lighten } from 'polished'
+import { rgba, transparentize, lighten } from 'polished'
 import { css } from 'styled-components'
 import { mixin } from '../utils'
 
@@ -10,5 +10,5 @@ export const baseFocus = mixin('baseFocus', color => () => css`
 
 export const controlFocus = mixin('controlFocus', color => () => css`
   outline: 0;
-  box-shadow: 0 0 0 0.2rem ${transparentize(0.75, color)};
+  box-shadow: 0 0 0 0.25rem ${rgba(color, 0.25)};
 `)
