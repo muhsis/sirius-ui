@@ -48,6 +48,13 @@ function createStyledComponent(variant, size, loading, props) {
         cursor: not-allowed;
       `}
 
+    ${p =>
+      p.block &&
+      `
+        display: block;
+        width: 100%;
+      `}
+
     /* When used as link */
     text-decoration: none;
 
