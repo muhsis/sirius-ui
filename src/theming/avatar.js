@@ -1,8 +1,8 @@
 // Avatar sizes.
 export const avatarSizes = {
-  xs: '30px',
-  sm: '50px',
-  md: '80px',
+  xs: '20px',
+  sm: '36px',
+  md: '44px',
   lg: '120px',
   xl: '180px',
 }
