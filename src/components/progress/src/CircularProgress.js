@@ -18,7 +18,7 @@ function createStyledComponent(variant, size, percent, radius, stroke, props) {
   const ScCircularProgress = styled.div`
     display: inline-block;
     ${p => transitionBase(p)};
-    ${sizeStyle};
+    ${p => sizeStyle(p)};
     ${space}
   `
 
@@ -52,8 +52,8 @@ class CircularProgress extends PureComponent {
     variant: 'primary',
     size: 'md',
     percent: 0,
-    radius: 0,
-    stroke: 0,
+    radius: 60,
+    stroke: 10,
   }
 
   render() {

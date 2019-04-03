@@ -3,23 +3,18 @@ import PropTypes from 'prop-types'
 import styled, { css, withTheme } from 'styled-components'
 import { space } from 'styled-system'
 
-import {
-  transitionBase,
-  borderRadiusSemiCircle,
-  borderRadiusSemiCircleLg,
-  borderRadiusSemiCircleSm,
-} from '../../../theming'
+import { transitionBase } from '../../../theming'
 import Line from './Line'
 
 const sizeStyles = {
-  sm: () => css`
-    border-radius: ${borderRadiusSemiCircleSm};
+  sm: p => css`
+    border-radius: ${p.theme.borderRadiusSemiCircleSm};
   `,
-  md: () => css`
-    border-radius: ${borderRadiusSemiCircle};
+  md: p => css`
+    border-radius: ${p.theme.borderRadiusSemiCircle};
   `,
-  lg: () => css`
-    border-radius: ${borderRadiusSemiCircleLg};
+  lg: p => css`
+    border-radius: ${p.theme.borderRadiusSemiCircleLg};
   `,
 }
 
@@ -29,7 +24,7 @@ function createStyledComponent(variant, size, percent, striped, props) {
   const ScLinearProgress = styled.div`
     background-color: ${p => p.theme.grays.smoke};
     ${p => transitionBase(p)};
-    ${sizeStyle};
+    ${p => sizeStyle(p)};
     ${space}
   `
 
