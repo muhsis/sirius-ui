@@ -1,4 +1,4 @@
-export { ThemeProvider } from 'styled-components'
+export { ThemeProvider, createGlobalStyle, css } from 'styled-components'
 export { default as styled } from 'styled-components'
 
 // Components
@@ -8,6 +8,7 @@ export * from './components/normalize'
 export * from './components/alert'
 export * from './components/progress'
 export * from './components/portal'
+export * from './components/spinner'
 
 // Elements
 export * from './elements/avatar'
