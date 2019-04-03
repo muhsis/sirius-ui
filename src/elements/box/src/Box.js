@@ -29,6 +29,7 @@ import {
   bottom,
   left,
   textAlign,
+  fontSize,
 } from 'styled-system'
 
 const Box = styled('div')(
@@ -64,6 +65,7 @@ const Box = styled('div')(
   bottom,
   left,
   textAlign,
+  fontSize,
 )
 
 Box.displayName = 'Box'
@@ -97,6 +99,7 @@ Box.propTypes = {
   ...bottom.propTypes,
   ...left.propTypes,
   ...textAlign.propTypes,
+  ...fontSize.propTypes,
 }
 
 export default Box

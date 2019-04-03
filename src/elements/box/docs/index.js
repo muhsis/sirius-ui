@@ -20,7 +20,7 @@ const scope = { Box }
 const components = [
   {
     name: 'Box',
-    underDevelopment: true,
+    underDevelopment: false,
     examples: [
       {
         title: 'Basic Box Example',
