@@ -2,11 +2,11 @@ import { white, grays } from './color'
 import { borderWidth } from './border'
 import { lineHeightBase, lineHeightSm, lineHeightLg } from './typography'
 
-export const inputBtnPaddingY = '.475rem'
-export const inputBtnPaddingX = '1rem'
+export const inputBtnPaddingY = '.5rem'
+export const inputBtnPaddingX = '.875rem'
 export const inputBtnLineHeight = lineHeightBase
 
-export const inputBtnPaddingYSm = '.25rem'
+export const inputBtnPaddingYSm = '.275rem'
 export const inputBtnPaddingXSm = '.5rem'
 export const inputBtnLineHeightSm = lineHeightSm
 

@@ -4,6 +4,14 @@ import { thd, mixin } from '../utils'
 export const black = '#000'
 export const white = '#fff'
 
+/**
+ * Brand colors
+ *  - brand colors variations
+ * Contextual colors
+ * Grayscale colors
+ * Tint colors
+ */
+
 export const grays = {
   darker: '#121217',
   dark: '#17171d',
@@ -15,18 +23,18 @@ export const grays = {
   white: '#ffffff',
 }
 
-export const blue = '#2557AB'
-export const bunting = '#1A1B52'
+export const blue = '#007ced'
+export const bunting = '#ff4f00'
 export const indigo = '#6610f2'
 export const purple = '#6f42c1'
 export const pink = '#e83e8c'
-export const red = '#F83A30'
+export const red = '#ff3318'
 export const brick = '#bd4932'
-export const orange = '#FF653F'
-export const yellow = '#ffc107'
+export const orange = '#ff6d18'
+export const yellow = '#ffc200'
 export const green = '#24BB5D'
 export const teal = '#20c997'
-export const cyan = '#079CFF'
+export const cyan = '#1890ff'
 export const universe = '#fff8e7'
 
 export const brand = {
@@ -34,7 +42,7 @@ export const brand = {
   secondary: bunting,
   success: green,
   info: cyan,
-  warning: orange,
+  warning: yellow,
   danger: red,
   light: grays.silver,
   dark: grays.dark,
@@ -44,7 +52,7 @@ function getTints() {
   const tintObj = {}
 
   Object.keys(brand).forEach(key => {
-    tintObj[key] = tint(0.85, brand[key])
+    tintObj[key] = tint(0.875, brand[key])
   })
 
   return tintObj
