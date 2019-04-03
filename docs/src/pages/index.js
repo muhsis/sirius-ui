@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Container, Content, Layout, SEO, Sidebar } from '../components'
 import {
+  Alert,
   Avatar,
   AvatarInitials,
   Badge,
@@ -26,6 +27,10 @@ import {
   LinearProgress,
   CircularProgress,
   Spinner,
+  Card,
+  CardHeader,
+  CardFooter,
+  TextInput,
 } from '../../../src'
 
 import {
@@ -77,6 +82,92 @@ const IndexPage = () => (
           developed with <a href="#">Styled Components 💅</a> and{' '}
           <a href="#">Styled System</a>.
         </Paragraph>
+
+        <Box
+          my={3}
+          p={3}
+          border="1px solid"
+          borderColor="silver"
+          borderRadius="0.25rem"
+        >
+          <TextInput type="text" placeholder="Your Email Address" />
+        </Box>
+
+        <Box
+          my={3}
+          p={3}
+          border="1px solid"
+          borderColor="transparent"
+          borderRadius="0.25rem"
+          bg="snow"
+        >
+          <Card mb={3}>
+            <CardHeader title="Card Title">
+              <Button size="sm" mr={1}>
+                Inside Card
+              </Button>
+              <Button variant="warning" size="sm">
+                Inside Card
+              </Button>
+            </CardHeader>
+            Card Content
+            <CardFooter>Card footer goes here.</CardFooter>
+          </Card>
+
+          <Card mb={3} elevation={1}>
+            Only Card.
+          </Card>
+          <Card elevation={2}>
+            <CardHeader title="Card w/ Heading Only" />
+            Hello from inside card.
+          </Card>
+        </Box>
+
+        <Box
+          my={3}
+          p={3}
+          border="1px solid"
+          borderColor="silver"
+          borderRadius="0.25rem"
+        >
+          <Box width={500} mx="auto">
+            <Alert
+              mb={3}
+              text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            />
+            <Alert
+              variant="warning"
+              mb={3}
+              title="Username or password is wrong!"
+              hasIcon={true}
+              text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            />
+
+            <Alert
+              variant="success"
+              mb={3}
+              title="Username or password is wrong!"
+              hasIcon={true}
+              text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            />
+
+            <Alert
+              variant="danger"
+              mb={3}
+              title="Username or password is wrong!"
+              hasIcon={true}
+              text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            />
+
+            <Alert
+              variant="info"
+              mb={3}
+              title="Username or password is wrong!"
+              hasIcon={true}
+              text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            />
+          </Box>
+        </Box>
 
         <Box
           my={3}
