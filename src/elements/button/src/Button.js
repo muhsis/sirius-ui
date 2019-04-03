@@ -3,73 +3,72 @@ import PropTypes from 'prop-types'
 import styled, { css, withTheme } from 'styled-components'
 import { space } from 'styled-system'
 
-import {
-  fontSizeSm,
-  borderRadiusSm,
-  fontSizeBase,
-  fontSizeLg,
-  borderRadiusLg,
-  transitionBase,
-} from '../../../theming'
-import {
-  btnPaddingYSm,
-  btnPaddingXSm,
-  btnLineHeightSm,
-  btnPaddingY,
-  btnPaddingX,
-  btnLineHeight,
-  btnPaddingYLg,
-  btnPaddingXLg,
-  btnLineHeightLg,
-  btnBorderWidth,
-  btnDisabledOpacity,
-  btnVariant,
-} from '../../../theming/button'
+import { Spinner } from '../../../components/spinner'
+import { transitionBase } from '../../../theming'
+import { btnVariant } from '../../../theming/button'
 
 const sizeStyles = {
-  sm: () => css`
-    padding: ${btnPaddingYSm} ${btnPaddingXSm};
-    font-size: ${fontSizeSm};
-    border-radius: ${borderRadiusSm};
-    line-height: ${btnLineHeightSm};
+  sm: p => css`
+    padding: ${p.theme.btnPaddingYSm} ${p.theme.btnPaddingXSm};
+    font-size: ${p.theme.fontSizeSm};
+    border-radius: ${p.theme.borderRadiusSm};
+    line-height: ${p.theme.btnLineHeightSm};
   `,
-  md: () => css`
-    padding: ${btnPaddingY} ${btnPaddingX};
-    font-size: ${fontSizeBase};
-    border-radius: ${borderRadiusSm};
-    line-height: ${btnLineHeight};
+  md: p => css`
+    padding: ${p.theme.btnPaddingY} ${p.theme.btnPaddingX};
+    font-size: ${p.theme.fontSizeBase};
+    border-radius: ${p.theme.borderRadiusSm};
+    line-height: ${p.theme.btnLineHeight};
   `,
-  lg: () => css`
-    padding: ${btnPaddingYLg} ${btnPaddingXLg};
-    font-size: ${fontSizeLg};
-    border-radius: ${borderRadiusLg};
-    line-height: ${btnLineHeightLg};
+  lg: p => css`
+    padding: ${p.theme.btnPaddingYLg} ${p.theme.btnPaddingXLg};
+    font-size: ${p.theme.fontSizeLg};
+    border-radius: ${p.theme.borderRadiusLg};
+    line-height: ${p.theme.btnLineHeightLg};
   `,
 }
 
-function createStyledComponent(variant, size, props) {
+function createStyledComponent(variant, size, loading, props) {
   const sizeStyle = sizeStyles[size]
 
   const ScButton = styled.button`
     display: inline-block;
-    border-width: ${btnBorderWidth};
+    border-width: ${p => p.theme.btnBorderWidth};
+    font-family: ${p => p.theme.fontFamily};
     cursor: pointer;
 
     ${p => transitionBase(p)};
     ${p => btnVariant(variant)(p)};
-    ${sizeStyle};
+    ${p => sizeStyle(p)};
+
+    ${p =>
+      p.loading &&
+      `
+        opacity: ${p.theme.btnDisabledOpacity};
+        cursor: not-allowed;
+      `}
 
     /* When used as link */
     text-decoration: none;
 
     &:disabled {
-      opacity: ${btnDisabledOpacity};
+      cursor: not-allowed;
+      opacity: ${p => p.theme.btnDisabledOpacity};
     }
 
     ${space}
   `
 
-  return <ScButton {...props}>{props.children}</ScButton>
+  return (
+    <ScButton {...props}>
+      {loading && (
+        <>
+          <Spinner mr={1} /> Yükleniyor
+        </>
+      )}
+      {!loading && props.children}
+    </ScButton>
+  )
 }
 
 class Button extends PureComponent {
@@ -85,18 +84,21 @@ class Button extends PureComponent {
       'dark',
     ]),
     size: PropTypes.oneOf(['sm', 'md', 'lg']),
+    loading: PropTypes.bool,
     ...space.propTypes,
   }
 
   static defaultProps = {
     variant: 'primary',
     size: 'md',
+    loading: false,
   }
 
   render() {
     return createStyledComponent(
       this.props.variant,
       this.props.size,
+      this.props.loading,
       ...this.props,
     )
   }
