@@ -5,6 +5,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import '../../css/index.css' // eslint-disable-line import/no-unassigned-import
 
 import { theme, Normalize } from '../../../../src'
+import GlobalStyles from '../../globalStyles'
 console.log('Active theme', theme)
 
 class Layout extends Component {
@@ -24,6 +25,7 @@ class Layout extends Component {
           <ThemeProvider theme={theme}>
             <>
               <Normalize />
+              <GlobalStyles />
               {this.props.children}
             </>
           </ThemeProvider>

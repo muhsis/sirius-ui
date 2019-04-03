@@ -7,6 +7,8 @@ Here you can find a list of tasks that are too small to open a Jira story/task.
 - [ ] Better grayscale system.
 - [ ] Better tint bgs system.
 - [ ] Change default font sizes.
+- [ ] We have css grid component. Now we need flexbox.
+- [ ] We need prop tables for elements and components.
 
 ## Documentation Topics
 

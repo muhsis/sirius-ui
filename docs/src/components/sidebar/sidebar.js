@@ -30,6 +30,7 @@ const ScSidebarBrand = styled.div`
   & small {
     color: #999;
     display: block;
+    margin-top: 0.5rem;
   }
 `
 
@@ -168,7 +169,7 @@ export default class Sidebar extends PureComponent {
     return (
       <ScSidebar {...props}>
         <ScSidebarBrand>
-          {/* <img src={logo} alt="Muhsis UI" /> */}
+          <img src={logo} alt="Muhsis UI" />
           <small>A design system & UI library for React.</small>
         </ScSidebarBrand>
         <ScSidebarDivider />

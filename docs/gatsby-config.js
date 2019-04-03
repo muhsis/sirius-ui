@@ -28,5 +28,13 @@ module.exports = {
         icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Mukta:400,500,600,700,800:latin-ext'],
+        },
+      },
+    },
   ],
 }

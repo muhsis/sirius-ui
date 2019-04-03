@@ -25,6 +25,7 @@ import {
   styled,
   LinearProgress,
   CircularProgress,
+  Spinner,
 } from '../../../src'
 
 import {
@@ -89,7 +90,7 @@ const IndexPage = () => (
             <Button mr={1} variant="secondary">
               Secondary
             </Button>
-            <Button mr={1} variant="success">
+            <Button mr={1} variant="success" loading>
               Success
             </Button>
             <Button mr={1} variant="info">
@@ -140,15 +141,35 @@ const IndexPage = () => (
             <Button size="sm" mr={1} variant="dark">
               Dark
             </Button>
+            <Button size="sm" mr={1} variant="dark" loading>
+              Dark
+            </Button>
+          </Box>
+
+          <Box mb={3}>
+            <Button size="lg" mr={2}>
+              <IconCheck color="snow" mr={1} /> Large Button
+            </Button>
+            <Button size="lg" variant="success" mr={2}>
+              Large Button
+              <IconArrowLongRight ml={2} />
+            </Button>
+
+            <Button size="lg" variant="danger" loading>
+              Loading Button
+              <IconArrowLongRight ml={2} />
+            </Button>
           </Box>
 
           <Box>
-            <Button size="lg" mr={2}>
-              <IconCheck color="snow" mr={2} /> Large Button
+            <Button size="md" disabled>
+              <Spinner mr={1} />
+              Loading Button
             </Button>
-            <Button size="lg" variant="success">
-              Large Button
-              <IconArrowLongRight ml={2} />
+
+            <Button size="lg">
+              <Spinner mr={2} />
+              Loading Button
             </Button>
           </Box>
         </Box>
@@ -171,16 +192,15 @@ const IndexPage = () => (
               striped={true}
             />
             <LinearProgress mb={1} percent={70} variant="danger" />
+            <LinearProgress mb={1} percent={28} variant="light" />
+            <LinearProgress mb={4} percent={29} variant="dark" />
             <LinearProgress mb={1} size="sm" percent={70} variant="danger" />
             <LinearProgress
-              mb={1}
               size="sm"
               percent={70}
-              variant="danger"
+              variant="primary"
               striped={true}
             />
-            <LinearProgress mb={1} percent={28} variant="light" />
-            <LinearProgress percent={29} variant="dark" />
           </Box>
         </Box>
 
@@ -192,54 +212,13 @@ const IndexPage = () => (
           borderRadius="0.25rem"
         >
           <Box mr={1}>
-            <CircularProgress mb={1} percent={10} radius={60} stroke={10} />
-            <CircularProgress
-              mb={1}
-              percent={25}
-              variant="success"
-              radius={60}
-              stroke={4}
-            />
-            <CircularProgress
-              mb={1}
-              percent={40}
-              variant="info"
-              radius={60}
-              stroke={4}
-            />
-            <CircularProgress
-              mb={1}
-              percent={55}
-              variant="warning"
-              radius={60}
-              stroke={12}
-            />
-            <CircularProgress
-              mb={1}
-              percent={70}
-              variant="danger"
-              radius={60}
-              stroke={4}
-            />
-            <CircularProgress
-              mb={1}
-              radius={60}
-              stroke={10}
-              percent={85}
-              variant="light"
-            />
-            <CircularProgress
-              radius={60}
-              stroke={4}
-              percent={100}
-              variant="dark"
-            />
-            <CircularProgress
-              radius={100}
-              stroke={8}
-              percent={100}
-              variant="dark"
-            />
+            <CircularProgress mb={1} percent={100} stroke={10} />
+            <CircularProgress mb={1} percent={25} variant="success" />
+            <CircularProgress mb={1} percent={40} variant="info" />
+            <CircularProgress mb={1} percent={55} variant="warning" />
+            <CircularProgress mb={1} percent={70} variant="danger" />
+            <CircularProgress mb={1} percent={85} variant="light" />
+            <CircularProgress percent={100} variant="dark" />
           </Box>
         </Box>
 
