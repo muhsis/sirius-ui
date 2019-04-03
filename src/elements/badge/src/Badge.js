@@ -7,36 +7,37 @@ import { space } from 'styled-system'
 // since it's gonna be used a lot.
 const variantStyles = {
   primary: p => css`
-    background-color: ${p.theme.primary};
-    color: ${p.theme.colorYik(p.theme.primary)};
+    background-color: ${p.theme.tints.primary};
+    color: ${p.theme.primary};
   `,
   secondary: p => css`
-    background-color: ${p.theme.secondary};
-    color: ${p.theme.colorYik(p.theme.secondary)};
+    background-color: ${p.theme.tints.secondary};
+    color: ${p.theme.secondary};
   `,
   success: p => css`
-    background-color: ${p.theme.success};
-    color: ${p.theme.colorYik(p.theme.success)};
+    background-color: ${p.theme.tints.success};
+    color: ${p.theme.success};
   `,
   info: p => css`
-    background-color: ${p.theme.info};
-    color: ${p.theme.colorYik(p.theme.info)};
+    background-color: ${p.theme.tints.info};
+    color: ${p.theme.info};
   `,
   warning: p => css`
-    background-color: ${p.theme.warning};
-    color: ${p.theme.colorYik(p.theme.warning)};
+    background-color: ${p.theme.tints.warning};
+    color: ${p.theme.warning};
   `,
   danger: p => css`
-    background-color: ${p.theme.danger};
-    color: ${p.theme.colorYik(p.theme.danger)};
+    background-color: ${p.theme.tints.danger};
+    color: ${p.theme.danger};
   `,
   light: p => css`
-    background-color: ${p.theme.light};
+    background-color: transparent;
+    border: 1px solid ${p.theme.light};
     color: ${p.theme.colorYik(p.theme.light)};
   `,
   dark: p => css`
-    background-color: ${p.theme.dark};
-    color: ${p.theme.colorYik(p.theme.dark)};
+    background-color: ${p.theme.tints.dark};
+    color: ${p.theme.dark};
   `,
 }
 
@@ -48,7 +49,9 @@ function createStyledComponent(variant, children, props) {
     font-family: ${p => p.theme.fontFamilyBase};
     font-weight: 500;
     font-size: 0.875rem;
-    padding: 0.25rem 0.5rem;
+    line-height: normal;
+    padding: 0rem 0.5rem;
+    text-transform: uppercase;
 
     ${variantStyle}
     ${space}

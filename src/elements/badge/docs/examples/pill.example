@@ -13,7 +13,7 @@
     5
   </Pill>
   <Pill mr={1} variant="danger">
-    6
+    99+
   </Pill>
   <Pill mr={1} variant="light">
     7

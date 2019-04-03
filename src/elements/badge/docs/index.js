@@ -42,7 +42,9 @@ const components = [
         title: 'Pill Example',
         description: (
           <Paragraph>
-            Very basic <Code>Pill</Code> component examples.
+            Very basic <Code>Pill</Code> component examples. This is actually
+            not a pill component. Pill is something else entirely. Need to
+            change the name on this one!
           </Paragraph>
         ),
         codeText: examplePill,

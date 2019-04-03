@@ -44,11 +44,12 @@ function createStyledComponent(variant, children, props) {
   const variantStyle = variantStyles[variant]
 
   const ScPill = styled.span`
-    border-radius: 1.5rem;
-    font-family: ${p => p.theme.fontFamilyBase};
+    border-radius: 0.25rem;
+    font-family: ${p => p.theme.fontFamilyMonospace};
     font-weight: 500;
-    font-size: 0.875rem;
-    padding: 0.25rem 0.5rem;
+    font-size: ${p => p.theme.fontSizeSm};
+    padding: 0.2rem 0.375rem;
+    text-align: center;
 
     ${variantStyle}
     ${space}
