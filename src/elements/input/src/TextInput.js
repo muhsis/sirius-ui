@@ -25,43 +25,41 @@ const sizeStyles = {
   `,
 }
 
+const ScInput = styled.input`
+  display: block;
+  width: 100%;
+  border-width: ${p => p.theme.inputBorderWidth};
+  border-color: ${p => p.theme.inputBorderColor};
+  border-style: solid;
+  line-height: ${p => p.theme.inputLineHeight};
+  color: ${p => p.theme.inputTextColor};
+  font-family: ${p => p.theme.fontFamily};
+
+  &[type='number'] {
+    padding-right: 6px;
+  }
+
+  &::placeholder {
+    color: ${p => p.theme.inputPlaceholderText};
+  }
+
+  &:focus {
+    ${p => controlFocus(p.theme.colors.primary)(p)}
+  }
+
+  &:disabled {
+    background-color: ${p => p.theme.inputDisabledBgColor};
+    color: ${p => p.theme.inputDisabledText};
+  }
+
+  ${p => transitionBase(p)};
+  ${p => sizeStyles[p.size](p)};
+
+  ${space}
+`
+
 function createStyledComponent(size, props) {
-  const sizeStyle = sizeStyles[size]
-
-  const ScInput = styled.input`
-    display: block;
-    width: 100%;
-    border-width: ${p => p.theme.inputBorderWidth};
-    border-color: ${p => p.theme.inputBorderColor};
-    border-style: solid;
-    line-height: ${p => p.theme.inputLineHeight};
-    color: ${p => p.theme.inputTextColor};
-    font-family: ${p => p.theme.fontFamily};
-
-    &[type='number'] {
-      padding-right: 6px;
-    }
-
-    &::placeholder {
-      color: ${p => p.theme.inputPlaceholderText};
-    }
-
-    &:focus {
-      ${p => controlFocus(p.theme.colors.primary)(p)}
-    }
-
-    &:disabled {
-      background-color: ${p => p.theme.inputDisabledBgColor};
-      color: ${p => p.theme.inputDisabledText};
-    }
-
-    ${p => transitionBase(p)};
-    ${p => sizeStyle(p)};
-
-    ${space}
-  `
-
-  return <ScInput {...props} />
+  return <ScInput size={size} {...props} />
 }
 
 class TextInput extends PureComponent {
