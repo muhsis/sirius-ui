@@ -2,7 +2,13 @@ import React, { PureComponent } from 'react'
 import styled, { css, withTheme } from 'styled-components'
 import PropTypes from 'prop-types'
 import { space } from 'styled-system'
-import { IconBlock, IconCheck, IconBell, IconInfo } from '../../../icons'
+import {
+  IconBlock,
+  IconCheck,
+  IconBell,
+  IconInfo,
+  IconCross,
+} from '../../../icons'
 
 const variantStyles = {
   success: p => css`
@@ -54,12 +60,15 @@ const ScAlert = styled.div`
   color: #1f4160;
   padding: 1rem;
   text-align: left;
+  pointer-events: all;
 
   ${p => variantStyles[p.variant]}
   ${space}
 `
 
-const ScAlertContent = styled.div``
+const ScAlertContent = styled.div`
+  margin-right: 1rem;
+`
 
 const ScAlertIcon = styled.div`
   font-size: 2rem;
@@ -80,12 +89,23 @@ const ScAlertText = styled.p`
   color: #1f4160;
 `
 
+const ScAlertClose = styled.span`
+  position: absolute;
+  cursor: pointer;
+  right: 0.5rem;
+  top: 0.5rem;
+  font-size: 1.2rem;
+  opacity: 0.6;
+`
+
 class Alert extends PureComponent {
   static propTypes = {
     variant: PropTypes.oneOf(['success', 'info', 'warning', 'danger']),
-    title: PropTypes.string,
-    text: PropTypes.string,
+    title: PropTypes.node,
+    text: PropTypes.node,
     hasIcon: PropTypes.bool,
+    isRemovable: PropTypes.bool,
+    onRemove: PropTypes.func,
   }
 
   static defaultProps = {
@@ -93,22 +113,29 @@ class Alert extends PureComponent {
     title: null,
     text: null,
     hasIcon: false,
+    isRemovable: false,
   }
 
   render() {
     const IconTag = variantIcons[this.props.variant]
+    const { title, text, hasIcon, isRemovable, onRemove, ...props } = this.props
 
     return (
-      <ScAlert {...this.props}>
-        {this.props.hasIcon && (
-          <ScAlertIcon variant={this.props.variant}>
+      <ScAlert {...props}>
+        {hasIcon && (
+          <ScAlertIcon variant={props.variant}>
             <IconTag />
           </ScAlertIcon>
         )}
         <ScAlertContent>
-          {this.props.title && <ScAlertTitle>{this.props.title}</ScAlertTitle>}
-          {this.props.text && <ScAlertText>{this.props.text}</ScAlertText>}
+          {title && <ScAlertTitle>{title}</ScAlertTitle>}
+          {text && <ScAlertText>{text}</ScAlertText>}
         </ScAlertContent>
+        {isRemovable && (
+          <ScAlertClose onClick={onRemove}>
+            <IconCross />
+          </ScAlertClose>
+        )}
       </ScAlert>
     )
   }
