@@ -1,4 +1,9 @@
-export { ThemeProvider, createGlobalStyle, css } from 'styled-components'
+export {
+  ThemeProvider,
+  createGlobalStyle,
+  css,
+  keyframes,
+} from 'styled-components'
 export { default as styled } from 'styled-components'
 
 // Components
