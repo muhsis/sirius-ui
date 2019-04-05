@@ -3,6 +3,7 @@ import styled, { withTheme } from 'styled-components'
 
 const ScFormGroup = styled.div`
   margin-bottom: 1rem;
+  text-align: left;
 `
 
 class FormGroup extends PureComponent {
