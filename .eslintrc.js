@@ -23,5 +23,6 @@ module.exports = {
     'no-param-reassign': 'off',
     'no-shadow': 'off',
     'default-case': 'off',
+    'no-plusplus': 'off',
   },
 }
