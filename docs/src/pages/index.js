@@ -31,6 +31,8 @@ import {
   CardHeader,
   CardFooter,
   TextInput,
+  Toaster,
+  theme,
 } from '../../../src'
 
 import {
@@ -45,6 +47,8 @@ import {
   IconArrowLongRight,
   IconBox,
 } from '../../../src'
+
+const toaster = new Toaster(theme)
 
 const Item = styled.div`
   background: darkorange;
@@ -82,6 +86,39 @@ const IndexPage = () => (
           developed with <a href="#">Styled Components 💅</a> and{' '}
           <a href="#">Styled System</a>.
         </Paragraph>
+
+        <Box
+          my={3}
+          p={3}
+          border="1px solid"
+          borderColor="silver"
+          borderRadius="0.25rem"
+        >
+          <Button
+            onClick={() =>
+              toaster.info(
+                'Info Message',
+                'MCRM toaster system info variation!',
+                { duration: 100 },
+              )
+            }
+            mr={1}
+          >
+            Info Toaster
+          </Button>
+
+          <Button
+            variant="success"
+            onClick={() =>
+              toaster.success(
+                'Success Message',
+                'MCRM toaster system success variation!',
+              )
+            }
+          >
+            Success Toaster
+          </Button>
+        </Box>
 
         <Box
           my={3}
@@ -133,7 +170,9 @@ const IndexPage = () => (
           <Box width={500} mx="auto">
             <Alert
               mb={3}
+              title="Sample Alert Title"
               text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              isRemovable={true}
             />
             <Alert
               variant="warning"
@@ -148,6 +187,7 @@ const IndexPage = () => (
               mb={3}
               title="Username or password is wrong!"
               hasIcon={true}
+              isRemovable={true}
               text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             />
 
