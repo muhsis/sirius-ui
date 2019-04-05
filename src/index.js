@@ -10,6 +10,7 @@ export * from './components/normalize'
 export * from './components/progress'
 export * from './components/portal'
 export * from './components/spinner'
+export * from './components/toaster'
 
 // Elements
 export * from './elements/avatar'
