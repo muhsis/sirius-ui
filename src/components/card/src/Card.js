@@ -1,7 +1,15 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import styled, { withTheme, css } from 'styled-components'
-import { space, textAlign, width, zIndex } from 'styled-system'
+import {
+  space,
+  textAlign,
+  width,
+  zIndex,
+  maxWidth,
+  minWidth,
+  minHeight,
+} from 'styled-system'
 
 const elevationStyles = {
   0: () => css`
@@ -35,6 +43,9 @@ const ScCard = styled.div`
 
   ${space}
   ${width}
+  ${maxWidth}
+  ${minWidth}
+  ${minHeight}
   ${zIndex}
 `
 
