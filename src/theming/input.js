@@ -31,5 +31,5 @@ export const inputBorderColor = grays.smoke
 export const inputBgColor = white
 export const inputDisabledBgColor = grays.snow
 export const inputDisabledText = grays.slate
-export const inputPlaceholderText = grays.slate
+export const inputPlaceholderText = grays.silver
 export const inputTextColor = grays.dark
