@@ -35,7 +35,7 @@ const closeAnimation = keyframes`
 const ScToastContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   height: 0;
   transition: all ${ANIMATION_DURATION}ms ${animationEasing.deceleration};
 
