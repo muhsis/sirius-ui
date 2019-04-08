@@ -16,6 +16,7 @@ export const grays = {
   darker: '#121217',
   dark: '#17171d',
   black: '#000000',
+  shaft: '#333333',
   slate: '#5f6e78',
   silver: '#bec4c8',
   smoke: '#dee1e3',
