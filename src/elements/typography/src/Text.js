@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import {
   space,
+  display,
   color,
   fontSize,
   fontWeight,
@@ -16,6 +17,7 @@ const Text = styled.span`
   line-height: ${lineHeightBase};
 
   ${space}
+  ${display}
   ${color}
   ${fontSize}
   ${fontWeight}
@@ -27,6 +29,7 @@ const Text = styled.span`
 Text.displayName = 'Text'
 Text.propTypes = {
   ...space.propTypes,
+  ...display.propTypes,
   ...color.propTypes,
   ...fontSize.propTypes,
   ...fontWeight.propTypes,
