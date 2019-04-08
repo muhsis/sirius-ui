@@ -4,9 +4,8 @@ import styled, { withTheme } from 'styled-components'
 const ScFormHint = styled.div`
   color: ${p => p.theme.grays.silver};
   margin-bottom: 0.5rem;
-  margin-top: 0.5rem;
-  font-size: ${p => p.theme.fontSizeSm};
-  font-style: italic;
+  margin-top: 0.25rem;
+  font-size: ${p => p.theme.fontSizeBase};
 `
 
 class FormHint extends PureComponent {

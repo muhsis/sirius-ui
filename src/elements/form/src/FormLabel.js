@@ -3,7 +3,7 @@ import styled, { withTheme } from 'styled-components'
 
 const ScFormLabel = styled.label`
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
   font-size: ${p => p.theme.fontSizeBase};
   font-weight: 500;
 `
