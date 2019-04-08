@@ -5,19 +5,19 @@ import { borderRadius, space } from 'styled-system'
 
 const sizeStyles = {
   xs: () => css`
-    font-size: 1rem;
+    font-size: 0.875rem;
   `,
   sm: () => css`
     font-size: 1.25rem;
   `,
   md: () => css`
-    font-size: 2rem;
+    font-size: 2.5rem;
   `,
   lg: () => css`
-    font-size: 3rem;
+    font-size: 5rem;
   `,
   xl: () => css`
-    font-size: 5rem;
+    font-size: 8rem;
   `,
 }
 
