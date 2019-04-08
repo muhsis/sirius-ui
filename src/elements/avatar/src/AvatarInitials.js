@@ -71,6 +71,7 @@ function createStyledComponent(variant, size, initials, props) {
     width: ${p => p.theme.avatarSizes[size]};
     text-align: center;
     text-transform: uppercase;
+    user-select: none;
 
     ${sizeStyle}
     ${variantStyle}
