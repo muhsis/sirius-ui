@@ -46,3 +46,19 @@ export const btnVariant = mixin('btnVariant', variant => p => {
     }
   `
 })
+
+export const btnIconVariant = mixin('btnIconVariant', variant => p => {
+  const color = colorVariant(variant)(p)
+  return css`
+    color: ${color};
+
+    &:focus {
+      ${controlFocus(color)(p)};
+    }
+
+    &:not(:disabled):hover,
+    &:not(:disabled):active {
+      color: ${darken(0.05, color)};
+    }
+  `
+})

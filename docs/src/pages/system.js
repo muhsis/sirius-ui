@@ -1,6 +1,14 @@
 import React, { Component } from 'react'
 import { Layout, SEO, Sidebar } from '../components'
-import { Box, Text, Paragraph, SideSheet, Button } from '../../../src'
+import {
+  Box,
+  Text,
+  Paragraph,
+  SideSheet,
+  Button,
+  ButtonIcon,
+  IconBell,
+} from '../../../src'
 
 class SystemPage extends Component {
   constructor(props) {
@@ -31,6 +39,11 @@ class SystemPage extends Component {
       <Layout>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
         <Sidebar />
+        <Box p={3} ml={250}>
+          <ButtonIcon>
+            <IconBell />
+          </ButtonIcon>
+        </Box>
         <Box p={3} ml={250}>
           <Button onClick={this.openSideSheet}>Show Side Sheet</Button>
           <SideSheet
