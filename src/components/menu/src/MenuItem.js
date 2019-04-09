@@ -19,7 +19,7 @@ const MenuItem = styled.button`
   }
 
   &:hover {
-    background-color: ${p => p.theme.colors.snow};
+    background-color: ${p => p.theme.tints.primary};
   }
 
   &:active {
