@@ -5,7 +5,7 @@ import { space } from 'styled-system'
 import {
   IconBlock,
   IconCheck,
-  IconBell,
+  IconNew,
   IconInfo,
   IconCross,
 } from '../../../icons'
@@ -43,7 +43,7 @@ const variantIconStyles = {
 const variantIcons = {
   success: () => <IconCheck />,
   info: () => <IconInfo />,
-  warning: () => <IconBell />,
+  warning: () => <IconNew />,
   danger: () => <IconBlock />,
 }
 
