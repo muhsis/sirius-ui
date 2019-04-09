@@ -38,11 +38,17 @@ export const btnVariant = mixin('btnVariant', variant => p => {
 
     &:focus {
       ${controlFocus(color)(p)};
+      /* for links */
+      color: ${colorYik(color)(p)};
+      text-decoration: none;
     }
 
     &:not(:disabled):hover,
     &:not(:disabled):active {
       background-color: ${darken(0.05, color)};
+      /* for links */
+      color: ${colorYik(color)(p)};
+      text-decoration: none;
     }
   `
 })
