@@ -50,7 +50,7 @@ const ScCard = styled.div`
 `
 
 const ScCardBody = styled.div`
-  padding: 2rem 1.5rem;
+  padding: 1rem 1.5rem;
 
   ${textAlign}
 `

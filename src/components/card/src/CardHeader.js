@@ -7,7 +7,7 @@ const ScCardHeader = styled.div`
   display: flex;
   align-items: center;
   padding: 1rem;
-  margin: -2rem -1.5rem 1.5rem -1.5rem;
+  margin: -1rem -1.5rem 1.5rem -1.5rem;
 `
 
 const ScCardHeaderTitle = styled.h3`
