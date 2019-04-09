@@ -16,6 +16,7 @@ export * from './components/menu'
 export * from './components/normalize'
 export * from './components/progress'
 export * from './components/portal'
+export * from './components/side-sheet'
 export * from './components/spinner'
 export * from './components/toaster'
 
