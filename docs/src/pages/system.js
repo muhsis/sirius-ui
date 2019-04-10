@@ -14,6 +14,7 @@ import {
   MediaItem,
   Select,
   TextInput,
+  TextArea,
 } from '../../../src'
 
 const colourOptions = [
@@ -59,6 +60,7 @@ class SystemPage extends Component {
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
         <Sidebar />
         <Box p={3} ml={250}>
+          <TextArea rows="5" placeholder="Hey, Ho!" mb={3} />
           <TextInput value="Shit" />
           <Select
             isMulti
