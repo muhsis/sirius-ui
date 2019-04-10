@@ -1,6 +1,14 @@
 import React from 'react'
 import { Layout, SEO, Sidebar, Container, Content } from '../components'
-import { Heading, Paragraph, Grid, Cell, Box, styled } from '../../../src'
+import {
+  Heading,
+  Paragraph,
+  Grid,
+  Cell,
+  Box,
+  styled,
+  Loader,
+} from '../../../src'
 import * as colors from '../../../src/theming/color'
 console.log('Colors', colors)
 
@@ -42,6 +50,10 @@ const ColorsPage = () => (
           The color system for a product has many requirements and constraints.
           There is a need to be intentional and functional with color use.
         </Paragraph>
+
+        <Box mt={4} mb={3} py={5}>
+          <Loader />
+        </Box>
 
         <Box mt={4} mb={3}>
           <Heading variant="h4" mb={3}>
