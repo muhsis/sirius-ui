@@ -12,7 +12,22 @@ import {
   ListViewItem,
   Media,
   MediaItem,
+  Select,
+  TextInput,
 } from '../../../src'
+
+const colourOptions = [
+  { value: 'ocean', label: 'Ocean', color: '#00B8D9', isFixed: true },
+  { value: 'blue', label: 'Blue', color: '#0052CC', disabled: true },
+  { value: 'purple', label: 'Purple', color: '#5243AA' },
+  { value: 'red', label: 'Red', color: '#FF5630', isFixed: true },
+  { value: 'orange', label: 'Orange', color: '#FF8B00' },
+  { value: 'yellow', label: 'Yellow', color: '#FFC400' },
+  { value: 'green', label: 'Green', color: '#36B37E' },
+  { value: 'forest', label: 'Forest', color: '#00875A' },
+  { value: 'slate', label: 'Slate', color: '#253858' },
+  { value: 'silver', label: 'Silver', color: '#666666' },
+]
 
 class SystemPage extends Component {
   constructor(props) {
@@ -43,6 +58,42 @@ class SystemPage extends Component {
       <Layout>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
         <Sidebar />
+        <Box p={3} ml={250}>
+          <TextInput value="Shit" />
+          <Select
+            isMulti
+            isDisabled={false}
+            isLoading={false}
+            isClearable={true}
+            isSearchable={true}
+            name="color"
+            options={colourOptions}
+          />
+        </Box>
+        <Box p={3} ml={250}>
+          <TextInput size="sm" value="Shit" />
+          <Select
+            size="sm"
+            isDisabled={false}
+            isLoading={false}
+            isClearable={true}
+            isSearchable={true}
+            name="color"
+            options={colourOptions}
+          />
+        </Box>
+        <Box p={3} ml={250}>
+          <TextInput size="lg" value="Shit" />
+          <Select
+            size="lg"
+            isDisabled={false}
+            isLoading={false}
+            isClearable={true}
+            isSearchable={true}
+            name="color"
+            options={colourOptions}
+          />
+        </Box>
         <Box p={3} ml={250}>
           <ButtonIcon>
             <IconBell />
