@@ -20,7 +20,7 @@ const scope = { Badge, Box }
 const components = [
   {
     name: 'Badge',
-    underDevelopment: true,
+    underDevelopment: false,
     examples: [
       {
         title: 'Badge Example',

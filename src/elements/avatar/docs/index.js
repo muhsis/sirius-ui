@@ -22,7 +22,7 @@ const scope = { Avatar, AvatarInitials, Box }
 const components = [
   {
     name: 'Avatar',
-    underDevelopment: true,
+    underDevelopment: false,
     examples: [
       {
         title: 'Basic Avatar Example',
