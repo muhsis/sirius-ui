@@ -33,6 +33,7 @@ export * from './elements/form'
 export * from './elements/image'
 export * from './elements/input'
 export * from './elements/table'
+export * from './elements/tag'
 export * from './elements/typography'
 
 // Icons
