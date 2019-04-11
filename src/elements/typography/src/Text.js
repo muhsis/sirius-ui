@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { withTheme } from 'styled-components'
 import {
   space,
   display,
@@ -9,12 +9,11 @@ import {
   lineHeight,
   textAlign,
 } from 'styled-system'
-import { fontFamily, fontSizeBase, lineHeightBase } from '../../../theming'
 
 const Text = styled.span`
-  font-family: ${fontFamily};
-  font-size: ${fontSizeBase};
-  line-height: ${lineHeightBase};
+  font-family: ${p => p.theme.fontFamily};
+  font-size: ${p => p.theme.fontSizeBase};
+  line-height: ${p => p.theme.lineHeightBase};
 
   ${space}
   ${display}
@@ -38,4 +37,4 @@ Text.propTypes = {
   ...textAlign.propTypes,
 }
 
-export default Text
+export default withTheme(Text)
