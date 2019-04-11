@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
 import getElement from '../utils/getElement'
 import { Container, Content, Layout, Sidebar, SEO, Readme } from '../components'
 

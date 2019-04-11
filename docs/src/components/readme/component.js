@@ -1,12 +1,15 @@
 import React, { PureComponent } from 'react'
 
 import PropTypes from 'prop-types'
-import { Playground } from '../playground'
-import { Heading } from '../../../../src/'
+import { PropTypesTable, Playground } from '../'
+import { Heading, styled } from '../../../../src/'
+
+const ScPlaygroundExamples = styled.div``
 
 class ReadmeComponent extends PureComponent {
   static propTypes = {
     name: PropTypes.string.isRequired,
+    source: PropTypes.string,
     description: PropTypes.node,
     examples: PropTypes.arrayOf(
       PropTypes.shape({
@@ -19,21 +22,25 @@ class ReadmeComponent extends PureComponent {
   }
 
   render() {
-    const { examples } = this.props
+    const { examples, source } = this.props
 
     return (
       <>
-        {examples.map(example => {
-          return (
-            <Playground
-              key={example.title}
-              title={example.title}
-              description={example.description}
-              codeText={example.codeText}
-              scope={example.scope}
-            />
-          )
-        })}
+        <ScPlaygroundExamples>
+          {examples.map(example => {
+            return (
+              <Playground
+                key={example.title}
+                title={example.title}
+                description={example.description}
+                codeText={example.codeText}
+                scope={example.scope}
+              />
+            )
+          })}
+        </ScPlaygroundExamples>
+
+        <PropTypesTable componentSource={source} />
       </>
     )
   }

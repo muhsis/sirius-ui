@@ -20,6 +20,7 @@
     "polished": "^2.3.3",
     "prop-types": "^15.6.2",
     "react": "^16.8.0",
+    "react-docgen": "^4.1.0",
     "react-dom": "^16.8.0",
     "react-helmet": "^5.2.0",
     "react-live": "^1.12.0",

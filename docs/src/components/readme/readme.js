@@ -67,6 +67,7 @@ class Readme extends PureComponent {
           <ReadmeComponent
             key={component.name}
             name={component.name}
+            source={component.source}
             description={component.description}
             examples={component.examples}
           />
