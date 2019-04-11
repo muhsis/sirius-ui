@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import PropTypes from 'prop-types'
+import styled, { withTheme } from 'styled-components'
 import {
   space,
   color,
@@ -8,19 +9,19 @@ import {
   lineHeight,
   textAlign,
 } from 'styled-system'
-import {
-  colors,
-  fontFamily,
-  fontSizeBase,
-  lineHeightBase,
-} from '../../../theming'
 
 const Paragraph = styled.p`
-  color: ${colors.dark};
-  font-family: ${fontFamily};
-  font-size: ${fontSizeBase};
-  line-height: ${lineHeightBase};
+  color: ${p => p.theme.colors.dark};
+  font-family: ${p => p.theme.fontFamily};
+  font-size: ${p => p.theme.fontSizeBase};
+  line-height: ${p => p.theme.lineHeightBase};
   margin-bottom: 1rem;
+
+  ${p =>
+    p.isLead &&
+    `
+    font-size: ${p.theme.fontSizeLg};
+  `}
 
   ${space}
   ${color}
@@ -33,6 +34,7 @@ const Paragraph = styled.p`
 
 Paragraph.displayName = 'Paragraph'
 Paragraph.propTypes = {
+  isLead: PropTypes.bool,
   ...space.propTypes,
   ...color.propTypes,
   ...fontSize.propTypes,
@@ -42,4 +44,8 @@ Paragraph.propTypes = {
   ...textAlign.propTypes,
 }
 
-export default Paragraph
+Paragraph.defaultProps = {
+  isLead: false,
+}
+
+export default withTheme(Paragraph)
