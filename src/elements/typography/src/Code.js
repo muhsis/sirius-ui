@@ -1,18 +1,22 @@
 import styled, { withTheme } from 'styled-components'
+import { space } from 'styled-system'
 import { lighten } from 'polished'
-
-// There should be two variations
-// inline and code block
 
 const Code = styled.code`
   background-color: ${p => p.theme.tints.primary};
-  border-radius: 0.15rem;
+  border-radius: ${p => p.theme.borderRadius};
   box-shadow: 0 0 0 1px ${p => lighten(0.4, p.theme.brand.primary)};
   color: ${p => p.theme.brand.primary};
   font-family: ${p => p.theme.fontFamilyMonospace};
-  font-size: 0.875rem;
+  font-size: ${p => p.theme.fontSizeSm};
   font-weight: 500;
   padding: 2px 4px;
+
+  ${space}
 `
+Code.displayName = 'Code'
+Code.propTypes = {
+  ...space.propTypes,
+}
 
 export default withTheme(Code)
