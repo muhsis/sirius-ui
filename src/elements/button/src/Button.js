@@ -28,7 +28,7 @@ const sizeStyles = {
   `,
 }
 
-function createStyledComponent(variant, size, loading, props) {
+function createStyledComponent(variant, size, loading, block, props) {
   const sizeStyle = sizeStyles[size]
 
   const ScButton = styled.button`
@@ -92,6 +92,7 @@ class Button extends PureComponent {
     ]),
     size: PropTypes.oneOf(['sm', 'md', 'lg']),
     loading: PropTypes.bool,
+    block: PropTypes.bool,
     ...space.propTypes,
   }
 
@@ -99,6 +100,7 @@ class Button extends PureComponent {
     variant: 'primary',
     size: 'md',
     loading: false,
+    block: false,
   }
 
   render() {
@@ -106,6 +108,7 @@ class Button extends PureComponent {
       this.props.variant,
       this.props.size,
       this.props.loading,
+      this.props.block,
       ...this.props,
     )
   }
