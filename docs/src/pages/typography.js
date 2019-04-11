@@ -10,14 +10,18 @@ import {
 import {
   Box,
   Heading,
-  Pre,
   Text,
   Strong,
+  Small,
   Paragraph,
   Code,
   UnorderedList,
+  OrderedList,
   ListItem,
   Link,
+  IconCheck,
+  IconCross,
+  IconInfoWithCircle,
 } from '../../../src'
 
 // Examples
@@ -25,12 +29,24 @@ import headingCodeText from '../examples/heading.example'
 import paragraphCodeText from '../examples/paragraph.example'
 import textCodeText from '../examples/text.example'
 import linkCodeText from '../examples/link.example'
+import listCodeText from '../examples/list.example'
 
 // Scopes
 const headingScope = { Box, Heading }
-const paragraphScope = { Box, Paragraph }
+const paragraphScope = { Box, Paragraph, Strong, Small }
 const textScope = { Box, Text, Paragraph }
 const linkScope = { Box, Link, Paragraph, Code }
+const listScope = {
+  Box,
+  UnorderedList,
+  OrderedList,
+  ListItem,
+  Paragraph,
+  Code,
+  IconCheck,
+  IconCross,
+  IconInfoWithCircle,
+}
 
 const TypographyPage = () => (
   <Layout>
@@ -147,6 +163,19 @@ const TypographyPage = () => (
           }
           scope={linkScope}
           codeText={linkCodeText}
+        />
+
+        <Playground
+          title="List Styles"
+          description={
+            <Paragraph>
+              You can use <Code>UnorderedList</Code> component with icons and
+              variants. You must use <Code>ListItem</Code> component inside
+              lists.
+            </Paragraph>
+          }
+          scope={listScope}
+          codeText={listCodeText}
         />
       </Content>
     </Container>

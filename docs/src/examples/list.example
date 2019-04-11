@@ -1,0 +1,47 @@
+<>
+  <UnorderedList mb={3}>
+    <ListItem>Etiam porta sem malesuada magna mollis euismod.</ListItem>
+    <ListItem>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</ListItem>
+    <ListItem>Nullam id dolor id nibh ultricies vehicula ut id elit.</ListItem>
+    <ListItem>Maecenas sed diam eget risus varius blandit sit amet non magna. </ListItem>
+    <ListItem>Maecenas faucibus mollis interdum. </ListItem>
+  </UnorderedList>
+
+  <UnorderedList icon={<IconCheck />} variant="success" mb={3}>
+    <ListItem>Etiam porta sem malesuada magna mollis euismod.</ListItem>
+    <ListItem>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</ListItem>
+    <ListItem>Nullam id dolor id nibh ultricies vehicula ut id elit.</ListItem>
+    <ListItem>Maecenas sed diam eget risus varius blandit sit amet non magna. </ListItem>
+    <ListItem>Maecenas faucibus mollis interdum. </ListItem>
+  </UnorderedList>
+
+  <UnorderedList icon={<IconInfoWithCircle />} variant="info" mb={3}>
+    <ListItem>Etiam porta sem malesuada magna mollis euismod.</ListItem>
+    <ListItem>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</ListItem>
+    <ListItem>Nullam id dolor id nibh ultricies vehicula ut id elit.</ListItem>
+    <ListItem>Maecenas sed diam eget risus varius blandit sit amet non magna. </ListItem>
+    <ListItem>Maecenas faucibus mollis interdum. </ListItem>
+  </UnorderedList>
+
+  <UnorderedList icon={<IconCross />} variant="danger" mb={3}>
+    <ListItem>Etiam porta sem malesuada magna mollis euismod.</ListItem>
+    <ListItem>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</ListItem>
+    <ListItem>Nullam id dolor id nibh ultricies vehicula ut id elit.</ListItem>
+    <ListItem>Maecenas sed diam eget risus varius blandit sit amet non magna. </ListItem>
+    <ListItem>Maecenas faucibus mollis interdum. </ListItem>
+  </UnorderedList>
+
+  <UnorderedList mb={3}>
+    <ListItem icon={<IconInfoWithCircle />} variant="info">Etiam porta sem malesuada magna mollis euismod.</ListItem>
+    <ListItem icon={<IconCheck />} variant="success">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</ListItem>
+    <ListItem icon={<IconCross />} variant="danger">Nullam id dolor id nibh ultricies vehicula ut id elit.</ListItem>
+  </UnorderedList>
+
+  <OrderedList>
+    <ListItem>Etiam porta sem malesuada magna mollis euismod.</ListItem>
+    <ListItem>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</ListItem>
+    <ListItem>Nullam id dolor id nibh ultricies vehicula ut id elit.</ListItem>
+    <ListItem>Maecenas sed diam eget risus varius blandit sit amet non magna. </ListItem>
+    <ListItem>Maecenas faucibus mollis interdum. </ListItem>
+  </OrderedList>
+</>
