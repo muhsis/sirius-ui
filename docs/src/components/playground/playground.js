@@ -7,7 +7,6 @@ import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 
 const ScPlayground = styled.div`
   background-color: #234361;
-  color: #fff;
   margin-bottom: 2rem;
   overflow: hidden;
   border-radius: 0.25rem;
@@ -17,9 +16,12 @@ const ScPlaygroundPreview = styled.div`
   background-color: #fff;
   border-radius: 0.25rem;
   box-shadow: 0 0 0 1px rgba(67, 90, 111, 0.14);
-  color: #66788a;
   margin: 0.25rem;
   padding: 1rem;
+`
+
+const ScPlaygroundEditor = styled.div`
+  color: #fff;
 `
 
 const ScPlaygroundError = styled.div`
@@ -63,6 +65,11 @@ class Playground extends Component {
   static propTypes = {
     codeText: PropTypes.string.isRequired,
     scope: PropTypes.object,
+    isCodeCollapsed: PropTypes.bool,
+  }
+
+  static defaultProps = {
+    isCodeCollapsed: true,
   }
 
   constructor(props) {
@@ -70,7 +77,7 @@ class Playground extends Component {
 
     this.state = {
       uniqueId: uniqueId(),
-      isCodeCollapsed: false,
+      isCodeCollapsed: props.isCodeCollapsed,
       hasError: false,
       codeText: props.codeText,
     }
@@ -120,7 +127,12 @@ class Playground extends Component {
               <ScPlaygroundPreview id={`code-playground-${uniqueId}`}>
                 <LivePreview />
               </ScPlaygroundPreview>
-              {!isCodeCollapsed && <LiveEditor onChange={this.handleChange} />}
+
+              {!isCodeCollapsed && (
+                <ScPlaygroundEditor>
+                  <LiveEditor onChange={this.handleChange} />
+                </ScPlaygroundEditor>
+              )}
             </div>
 
             <ScCodeToggle
