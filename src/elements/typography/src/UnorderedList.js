@@ -14,17 +14,13 @@ const ScUnorderedList = styled.ul`
 
 class UnorderedList extends PureComponent {
   static propTypes = {
-    hasIcon: PropTypes.bool,
+    icon: PropTypes.node,
     variant: PropTypes.oneOf(['success', 'info', 'warning', 'danger']),
     ...space.propTypes,
   }
 
-  static defaultProps = {
-    hasIcon: false,
-  }
-
   render() {
-    const { children, ...props } = this.props
+    const { children, icon, ...props } = this.props
     const finalChildren = React.Children.map(children, child => {
       if (!React.isValidElement(child)) {
         return child
@@ -32,7 +28,7 @@ class UnorderedList extends PureComponent {
 
       return React.cloneElement(child, {
         variant: child.props.variant || this.props.variant,
-        hasIcon: child.props.hasIcon || this.props.hasIcon,
+        icon: child.props.icon || this.props.icon,
       })
     })
 

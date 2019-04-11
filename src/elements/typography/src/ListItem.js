@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import styled, { withTheme } from 'styled-components'
 import { space } from 'styled-system'
 
+import Text from './Text'
+
 const ScListItem = styled.li`
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
@@ -11,7 +13,7 @@ const ScListItem = styled.li`
   font-size: ${p => p.theme.fontSizeBase};
 
   ${p =>
-    p.hasIcon &&
+    p.icon &&
     `
     list-style-type: none;
   `}
@@ -19,14 +21,27 @@ const ScListItem = styled.li`
 
 class ListItem extends PureComponent {
   static propTypes = {
-    hasIcon: PropTypes.bool,
+    icon: PropTypes.node,
     variant: PropTypes.oneOf(['success', 'info', 'warning', 'danger']),
     ...space.propTypes,
   }
 
+  static defaultProps = {
+    variant: 'info',
+  }
+
   render() {
-    const { children, ...props } = this.props
-    return <ScListItem {...props}>{children}</ScListItem>
+    const { children, icon, ...props } = this.props
+    return (
+      <ScListItem icon={icon} {...props}>
+        {icon && (
+          <Text color={props.variant} mr={2} ml={-3}>
+            {icon}
+          </Text>
+        )}
+        {children}
+      </ScListItem>
+    )
   }
 }
 
