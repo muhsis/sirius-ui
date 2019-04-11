@@ -2,9 +2,10 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import styled, { withTheme, keyframes } from 'styled-components'
 import { rgba } from 'polished'
+import { space } from 'styled-system'
 
 import { Box } from '../../../elements/box'
-import { Heading, Text } from '../../../elements/typography'
+import { Text } from '../../../elements/typography'
 
 const blobBottomAnimation = keyframes`
   25%, 50%, 75% {
@@ -59,11 +60,23 @@ const blobMoverAnimation = keyframes`
 `
 
 const ScLoader = styled.div`
-  background-color: ${p => rgba(p.theme.colors.white, 0.875)};
+  background-color: ${p => rgba(p.theme.colors.white, 0.85)};
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  ${p =>
+    p.spread &&
+    `
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  `}
+
+  ${space}
 `
 
 const ScBlobContainer = styled.div`
@@ -71,6 +84,7 @@ const ScBlobContainer = styled.div`
   width: 30px;
   height: 30px;
   position: relative;
+  top: -15px;
 `
 
 const ScBlob = styled.div`
@@ -111,16 +125,18 @@ class Loader extends PureComponent {
   static propTypes = {
     title: PropTypes.string,
     text: PropTypes.string,
+    spread: PropTypes.bool,
   }
 
   static defaultProps = {
     title: 'Yükleniyor',
     text: 'Lütfen işlem devam ederken bekleyiniz.',
+    spread: false,
   }
 
   render() {
     return (
-      <ScLoader>
+      <ScLoader {...this.props}>
         <ScBlobContainer>
           <ScBlobTop theme={this.props.theme} />
           <ScBlobBottom theme={this.props.theme} />
@@ -129,10 +145,10 @@ class Loader extends PureComponent {
           <ScBlobMove theme={this.props.theme} />
         </ScBlobContainer>
 
-        <Box mt="3rem" maxWidth={400} textAlign="center">
-          <Heading variant="h5" m={0} p={0}>
+        <Box mt={4} maxWidth={400} textAlign="center">
+          <Text display="block" fontSize="1.2rem" fontWeight={500}>
             {this.props.title}
-          </Heading>
+          </Text>
           <Text color="slate" fontSize="1rem">
             {this.props.text}
           </Text>
