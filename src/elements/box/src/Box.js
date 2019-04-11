@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import {
   space,
@@ -34,9 +33,6 @@ import {
   fontSize,
 } from 'styled-system'
 
-/**
- * General component description. BOX!!
- */
 const ScBox = styled.div`
   box-sizing: border-box;
 
@@ -71,12 +67,12 @@ const ScBox = styled.div`
   ${textAlign}
   ${fontSize}
 `
+
+/**
+ * General component description. BOX!!
+ */
 class Box extends PureComponent {
   static propTypes = {
-    /**
-     * Composes some Box APIs.
-     */
-    amk: PropTypes.number,
     ...space.propTypes,
     ...width.propTypes,
     ...color.propTypes,
@@ -107,10 +103,6 @@ class Box extends PureComponent {
     ...left.propTypes,
     ...textAlign.propTypes,
     ...fontSize.propTypes,
-  }
-
-  static defaultProps = {
-    amk: 8,
   }
 
   render() {

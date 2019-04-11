@@ -78,8 +78,14 @@ function createStyledComponent(variant, size, loading, block, props) {
   )
 }
 
+/**
+ * Button element.
+ */
 class Button extends PureComponent {
   static propTypes = {
+    /**
+     * Contextual color option.
+     */
     variant: PropTypes.oneOf([
       'primary',
       'secondary',
@@ -90,8 +96,17 @@ class Button extends PureComponent {
       'light',
       'dark',
     ]),
+    /**
+     * Changes the size and spacing of buttons.
+     */
     size: PropTypes.oneOf(['sm', 'md', 'lg']),
+    /**
+     * Use this when there's a loading operation and you don't want button to be clicked.
+     */
     loading: PropTypes.bool,
+    /**
+     * Whether button will be a block element.
+     */
     block: PropTypes.bool,
     ...space.propTypes,
   }

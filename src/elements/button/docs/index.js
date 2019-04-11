@@ -15,6 +15,10 @@ import exampleStates from './examples/states.example'
 import exampleLinks from './examples/links.example'
 import exampleIcons from './examples/icon.example'
 
+/* eslint-disable import/no-unresolved, import/no-webpack-loader-syntax */
+import sourceButton from '!raw-loader!../src/Button'
+/* eslint-enable import/no-unresolved, import/no-webpack-loader-syntax */
+
 const name = 'Button'
 const introduction = (
   <Paragraph>
@@ -29,6 +33,7 @@ const scope = { Button, ButtonLink, ButtonIcon, Box, IconClipboard }
 const components = [
   {
     name: 'Button',
+    source: sourceButton,
     underDevelopment: false,
     examples: [
       {
