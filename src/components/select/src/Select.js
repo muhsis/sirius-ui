@@ -65,7 +65,7 @@ const ScReactSelect = styled(ReactSelect)`
 
   & .select__placeholder {
     color: ${p => p.theme.colors.silver};
-    margin: 0;
+    margin: 0 0.25rem;
   }
 
   & .select__value-container {
