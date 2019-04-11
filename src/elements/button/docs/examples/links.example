@@ -1,0 +1,24 @@
+<Box>
+  <ButtonLink mr={1}>Link Button</ButtonLink>
+  <ButtonLink mr={1} variant="secondary">
+    Link Button
+  </ButtonLink>
+  <ButtonLink mr={1} variant="success">
+    Link Button
+  </ButtonLink>
+  <ButtonLink mr={1} variant="info">
+    Link Button
+  </ButtonLink>
+  <ButtonLink mr={1} variant="warning">
+    Link Button
+  </ButtonLink>
+  <ButtonLink mr={1} variant="danger">
+    Link Button
+  </ButtonLink>
+  <ButtonLink mr={1} variant="light">
+    Link Button
+  </ButtonLink>
+  <ButtonLink variant="dark">
+    Link Button
+  </ButtonLink>
+</Box>

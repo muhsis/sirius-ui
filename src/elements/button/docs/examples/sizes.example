@@ -1,5 +1,11 @@
-<Box>
-  <Button size="sm">Small Button</Button>
-  <Button>Regular Button</Button>
-  <Button size="lg">Large Button</Button>
-</Box>
+<>
+  <Box mb={2}>
+    <Button size="sm">Small Button</Button>
+  </Box>
+  <Box mb={2}>
+    <Button>Regular Button</Button>
+  </Box>
+  <Box>
+    <Button size="lg">Large Button</Button>
+  </Box>
+</>
