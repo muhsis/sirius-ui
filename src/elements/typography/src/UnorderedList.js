@@ -1,5 +1,43 @@
-import styled from 'styled-components'
+import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
+import styled, { withTheme } from 'styled-components'
+import { space } from 'styled-system'
 
-const UnorderedList = styled.ul``
+const ScUnorderedList = styled.ul`
+  margin-left: 1.25rem;
+  padding: 0;
+  list-style-position: inside;
+  list-style: disc;
 
-export default UnorderedList
+  ${space}
+`
+
+class UnorderedList extends PureComponent {
+  static propTypes = {
+    hasIcon: PropTypes.bool,
+    variant: PropTypes.oneOf(['success', 'info', 'warning', 'danger']),
+    ...space.propTypes,
+  }
+
+  static defaultProps = {
+    hasIcon: false,
+  }
+
+  render() {
+    const { children, ...props } = this.props
+    const finalChildren = React.Children.map(children, child => {
+      if (!React.isValidElement(child)) {
+        return child
+      }
+
+      return React.cloneElement(child, {
+        variant: child.props.variant || this.props.variant,
+        hasIcon: child.props.hasIcon || this.props.hasIcon,
+      })
+    })
+
+    return <ScUnorderedList {...props}>{finalChildren}</ScUnorderedList>
+  }
+}
+
+export default withTheme(UnorderedList)
