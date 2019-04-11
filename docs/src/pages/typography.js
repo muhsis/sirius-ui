@@ -17,15 +17,20 @@ import {
   Code,
   UnorderedList,
   ListItem,
+  Link,
 } from '../../../src'
 
 // Examples
 import headingCodeText from '../examples/heading.example'
 import paragraphCodeText from '../examples/paragraph.example'
+import textCodeText from '../examples/text.example'
+import linkCodeText from '../examples/link.example'
 
 // Scopes
 const headingScope = { Box, Heading }
 const paragraphScope = { Box, Paragraph }
+const textScope = { Box, Text, Paragraph }
+const linkScope = { Box, Link, Paragraph, Code }
 
 const TypographyPage = () => (
   <Layout>
@@ -116,6 +121,32 @@ const TypographyPage = () => (
           }
           scope={paragraphScope}
           codeText={paragraphCodeText}
+        />
+
+        <Playground
+          title="Text Styles"
+          description={
+            <Paragraph>
+              View properties table to view all properties that can be applied
+              to component.
+            </Paragraph>
+          }
+          scope={textScope}
+          codeText={textCodeText}
+        />
+
+        <Playground
+          title="Link Styles"
+          description={
+            <Paragraph>
+              You can apply regular html anchor properties such as{' '}
+              <Code>href</Code>, <Code>target</Code> to <Code>Link</Code>{' '}
+              component. View properties table to view all properties that can
+              be applied to component.
+            </Paragraph>
+          }
+          scope={linkScope}
+          codeText={linkCodeText}
         />
       </Content>
     </Container>
