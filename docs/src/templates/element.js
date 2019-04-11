@@ -13,7 +13,6 @@ export default class ElementTemplate extends PureComponent {
     const { name, introduction, components } = getElement(
       this.props.pageContext.componentName,
     )
-    console.log(name, introduction)
 
     return (
       <Layout>

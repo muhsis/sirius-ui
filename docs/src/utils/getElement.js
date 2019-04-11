@@ -10,6 +10,7 @@ import inputDocs from '../../../src/elements/input/docs'
 import radioDocs from '../../../src/elements/radio/docs'
 import selectDocs from '../../../src/elements/select/docs'
 import tableDocs from '../../../src/elements/table/docs'
+import tagDocs from '../../../src/elements/tag/docs'
 
 const mapper = {
   avatar: avatarDocs,
@@ -23,6 +24,7 @@ const mapper = {
   radio: radioDocs,
   select: selectDocs,
   table: tableDocs,
+  tag: tagDocs,
 }
 
 function getElement(name) {

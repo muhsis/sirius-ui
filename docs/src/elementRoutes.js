@@ -5,7 +5,7 @@ module.exports = [
     path: '/elements/avatar',
   },
   {
-    name: 'Badge & Pill',
+    name: 'Badge',
     componentName: 'badge',
     path: '/elements/badge',
   },
@@ -53,5 +53,10 @@ module.exports = [
     name: 'Table',
     componentName: 'table',
     path: '/elements/table',
+  },
+  {
+    name: 'Tag',
+    componentName: 'tag',
+    path: '/elements/tag',
   },
 ]

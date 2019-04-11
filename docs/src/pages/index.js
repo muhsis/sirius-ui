@@ -5,11 +5,9 @@ import {
   Alert,
   Avatar,
   AvatarInitials,
-  Badge,
   Button,
   Carousel,
   Code,
-  Pill,
   Box,
   Heading,
   Text,
@@ -377,64 +375,6 @@ const IndexPage = () => (
               Cell Value
             </Cell>
           </Grid>
-        </Box>
-
-        <Box
-          my={3}
-          p={3}
-          border="1px solid"
-          borderColor="silver"
-          borderRadius="0.25rem"
-        >
-          <Box mb={3}>
-            <Badge mr={1}>Primary</Badge>
-            <Badge mr={1} variant="secondary">
-              Secondary
-            </Badge>
-            <Badge mr={1} variant="success">
-              Success
-            </Badge>
-            <Badge mr={1} variant="info">
-              Info
-            </Badge>
-            <Badge mr={1} variant="warning">
-              Warning
-            </Badge>
-            <Badge mr={1} variant="danger">
-              Danger
-            </Badge>
-            <Badge mr={1} variant="light">
-              Light
-            </Badge>
-            <Badge mr={1} variant="dark">
-              Dark
-            </Badge>
-          </Box>
-
-          <Box>
-            <Pill mr={1}>1</Pill>
-            <Pill mr={1} variant="secondary">
-              2
-            </Pill>
-            <Pill mr={1} variant="success">
-              3
-            </Pill>
-            <Pill mr={1} variant="info">
-              4
-            </Pill>
-            <Pill mr={1} variant="warning">
-              5
-            </Pill>
-            <Pill mr={1} variant="danger">
-              6
-            </Pill>
-            <Pill mr={1} variant="light">
-              7
-            </Pill>
-            <Pill mr={1} variant="dark">
-              8
-            </Pill>
-          </Box>
         </Box>
 
         <Box my={3}>

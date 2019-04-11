@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import { ReadmeComponent } from './index'
 import {
-  Badge,
+  Tag,
   Heading,
   Paragraph,
   Box,
@@ -42,13 +42,13 @@ class Readme extends PureComponent {
             </TableHead>
             <TableBody>
               {components.map(component => (
-                <TableRow>
+                <TableRow key={component.name}>
                   <TableCell>{component.name}</TableCell>
                   <TableCell textAlign="center">
                     {component.underDevelopment ? (
-                      <Badge>IN PROGRESS</Badge>
+                      <Tag variant="secondary">IN PROGRESS</Tag>
                     ) : (
-                      <Badge variant="success">DONE</Badge>
+                      <Tag variant="success">DONE</Tag>
                     )}
                   </TableCell>
                 </TableRow>
@@ -59,9 +59,8 @@ class Readme extends PureComponent {
 
         <Heading variant="h4">Examples</Heading>
         <Paragraph mb={4}>
-          You can find all examples for components developed in this module. I'm
-          just making the sentence longer becuase i don't like the way the
-          description looks.
+          You can find all examples for components developed in this module
+          here.
         </Paragraph>
 
         {components.map(component => (
