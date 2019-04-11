@@ -12,6 +12,7 @@ import {
   Code,
   Table,
   TableBody,
+  TableRow,
   TableHead,
   TableHeaderCell,
   styled,
@@ -106,9 +107,11 @@ class PropTypesTable extends PureComponent {
         {propTypes && (
           <Table>
             <TableHead>
-              <TableHeaderCell width="150">Property Name</TableHeaderCell>
-              <TableHeaderCell width="100">Type</TableHeaderCell>
-              <TableHeaderCell>Description</TableHeaderCell>
+              <TableRow>
+                <TableHeaderCell width="150">Property Name</TableHeaderCell>
+                <TableHeaderCell width="100">Type</TableHeaderCell>
+                <TableHeaderCell>Description</TableHeaderCell>
+              </TableRow>
             </TableHead>
 
             <TableBody>
@@ -117,16 +120,15 @@ class PropTypesTable extends PureComponent {
                 const isArrayOf = this.isArrayOf(prop)
 
                 return (
-                  <>
-                    <PropTypeHeading
-                      name={propName}
-                      description={prop.description}
-                      required={prop.required}
-                      defaultValue={prop.defaultValue}
-                      type={prop.type || {}}
-                      isArrayOf={isArrayOf}
-                    />
-                  </>
+                  <PropTypeHeading
+                    name={propName}
+                    key={propName}
+                    description={prop.description}
+                    required={prop.required}
+                    defaultValue={prop.defaultValue}
+                    type={prop.type || {}}
+                    isArrayOf={isArrayOf}
+                  />
                 )
               })}
             </TableBody>

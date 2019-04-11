@@ -6,7 +6,7 @@ export default class PropTypeHeading extends PureComponent {
   static propTypes = {
     defaultValue: PropTypes.any,
     name: PropTypes.string,
-    description: PropTypes.description,
+    description: PropTypes.string,
     required: PropTypes.bool,
     type: PropTypes.any,
     isArrayOf: PropTypes.string,
