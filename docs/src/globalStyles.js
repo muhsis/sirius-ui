@@ -5,7 +5,6 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: ${theme.fontFamily};
-    font-size: ${theme.fontSizeBase};
     line-height: ${theme.lineHeightBase};
   }
 `
