@@ -3,30 +3,6 @@ import PropTypes from 'prop-types'
 import styled, { withTheme, css } from 'styled-components'
 import { space } from 'styled-system'
 
-// TODO@EMRE : Do we really need this here. Can we get it like p => p.theme?
-import {
-  headingsMarginBottom,
-  headingsFontWeight,
-  headingsLineHeight,
-  headingsColor,
-  headingsFontFamily,
-  h1FontSize,
-  h2FontSize,
-  h3FontSize,
-  h4FontSize,
-  h5FontSize,
-  h6FontSize,
-  display1Size,
-  display1Weight,
-  display2Size,
-  display2Weight,
-  display3Size,
-  display3Weight,
-  display4Size,
-  display4Weight,
-  displayLineHeight,
-} from '../../../theming'
-
 const variantTags = {
   h1: 'h1',
   h2: 'h2',
@@ -40,15 +16,15 @@ const variantTags = {
   'display-4': 'h4',
 }
 
-const commonHeadingStyle = () => {
-  const fontFamily = headingsFontFamily
+const commonHeadingStyle = p => {
+  const fontFamily = p.theme.headingsFontFamily
 
   return css`
     margin-top: 0;
-    margin-bottom: ${headingsMarginBottom};
-    font-weight: ${headingsFontWeight};
-    line-height: ${headingsLineHeight};
-    color: ${headingsColor};
+    margin-bottom: ${p.theme.headingsMarginBottom};
+    font-weight: ${p.theme.headingsFontWeight};
+    line-height: ${p.theme.headingsLineHeight};
+    color: ${p.theme.headingsColor};
     ${fontFamily && `font-family: ${fontFamily}`};
 
     ${space}
@@ -56,59 +32,59 @@ const commonHeadingStyle = () => {
 }
 
 const variantStyles = {
-  h1: () => css`
-    ${commonHeadingStyle};
-    font-size: ${h1FontSize};
+  h1: p => css`
+    ${commonHeadingStyle(p)};
+    font-size: ${p.theme.h1FontSize};
   `,
-  h2: () => css`
-    ${commonHeadingStyle};
-    font-size: ${h2FontSize};
+  h2: p => css`
+    ${commonHeadingStyle(p)};
+    font-size: ${p.theme.h2FontSize};
   `,
-  h3: () => css`
-    ${commonHeadingStyle};
-    font-size: ${h3FontSize};
+  h3: p => css`
+    ${commonHeadingStyle(p)};
+    font-size: ${p.theme.h3FontSize};
   `,
-  h4: () => css`
-    ${commonHeadingStyle};
-    font-size: ${h4FontSize};
+  h4: p => css`
+    ${commonHeadingStyle(p)};
+    font-size: ${p.theme.h4FontSize};
   `,
-  h5: () => css`
-    ${commonHeadingStyle};
-    font-size: ${h5FontSize};
+  h5: p => css`
+    ${commonHeadingStyle(p)};
+    font-size: ${p.theme.h5FontSize};
   `,
-  h6: () => css`
-    ${commonHeadingStyle};
-    font-size: ${h6FontSize};
+  h6: p => css`
+    ${commonHeadingStyle(p)};
+    font-size: ${p.theme.h6FontSize};
   `,
-  'display-1': () => css`
-    ${commonHeadingStyle};
-    font-size: ${display1Size};
-    font-weight: ${display1Weight};
-    line-height: ${displayLineHeight};
+  'display-1': p => css`
+    ${commonHeadingStyle(p)};
+    font-size: ${p.theme.display1Size};
+    font-weight: ${p.theme.display1Weight};
+    line-height: ${p.theme.displayLineHeight};
   `,
-  'display-2': () => css`
-    ${commonHeadingStyle};
-    font-size: ${display2Size};
-    font-weight: ${display2Weight};
-    line-height: ${displayLineHeight};
+  'display-2': p => css`
+    ${commonHeadingStyle(p)};
+    font-size: ${p.theme.display2Size};
+    font-weight: ${p.theme.display2Weight};
+    line-height: ${p.theme.displayLineHeight};
   `,
-  'display-3': () => css`
-    ${commonHeadingStyle};
-    font-size: ${display3Size};
-    font-weight: ${display3Weight};
-    line-height: ${displayLineHeight};
+  'display-3': p => css`
+    ${commonHeadingStyle(p)};
+    font-size: ${p.theme.display3Size};
+    font-weight: ${p.theme.display3Weight};
+    line-height: ${p.theme.displayLineHeight};
   `,
-  'display-4': () => css`
-    ${commonHeadingStyle};
-    font-size: ${display4Size};
-    font-weight: ${display4Weight};
-    line-height: ${displayLineHeight};
+  'display-4': p => css`
+    ${commonHeadingStyle(p)};
+    font-size: ${p.theme.display4Size};
+    font-weight: ${p.theme.display4Weight};
+    line-height: ${p.theme.displayLineHeight};
   `,
 }
 
 function createStyledComponent(variant, children, props) {
   const element = variantTags[variant]
-  const style = variantStyles[variant]
+  const style = variantStyles[variant](props)
   const ScHeading = styled[element]`
     ${style}
   `

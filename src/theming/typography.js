@@ -23,7 +23,7 @@ export const lineHeightLg = 1.5
 
 export const headingsMarginBottom = '.5rem'
 export const headingsFontFamily = fontFamily
-export const headingsFontWeight = 500
+export const headingsFontWeight = 600
 export const headingsLineHeight = 1.2
 export const headingsColor = 'inherit'
 
