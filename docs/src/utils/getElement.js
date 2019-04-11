@@ -4,6 +4,7 @@ import badgeDocs from '../../../src/elements/badge/docs'
 import boxDocs from '../../../src/elements/box/docs'
 import buttonDocs from '../../../src/elements/button/docs'
 import checkboxDocs from '../../../src/elements/checkbox/docs'
+import dividerDocs from '../../../src/elements/divider/docs'
 import formDocs from '../../../src/elements/form/docs'
 import imageDocs from '../../../src/elements/image/docs'
 import inputDocs from '../../../src/elements/input/docs'
@@ -18,6 +19,7 @@ const mapper = {
   box: boxDocs,
   button: buttonDocs,
   checkbox: checkboxDocs,
+  divider: dividerDocs,
   form: formDocs,
   image: imageDocs,
   input: inputDocs,
