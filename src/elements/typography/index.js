@@ -1,6 +1,5 @@
 export { default as Code } from './src/Code'
 export { default as Heading } from './src/Heading'
-export { default as Label } from './src/Label'
 export { default as Link } from './src/Link'
 export { default as ListItem } from './src/ListItem'
 export { default as OrderedList } from './src/OrderedList'
