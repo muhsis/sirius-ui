@@ -14,36 +14,31 @@ module.exports = [
     componentName: 'card',
     path: '/components/card',
   },
-  {
-    name: 'Carousel',
-    componentName: 'carousel',
-    path: '/components/carousel',
-  },
-  {
-    name: 'Collapse',
-    componentName: 'collapse',
-    path: '/components/collapse',
-  },
+  // {
+  //   name: 'Collapse',
+  //   componentName: 'collapse',
+  //   path: '/components/collapse',
+  // },
   {
     name: 'Combobox',
     componentName: 'combobox',
     path: '/components/combobox',
   },
-  {
-    name: 'Corner Dialog',
-    componentName: 'corner-dialog',
-    path: '/components/corner-dialog',
-  },
-  {
-    name: 'Date Picker',
-    componentName: 'date-picker',
-    path: '/components/date-picker',
-  },
-  {
-    name: 'Dialog',
-    componentName: 'dialog',
-    path: '/components/dialog',
-  },
+  // {
+  //   name: 'Corner Dialog',
+  //   componentName: 'corner-dialog',
+  //   path: '/components/corner-dialog',
+  // },
+  // {
+  //   name: 'Date Picker',
+  //   componentName: 'date-picker',
+  //   path: '/components/date-picker',
+  // },
+  // {
+  //   name: 'Dialog',
+  //   componentName: 'dialog',
+  //   path: '/components/dialog',
+  // },
   {
     name: 'Dropdown',
     componentName: 'dropdown',
@@ -54,21 +49,21 @@ module.exports = [
     componentName: 'listview',
     path: '/components/listview',
   },
-  {
-    name: 'Pagination',
-    componentName: 'pagination',
-    path: '/components/pagination',
-  },
+  // {
+  //   name: 'Pagination',
+  //   componentName: 'pagination',
+  //   path: '/components/pagination',
+  // },
   {
     name: 'Pop Confirm',
     componentName: 'popconfirm',
     path: '/components/popconfirm',
   },
-  {
-    name: 'Popover',
-    componentName: 'popover',
-    path: '/components/popover',
-  },
+  // {
+  //   name: 'Popover',
+  //   componentName: 'popover',
+  //   path: '/components/popover',
+  // },
   {
     name: 'Portal',
     componentName: 'portal',
@@ -89,11 +84,11 @@ module.exports = [
     componentName: 'skeleton',
     path: '/components/skeleton',
   },
-  {
-    name: 'Slider',
-    componentName: 'slider',
-    path: '/components/slider',
-  },
+  // {
+  //   name: 'Slider',
+  //   componentName: 'slider',
+  //   path: '/components/slider',
+  // },
   {
     name: 'Spinner',
     componentName: 'spinner',
@@ -114,19 +109,19 @@ module.exports = [
     componentName: 'tab',
     path: '/components/tab',
   },
-  {
-    name: 'Toaster',
-    componentName: 'toaster',
-    path: '/components/toaster',
-  },
-  {
-    name: 'Tooltip',
-    componentName: 'tooltip',
-    path: '/components/tooltip',
-  },
-  {
-    name: 'Widget',
-    componentName: 'widget',
-    path: '/components/widget',
-  },
+  // {
+  //   name: 'Toaster',
+  //   componentName: 'toaster',
+  //   path: '/components/toaster',
+  // },
+  // {
+  //   name: 'Tooltip',
+  //   componentName: 'tooltip',
+  //   path: '/components/tooltip',
+  // },
+  // {
+  //   name: 'Widget',
+  //   componentName: 'widget',
+  //   path: '/components/widget',
+  // },
 ]

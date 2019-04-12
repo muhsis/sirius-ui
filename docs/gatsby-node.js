@@ -27,7 +27,7 @@ exports.createPages = ({ actions }) => {
   componentRoutes.forEach(({ name, componentName, path }) => {
     createPage({
       path,
-      component: elementTemplate, // TODO: for now.
+      component: componentTemplate,
       context: {
         name,
         componentName,

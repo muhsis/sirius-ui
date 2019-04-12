@@ -1,40 +1,36 @@
 // Get
-import alertDocs from '../../../src/elements/alert/docs'
-import blankSlateDocs from '../../../src/elements/blank-slate/docs'
-import cardDocs from '../../../src/elements/card/docs'
-import carouselDocs from '../../../src/elements/carousel/docs'
-import cornerDialogDocs from '../../../src/elements/corner-dialog/docs'
-import dialogDocs from '../../../src/elements/dialog/docs'
-import dropdownDocs from '../../../src/elements/dropdown/docs'
-import listviewDocs from '../../../src/elements/listview/docs'
-import popoverDocs from '../../../src/elements/popover/docs'
-import portalDocs from '../../../src/elements/portal/docs'
-import sideSheetDocs from '../../../src/elements/side-sheet/docs'
-import spinnerDocs from '../../../src/elements/spinner/docs'
-import switchDocs from '../../../src/elements/switch/docs'
-import tabDocs from '../../../src/elements/tab/docs'
-import toasterDocs from '../../../src/elements/toaster/docs'
-import tooltipDocs from '../../../src/elements/tooltip/docs'
-import widgetDocs from '../../../src/elements/widget/docs'
+import alertDocs from '../../../src/components/alert/docs'
+import blankSlateDocs from '../../../src/components/blank-slate/docs'
+import cardDocs from '../../../src/components/card/docs'
+import comboboxDocs from '../../../src/components/combobox/docs'
+import dropdownDocs from '../../../src/components/dropdown/docs'
+import listviewDocs from '../../../src/components/listview/docs'
+import popconfirmDocs from '../../../src/components/popconfirm/docs'
+import portalDocs from '../../../src/components/portal/docs'
+import progressDocs from '../../../src/components/progress/docs'
+import sideSheetDocs from '../../../src/components/side-sheet/docs'
+import skeletonDocs from '../../../src/components/skeleton/docs'
+import spinnerDocs from '../../../src/components/spinner/docs'
+import stepsDocs from '../../../src/components/steps/docs'
+import switchDocs from '../../../src/components/switch/docs'
+import tabDocs from '../../../src/components/tab/docs'
 
 const mapper = {
   alert: alertDocs,
   'blank-slate': blankSlateDocs,
   card: cardDocs,
-  carousel: carouselDocs,
-  'corner-dialog': cornerDialogDocs,
-  dialog: dialogDocs,
+  combobox: comboboxDocs,
   dropdown: dropdownDocs,
   listview: listviewDocs,
-  popover: popoverDocs,
+  popconfirm: popconfirmDocs,
   portal: portalDocs,
+  progress: progressDocs,
   'side-sheet': sideSheetDocs,
+  skeleton: skeletonDocs,
   spinner: spinnerDocs,
+  steps: stepsDocs,
   switch: switchDocs,
   tab: tabDocs,
-  toaster: toasterDocs,
-  tooltip: tooltipDocs,
-  widget: widgetDocs,
 }
 
 function getComponent(name) {
