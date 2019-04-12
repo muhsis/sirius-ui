@@ -28,7 +28,7 @@
     Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper nulla non metus auctor fringilla. Sed posuere consectetur est at lobortis. Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum.
   </Paragraph>
 
-  <Divider orientation="left" my={5}><Text color="success">Left Aligned Divider</Text></Divider>
+  <Divider orientation="left" my={5}><Text color="success"><IconEdit mr={2} />Left Aligned Divider</Text></Divider>
 
   <Paragraph>
     Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper nulla non metus auctor fringilla. Sed posuere consectetur est at lobortis. Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum.
