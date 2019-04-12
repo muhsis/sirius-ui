@@ -24,7 +24,17 @@ const ScDividerLine = styled.div`
       top: -0.06em;
     `}
 
-  ${p => p.direction === 'vertical' && css``}
+  ${p =>
+    p.direction === 'vertical' &&
+    css`
+      position: relative;
+      display: inline-block;
+      width: 1px;
+      height: 0.9em;
+      margin: 0 0.5rem;
+      vertical-align: middle;
+      top: -0.06em;
+    `}
 `
 
 const ScDividerWithText = styled.div`
