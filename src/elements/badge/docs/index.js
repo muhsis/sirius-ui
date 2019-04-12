@@ -1,11 +1,16 @@
 import React from 'react'
 import Badge from '../src/Badge'
 import { Box } from '../../box'
+import { AvatarInitials } from '../../avatar'
+import { ButtonIcon } from '../../button'
+import { IconBell } from '../../../icons'
+
 import { Paragraph, Code } from '../../typography'
 
 // Code examples
 import exampleBadge from './examples/badge.example'
 import exampleDots from './examples/dots.example'
+import exampleAdvanced from './examples/advanced.example'
 
 const name = 'Badge'
 const introduction = (
@@ -15,7 +20,7 @@ const introduction = (
   </Paragraph>
 )
 
-const scope = { Badge, Box }
+const scope = { Badge, Box, AvatarInitials, ButtonIcon, IconBell }
 
 const components = [
   {
@@ -45,6 +50,16 @@ const components = [
           </Paragraph>
         ),
         codeText: exampleDots,
+        scope,
+      },
+      {
+        title: 'Advanced Example',
+        description: (
+          <Paragraph>
+            You can find examples of using badged with other components.
+          </Paragraph>
+        ),
+        codeText: exampleAdvanced,
         scope,
       },
     ],
