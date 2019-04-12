@@ -70,7 +70,7 @@ const ScTd = styled.td`
     `}
 `
 
-class Cell extends PureComponent {
+class DataTableCell extends PureComponent {
   render() {
     const { content, header, fixed, height, total } = this.props
     const style = height ? { height: `${height}px` } : undefined
@@ -88,4 +88,4 @@ class Cell extends PureComponent {
   }
 }
 
-export default withTheme(Cell)
+export default withTheme(DataTableCell)

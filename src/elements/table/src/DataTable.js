@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled, { withTheme } from 'styled-components'
 import { space } from 'styled-system'
 
-import { Cell } from '..'
+import { DataTableCell } from '..'
 
 const ScTable = styled.table`
   /* border: 1px solid ${p => p.theme.grays.smoke}; */
@@ -59,7 +59,7 @@ class DataTable extends Component {
     const { cellHeights } = this.state
 
     return (
-      <Cell
+      <DataTableCell
         key={`column-${cellIndex}`}
         content={columns[cellIndex]}
         header
@@ -74,7 +74,7 @@ class DataTable extends Component {
     const { cellHeights } = this.state
 
     return (
-      <Cell
+      <DataTableCell
         key={`total-${cellIndex}`}
         content={totals[cellIndex]}
         header
@@ -94,7 +94,7 @@ class DataTable extends Component {
       <tr key={`row-${rowIndex}`}>
         {rows[rowIndex].map((_cell, cellIndex) => {
           return (
-            <Cell
+            <DataTableCell
               key={`${rowIndex}-${cellIndex}`}
               content={rows[rowIndex][cellIndex]}
               fixed={cellIndex === 0}
