@@ -14,6 +14,7 @@ import spinnerDocs from '../../../src/components/spinner/docs'
 import stepsDocs from '../../../src/components/steps/docs'
 import switchDocs from '../../../src/components/switch/docs'
 import tabDocs from '../../../src/components/tab/docs'
+import tooltipDocs from '../../../src/components/tooltip/docs'
 
 const mapper = {
   alert: alertDocs,
@@ -31,6 +32,7 @@ const mapper = {
   steps: stepsDocs,
   switch: switchDocs,
   tab: tabDocs,
+  tooltip: tooltipDocs,
 }
 
 function getComponent(name) {

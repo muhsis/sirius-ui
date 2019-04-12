@@ -114,11 +114,11 @@ module.exports = [
   //   componentName: 'toaster',
   //   path: '/components/toaster',
   // },
-  // {
-  //   name: 'Tooltip',
-  //   componentName: 'tooltip',
-  //   path: '/components/tooltip',
-  // },
+  {
+    name: 'Tooltip',
+    componentName: 'tooltip',
+    path: '/components/tooltip',
+  },
   // {
   //   name: 'Widget',
   //   componentName: 'widget',
