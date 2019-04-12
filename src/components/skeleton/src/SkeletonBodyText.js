@@ -41,8 +41,7 @@ const ScSkeletonLine = styled.div`
     bottom: 0;
     left: 0;
     display: block;
-    /* background-color: #dfe3e8; */
-    border-radius: 3px;
+    border-radius: 0.2rem;
 
     background: linear-gradient(
       -45deg,
@@ -51,7 +50,7 @@ const ScSkeletonLine = styled.div`
       ${p => darken(0.05, p.theme.colors.smoke)}
     );
     background-size: 400% 400%;
-    animation: ${bgGradientAnimation} 3s ease infinite;
+    animation: ${bgGradientAnimation} 2s ease infinite;
   }
 `
 
