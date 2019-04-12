@@ -164,7 +164,6 @@ const ScPopConfirm = styled.div`
   padding: 1rem 1.25rem;
   position: absolute;
   min-width: 250px;
-  transition: all 200ms;
   box-shadow: 0 0 1px rgba(67, 90, 111, 0.3),
     0 5px 8px -4px rgba(67, 90, 111, 0.47);
 
@@ -323,7 +322,7 @@ class PopConfirm extends Component {
               theme={theme}
             >
               <ScPopConfirmHeader theme={theme}>
-                <Text color="warning" mr={3} fontSize="1.5rem">
+                <Text color="danger" mr={3} fontSize="1.5rem">
                   <IconNew />
                 </Text>
                 <ScPopConfirmText>{title}</ScPopConfirmText>
