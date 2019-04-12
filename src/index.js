@@ -24,6 +24,7 @@ export * from './components/select'
 export * from './components/side-sheet'
 export * from './components/spinner'
 export * from './components/toaster'
+export * from './components/tooltip'
 
 // Elements
 export * from './elements/avatar'
