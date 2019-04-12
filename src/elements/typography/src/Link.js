@@ -16,6 +16,7 @@ const getVariantStyle = (variant, p) => {
 }
 
 const Link = styled.a`
+  font-size: ${p => p.theme.fontSizeBase};
   text-decoration: none;
   transition: color 0.15s, border-color 0.15s;
 
