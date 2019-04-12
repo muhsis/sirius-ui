@@ -23,7 +23,7 @@ const components = [
   {
     name: 'Pop Confirm',
     source: sourcePopconfirm,
-    underDevelopment: true,
+    underDevelopment: false,
     examples: [
       {
         title: 'Basic Popconfirm Example',

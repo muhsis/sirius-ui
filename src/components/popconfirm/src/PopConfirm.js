@@ -1,11 +1,85 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import styled, { withTheme, css } from 'styled-components'
+import styled, { withTheme, css, keyframes } from 'styled-components'
 import { space } from 'styled-system'
+import { Transition } from 'react-transition-group'
 
 import { Button } from '../../../elements/button'
 import { Text } from '../../../elements/typography'
 import { IconNew } from '../../../icons'
+
+const ANIMATION_DURATION = 200
+const getZoomInAnimation = direction => {
+  let result
+
+  switch (direction) {
+    case 'top':
+      result = keyframes`
+        0% {
+          transform: scale(.2) translate(-50%, -100%);
+          opacity: 0
+        }
+
+        100% {
+          transform: scale(1) translate(-50%, -100%);
+          opacity: 1
+        }
+      `
+      break
+    case 'right':
+      result = keyframes`
+        0% {
+          transform: scale(.2) translate(100%, -50%);
+          opacity: 0
+        }
+
+        100% {
+          transform: scale(1) translate(100%, -50%);
+          opacity: 1
+        }
+      `
+      break
+    case 'bottom':
+      result = keyframes`
+        0% {
+          transform: scale(.2) translate(-50%, 100%);
+          opacity: 0
+        }
+
+        100% {
+          transform: scale(1) translate(-50%, 100%);
+          opacity: 1
+        }
+      `
+      break
+    case 'left':
+      result = keyframes`
+        0% {
+          transform: scale(.2) translate(-100%, -50%);
+          opacity: 0
+        }
+
+        100% {
+          transform: scale(1) translate(-100%, -50%);
+          opacity: 1
+        }
+      `
+      break
+  }
+
+  return result
+}
+
+const zoomOutAnimation = keyframes`
+  0% {
+    transform: scale(1)
+  }
+
+  100% {
+    transform: scale(.2);
+    opacity: 0
+  }
+`
 
 const ScPopConfirmWrapper = styled.div`
   display: inline-block;
@@ -14,7 +88,7 @@ const ScPopConfirmWrapper = styled.div`
   ${space}
 `
 
-const ScPopConfirmDirectionalStyles = direction => {
+const getDirectionalStyles = direction => {
   let result
 
   switch (direction) {
@@ -22,40 +96,60 @@ const ScPopConfirmDirectionalStyles = direction => {
       result = css`
         top: 0;
         left: 50%;
-        margin-top: -10px;
-        transform: translate(-50%, -100%);
+        margin-top: -1rem;
+
+        &:after {
+          border-top-color: #fff;
+          margin-left: -0.5rem;
+
+          top: calc(100% - 1px);
+          left: 50%;
+        }
       `
       break
     case 'right':
       result = css`
         top: 50%;
         right: 0;
-        margin-right: -5px;
-        transform: translate(100%, -50%);
+        margin-right: -0.75rem;
+
+        &:after {
+          border-right-color: #fff;
+          margin-top: -0.5rem;
+
+          right: calc(100% - 1px);
+          top: 50%;
+        }
       `
       break
     case 'bottom':
       result = css`
         bottom: 0;
         left: 50%;
-        margin-bottom: -5px;
-        transform: translate(-50%, 100%);
+        margin-bottom: -0.75rem;
+
+        &:after {
+          border-bottom-color: #fff;
+          margin-left: -0.5rem;
+
+          bottom: calc(100% - 1px);
+          left: 50%;
+        }
       `
       break
     case 'left':
       result = css`
         top: 50%;
         left: 0;
-        margin-left: -5px;
-        transform: translate(-100%, -50%);
-      `
-      break
-    default:
-      result = css`
-        top: 0;
-        left: 50%;
-        margin-top: -5px;
-        transform: translate(-50%, -100%);
+        margin-left: -0.75rem;
+
+        &:after {
+          border-left-color: #fff;
+          margin-top: -0.5rem;
+
+          left: calc(100% - 1px);
+          top: 50%;
+        }
       `
       break
   }
@@ -64,7 +158,6 @@ const ScPopConfirmDirectionalStyles = direction => {
 
 const ScPopConfirm = styled.div`
   background-color: white;
-  /* border: 1px solid ${p => p.theme.colors.smoke}; */
   border-radius: ${p => p.theme.borderRadius};
   display: ${p => (p.show ? 'flex' : 'none')};
   flex-direction: column;
@@ -73,9 +166,39 @@ const ScPopConfirm = styled.div`
   min-width: 250px;
   transition: all 200ms;
   box-shadow: 0 0 1px rgba(67, 90, 111, 0.3),
-      0 5px 8px -4px rgba(67, 90, 111, 0.47);
+    0 5px 8px -4px rgba(67, 90, 111, 0.47);
 
-  ${p => ScPopConfirmDirectionalStyles(p.direction)};
+  &:after {
+    border: solid transparent;
+    content: ' ';
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: transparent;
+    border-width: 0.5rem;
+  }
+
+  ${p => getDirectionalStyles(p.direction)};
+
+  &[data-state='entering'] {
+    pointer-events: none;
+  }
+
+  &[data-state='entering'],
+  &[data-state='entered'] {
+    transform: scale(0) translate(-50%, -100%);
+    opacity: 0;
+
+    animation: ${p => getZoomInAnimation(p.direction)} ${ANIMATION_DURATION}ms
+      cubic-bezier(0.08, 0.82, 0.17, 1) both;
+  }
+
+  &[data-state='exiting'] {
+    animation: ${zoomOutAnimation} ${ANIMATION_DURATION}ms
+      cubic-bezier(0.08, 0.82, 0.17, 1) both;
+    pointer-events: none;
+  }
 `
 
 const ScPopConfirmHeader = styled.div`
@@ -107,7 +230,7 @@ class PopConfirm extends Component {
     this.handleClickOutside = this.handleClickOutside.bind(this)
 
     this.state = {
-      show: this.props.show || false,
+      isShown: this.props.isShown || false,
     }
   }
 
@@ -119,7 +242,7 @@ class PopConfirm extends Component {
     /**
      * Set true to show by default.
      */
-    show: PropTypes.bool,
+    isShown: PropTypes.bool,
     /**
      * Text of confirm button
      */
@@ -132,7 +255,7 @@ class PopConfirm extends Component {
 
   static defaultProps = {
     direction: 'top',
-    show: false,
+    isShown: false,
     okButtonText: 'Ok',
     cancelButtonText: 'Cancel',
   }
@@ -146,16 +269,16 @@ class PopConfirm extends Component {
   }
 
   handleShow = () => {
-    this.setState({ show: true })
+    this.setState({ isShown: true })
   }
 
   handleConfirm = () => {
-    this.setState({ show: false })
+    this.setState({ isShown: false })
     this.props.onResult(true)
   }
 
   handleCancel = () => {
-    this.setState({ show: false })
+    this.setState({ isShown: false })
     this.props.onResult(false)
   }
 
@@ -165,8 +288,7 @@ class PopConfirm extends Component {
 
   handleClickOutside(event) {
     if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
-      this.setState({ show: false })
-      this.props.onResult(false)
+      this.setState({ isShown: false })
     }
   }
 
@@ -175,34 +297,53 @@ class PopConfirm extends Component {
   }
 
   render() {
+    const { isShown } = this.state
+    const {
+      title,
+      direction,
+      okButtonText,
+      cancelButtonText,
+      theme,
+    } = this.props
+
     return (
       <ScPopConfirmWrapper onClick={this.handleShow} ref={this.setWrapperRef}>
-        <ScPopConfirm
-          direction={this.props.direction}
-          show={this.state.show}
-          onClick={e => this.handlePopConfirmClick(e)}
-          theme={this.props.theme}
+        <Transition
+          appear
+          unmountOnExit
+          timeout={ANIMATION_DURATION}
+          in={isShown}
         >
-          <ScPopConfirmHeader theme={this.props.theme}>
-            <Text color="warning" mr={3} fontSize="1.5rem">
-              <IconNew />
-            </Text>
-            <ScPopConfirmText>{this.props.title}</ScPopConfirmText>
-          </ScPopConfirmHeader>
-          <ScPopConfirmActions>
-            <Button
-              size="sm"
-              variant="light"
-              mr={1}
-              onClick={this.handleCancel}
+          {state => (
+            <ScPopConfirm
+              data-state={state}
+              direction={direction}
+              show={isShown}
+              onClick={e => this.handlePopConfirmClick(e)}
+              theme={theme}
             >
-              {this.props.cancelButtonText}
-            </Button>
-            <Button size="sm" onClick={this.handleConfirm}>
-              {this.props.okButtonText}
-            </Button>
-          </ScPopConfirmActions>
-        </ScPopConfirm>
+              <ScPopConfirmHeader theme={theme}>
+                <Text color="warning" mr={3} fontSize="1.5rem">
+                  <IconNew />
+                </Text>
+                <ScPopConfirmText>{title}</ScPopConfirmText>
+              </ScPopConfirmHeader>
+              <ScPopConfirmActions>
+                <Button
+                  size="sm"
+                  variant="light"
+                  mr={1}
+                  onClick={this.handleCancel}
+                >
+                  {cancelButtonText}
+                </Button>
+                <Button size="sm" onClick={this.handleConfirm}>
+                  {okButtonText}
+                </Button>
+              </ScPopConfirmActions>
+            </ScPopConfirm>
+          )}
+        </Transition>
 
         {this.props.children}
       </ScPopConfirmWrapper>
