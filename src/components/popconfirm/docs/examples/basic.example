@@ -1,0 +1,10 @@
+<Box py="10rem" textAlign="center">
+  <PopConfirm
+    title="Are you sure you want to do this operation?"
+    direction="top"
+    okButtonText="Evet, Sil!"
+    cancelButtonText="İptal"
+  >
+    <Button>Open Pop Confirm</Button>
+  </PopConfirm>
+</Box>
