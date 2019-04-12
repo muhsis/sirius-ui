@@ -63,6 +63,11 @@ function createStyledComponent(variant, size, loading, block, props) {
       opacity: ${p => p.theme.btnDisabledOpacity};
     }
 
+    & svg {
+      position: relative;
+      top: 2px;
+    }
+
     ${space}
   `
 
