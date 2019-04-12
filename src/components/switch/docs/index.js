@@ -23,7 +23,7 @@ const components = [
   {
     name: 'Switch',
     source: sourceSwitch,
-    underDevelopment: true,
+    underDevelopment: false,
     examples: [
       {
         title: 'Basic Switch Example',
