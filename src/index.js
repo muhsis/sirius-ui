@@ -8,6 +8,7 @@ export { default as styled } from 'styled-components'
 
 // Components
 export * from './components/alert'
+export * from './components/blank-slate'
 export * from './components/card'
 export * from './components/carousel'
 export * from './components/dropdown'

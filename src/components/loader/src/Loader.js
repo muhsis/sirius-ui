@@ -60,7 +60,7 @@ const blobMoverAnimation = keyframes`
 `
 
 const ScLoader = styled.div`
-  background-color: ${p => rgba(p.theme.colors.white, 0.85)};
+  background-color: ${p => rgba(p.theme.colors.white, 0.875)};
   display: flex;
   align-items: center;
   justify-content: center;

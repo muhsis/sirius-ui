@@ -35,7 +35,7 @@ const components = [
         scope,
       },
       {
-        title: 'VerticalDividers',
+        title: 'Vertical Dividers',
         description: (
           <Paragraph>
             Dividers can also be used vertically. Just set{' '}

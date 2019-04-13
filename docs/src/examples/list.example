@@ -35,6 +35,7 @@
     <ListItem icon={<IconInfoWithCircle />} variant="info">Etiam porta sem malesuada magna mollis euismod.</ListItem>
     <ListItem icon={<IconCheck />} variant="success">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</ListItem>
     <ListItem icon={<IconCross />} variant="danger">Nullam id dolor id nibh ultricies vehicula ut id elit.</ListItem>
+    <ListItem icon={<IconCross />} variant="warning">Nullam id dolor id nibh ultricies vehicula ut id elit.</ListItem>
   </UnorderedList>
 
   <OrderedList>
