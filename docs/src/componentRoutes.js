@@ -45,6 +45,11 @@ module.exports = [
     path: '/components/dropdown',
   },
   {
+    name: 'Loader',
+    componentName: 'loader',
+    path: '/components/loader',
+  },
+  {
     name: 'List View',
     componentName: 'listview',
     path: '/components/listview',
