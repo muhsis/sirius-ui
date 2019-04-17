@@ -76,6 +76,7 @@
     "jest": "^24.1.0",
     "jest-styled-components": "^6.3.1",
     "prop-types": "^15.7.2",
+    "react-number-format": "^4.0.7",
     "react-select": "^2.4.2"
   },
   "engines": {
