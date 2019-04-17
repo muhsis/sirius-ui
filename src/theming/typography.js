@@ -1,5 +1,3 @@
-import { modularScale } from 'polished'
-
 export const fontSizes = [12, 14, 16, 20, 24, 32, 48, 64, 72]
 export const fontFamilyBase =
   '"Mukta", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
@@ -10,8 +8,8 @@ export const fontFamilyMonospace =
 export const fontFamily = fontFamilyBase
 
 export const fontSizeBase = '.925rem'
-export const fontSizeSm = modularScale(-0.25, fontSizeBase)
-export const fontSizeLg = modularScale(1.5, fontSizeBase)
+export const fontSizeSm = '.875rem'
+export const fontSizeLg = '1.25rem'
 
 export const fontWeightLight = 300
 export const fontWeightNormal = 400

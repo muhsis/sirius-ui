@@ -27,7 +27,7 @@ export const btnPaddingYLg = inputBtnPaddingYLg
 export const btnPaddingXLg = inputBtnPaddingXLg
 export const btnLineHeightLg = inputBtnLineHeightLg
 
-export const btnBorderWidth = 0
+export const btnBorderWidth = 1
 export const btnDisabledOpacity = 0.7
 
 export const btnVariant = mixin('btnVariant', variant => p => {
