@@ -33,7 +33,7 @@ function createStyledComponent(variant, size, loading, block, props) {
 
   const ScButton = styled.button`
     display: inline-block;
-    border-width: ${p => p.theme.btnBorderWidth};
+    border: ${p => p.theme.btnBorderWidth}px solid transparent;
     font-family: ${p => p.theme.fontFamily};
     cursor: pointer;
 
