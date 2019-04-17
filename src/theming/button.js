@@ -2,7 +2,7 @@ import { darken } from 'polished'
 import { css } from 'styled-components'
 import { mixin } from '../utils'
 import { colorVariant, colorYik } from './color'
-import { controlFocus } from './control'
+import { buttonFocus } from './control'
 import {
   inputBtnPaddingY,
   inputBtnPaddingX,
@@ -37,7 +37,7 @@ export const btnVariant = mixin('btnVariant', variant => p => {
     background-color: ${color};
 
     &:focus {
-      ${controlFocus(color)(p)};
+      ${buttonFocus(color)(p)};
       /* for links */
       color: ${colorYik(color)(p)};
       text-decoration: none;
@@ -59,7 +59,7 @@ export const btnIconVariant = mixin('btnIconVariant', variant => p => {
     color: ${color};
 
     &:focus {
-      ${controlFocus(color)(p)};
+      ${buttonFocus(color)(p)};
     }
 
     &:not(:disabled):hover,

@@ -94,6 +94,10 @@ class NumberInput extends PureComponent {
      * Pass this prop if the input is display: inline-block and width: auto.
      */
     inline: PropTypes.bool,
+    /**
+     * NumberFormat component prop types.
+     */
+    ...NumberFormat.propTypes,
     ...space.propTypes,
     ...width.propTypes,
   }
