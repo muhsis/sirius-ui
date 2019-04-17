@@ -15,6 +15,7 @@ import {
   TableRow,
   TableHead,
   TableHeaderCell,
+  Box,
   styled,
 } from '../../../../src'
 
@@ -76,31 +77,31 @@ class PropTypesTable extends PureComponent {
     }
 
     return (
-      <div>
+      <Box mb={4}>
         <div className="Content">
           {componentDocs &&
             componentDocs.composes &&
             componentDocs.composes.length > 0 && (
-              <>
+              <Box mb={4}>
                 <Heading variant="h3" mb={3}>
                   Properties
                 </Heading>
-                <div className="PropTypesTable-composes">
+                <Box>
                   <Alert
                     mb={4}
                     text={
                       <>
                         This component composes{' '}
                         {componentDocs.composes.map(filePath => (
-                          <Code key={filePath}>
+                          <Code key={filePath} mr={2}>
                             {filePath.substring(filePath.indexOf('/') + 1)}
                           </Code>
                         ))}
                       </>
                     }
                   />
-                </div>
-              </>
+                </Box>
+              </Box>
             )}
         </div>
 
@@ -134,7 +135,7 @@ class PropTypesTable extends PureComponent {
             </TableBody>
           </Table>
         )}
-      </div>
+      </Box>
     )
   }
 }

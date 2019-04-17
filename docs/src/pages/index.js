@@ -9,6 +9,9 @@ import {
   theme,
   Box,
   DataTable,
+  NumberInput,
+  TextInput,
+  Button,
 } from '../../../src'
 console.log('DT', DataTable)
 
@@ -42,6 +45,59 @@ const IndexPage = () => (
           developed with <a href="#">Styled Components 💅</a> and{' '}
           <a href="#">Styled System</a>.
         </Paragraph>
+
+        <Box my={5}>
+          <TextInput type="text" name="test" inline mr={0} />
+          <Button mx={1}>Sample</Button>
+
+          <NumberInput
+            thousandSeparator={true}
+            suffix={' ₺'}
+            placeholder="Enter Money Value"
+            mr={1}
+            inline
+          />
+          <NumberInput
+            thousandSeparator={true}
+            suffix={' ₺'}
+            placeholder="2,450"
+            width={100}
+            mr={1}
+            inline
+          />
+        </Box>
+
+        <Box my={5}>
+          <TextInput type="text" name="test" mr={0} size="sm" inline />
+          <Button mr={4} size="sm">
+            Sample
+          </Button>
+        </Box>
+
+        <Box my={5}>
+          <TextInput type="text" name="test" mr={0} size="lg" inline />
+          <Button mr={4} size="lg">
+            Sample
+          </Button>
+        </Box>
+
+        <Box my={5}>
+          <Box display="inline-block" mr={2}>
+            <TextInput type="text" size="sm" />
+          </Box>
+          <Box display="inline-block" mr={2}>
+            <TextInput type="text" />
+          </Box>
+          <Box display="inline-block" mr={2}>
+            <TextInput type="text" size="lg" />
+          </Box>
+        </Box>
+
+        <Box my={5}>
+          <Button size="sm">Button</Button>
+          <Button>Button</Button>
+          <Button size="lg">Button</Button>
+        </Box>
 
         <DataTable columns={columns} rows={rows} totals={totals} />
       </Content>

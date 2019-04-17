@@ -1,0 +1,5 @@
+<form>
+  <TextInput type="text" name="myInput" placeholder="Small (sm) input" mb={2} size="sm" />
+  <TextInput type="text" name="myInput2" placeholder="Regular (md) input" mb={2} />
+  <TextInput type="text" name="myInput3" placeholder="Large (lg) input" size="lg" />
+</form>

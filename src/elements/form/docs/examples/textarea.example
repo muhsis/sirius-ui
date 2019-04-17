@@ -1,0 +1,3 @@
+<form>
+  <TextArea name="myTextArea" id="myTextArea" rows="4" placeholder="Textarea placeholder value"></TextArea>
+</form>
