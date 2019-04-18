@@ -2,7 +2,7 @@ import React from 'react'
 
 import { FormGroup, FormHint, FormLabel, FormValidationMessage } from '../'
 import { Button } from '../../button'
-import { TextInput, TextArea, NumberInput } from '../../input'
+import { TextInput, TextArea, NumberInput, SelectInput } from '../../input'
 import { Paragraph, Code } from '../../typography'
 
 /* eslint-disable import/no-unresolved, import/no-webpack-loader-syntax */
@@ -14,6 +14,7 @@ import sourceFormValidationMessage from '!raw-loader!../src/FormValidationMessag
 import sourceTextInput from '!raw-loader!../../input/src/TextInput'
 import sourceTextArea from '!raw-loader!../../input/src/TextArea'
 import sourceNumberInput from '!raw-loader!../../input/src/NumberInput'
+import sourceSelectInput from '!raw-loader!../../input/src/SelectInput'
 /* eslint-enable import/no-unresolved, import/no-webpack-loader-syntax */
 
 // Code examples
@@ -23,6 +24,9 @@ import exampleTextInputSizes from './examples/textinput-sizes.example'
 
 import exampleNumberInput from './examples/numberinput.example'
 import exampleNumberInputAdvanced from './examples/numberinput-advanced.example'
+
+import exampleSelectInput from './examples/selectinput.example'
+import exampleSelectInputSizes from './examples/selectinput-sizes.example'
 
 import exampleTextarea from './examples/textarea.example'
 import exampleSink from './examples/sink.example'
@@ -43,6 +47,7 @@ const scope = {
   TextInput,
   TextArea,
   NumberInput,
+  SelectInput,
   Paragraph,
   Button,
 }
@@ -109,6 +114,35 @@ const components = [
           </Paragraph>
         ),
         codeText: exampleNumberInputAdvanced,
+        scope,
+      },
+    ],
+  },
+  {
+    name: 'SelectInput',
+    source: sourceSelectInput,
+    underDevelopment: false,
+    examples: [
+      {
+        title: 'Basic SelectInput Example',
+        description: (
+          <Paragraph>
+            Very basic <Code>SelectInput</Code> component examples. No search
+            and other capabilities. Use <Code>Combobox</Code> component for
+            advanced functionality.
+          </Paragraph>
+        ),
+        codeText: exampleSelectInput,
+        scope,
+      },
+      {
+        title: 'Select Sizes',
+        description: (
+          <Paragraph>
+            You can use different size variants for <Code>SelectInput</Code>.
+          </Paragraph>
+        ),
+        codeText: exampleSelectInputSizes,
         scope,
       },
     ],
