@@ -1,4 +1,7 @@
 export { default as Code } from './src/Code'
+export { default as DescriptionDefinition } from './src/DescriptionDefinition'
+export { default as DescriptionList } from './src/DescriptionList'
+export { default as DescriptionTerm } from './src/DescriptionTerm'
 export { default as Heading } from './src/Heading'
 export { default as Link } from './src/Link'
 export { default as ListItem } from './src/ListItem'

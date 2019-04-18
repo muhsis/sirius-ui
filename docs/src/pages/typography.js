@@ -18,6 +18,9 @@ import {
   UnorderedList,
   OrderedList,
   ListItem,
+  DescriptionList,
+  DescriptionTerm,
+  DescriptionDefinition,
   Link,
   IconCheck,
   IconCross,
@@ -30,6 +33,7 @@ import paragraphCodeText from '../examples/paragraph.example'
 import textCodeText from '../examples/text.example'
 import linkCodeText from '../examples/link.example'
 import listCodeText from '../examples/list.example'
+import descriptionListCodeText from '../examples/dl.example'
 
 // Scopes
 const headingScope = { Box, Heading }
@@ -46,6 +50,11 @@ const listScope = {
   IconCheck,
   IconCross,
   IconInfoWithCircle,
+}
+const descriptionListScope = {
+  DescriptionList,
+  DescriptionTerm,
+  DescriptionDefinition,
 }
 
 const TypographyPage = () => (
@@ -176,6 +185,19 @@ const TypographyPage = () => (
           }
           scope={listScope}
           codeText={listCodeText}
+        />
+
+        <Playground
+          title="Description List Styles"
+          description={
+            <Paragraph>
+              You can use <Code>DescriptionList</Code>,{' '}
+              <Code>DescriptionTerm</Code>, <Code>DescriptionDefinition</Code>{' '}
+              to create description lists.
+            </Paragraph>
+          }
+          scope={descriptionListScope}
+          codeText={descriptionListCodeText}
         />
       </Content>
     </Container>
