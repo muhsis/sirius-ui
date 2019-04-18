@@ -19,6 +19,10 @@ const ScRadioContainer = styled.label`
   position: relative;
   margin-bottom: 0.5rem;
 
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   ${space}
 
   ${p =>
