@@ -4,6 +4,7 @@ import styled, { withTheme, css } from 'styled-components'
 import { space } from 'styled-system'
 import { rgba } from 'polished'
 
+import { buttonFocus } from '../../../theming/control'
 import { Text } from '../../typography'
 
 const CheckIcon = ({ fill = 'currentColor', ...props }) => (
@@ -31,7 +32,7 @@ const ScCheckboxContainer = styled.label`
 `
 
 const ScCheckboxInput = styled.input`
-  order: 0px;
+  border: 0px;
   clip: rect(1px, 1px, 1px, 1px);
   height: 1px;
   overflow: hidden;
@@ -58,6 +59,14 @@ const ScCheckboxInput = styled.input`
     -webkit-font-smoothing: antialiased;
     -webkit-appearance: none;
     -moz-appearance: none;
+  }
+
+  &:focus + div {
+    ${p => buttonFocus(p.theme.colors.smoke)(p)};
+  }
+
+  &:checked:focus + div {
+    ${p => buttonFocus(p.theme.colors.primary)(p)};
   }
 
   &:checked + div,
@@ -88,6 +97,7 @@ const ScCheckbox = styled.div`
   justify-content: center;
   width: 20px;
   height: 20px;
+  transition: background-color 0.15s, box-shadow 0.15s;
 `
 
 class Checkbox extends PureComponent {
