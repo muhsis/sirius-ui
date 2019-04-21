@@ -78,7 +78,7 @@ const ScAlertIcon = styled.div`
 `
 
 const ScAlertTitle = styled.div`
-  font-size: 1rem;
+  font-size: ${p => p.theme.fontSizeBase};
   font-weight: 600;
 `
 
@@ -87,6 +87,7 @@ const ScAlertText = styled.p`
   margin: 0;
   padding: 0;
   color: #1f4160;
+  font-size: ${p => p.theme.fontSizeBase};
 `
 
 const ScAlertClose = styled.span`
