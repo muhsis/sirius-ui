@@ -1,0 +1,11 @@
+<>
+  <Box>
+    <Card>
+      <CardHeader title="Card Title">
+        <Button type="button">Actions</Button>
+      </CardHeader>
+
+      Card Content
+    </Card>
+  </Box>
+</>
