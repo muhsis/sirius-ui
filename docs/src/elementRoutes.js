@@ -45,11 +45,6 @@ module.exports = [
     path: '/elements/radio',
   },
   {
-    name: 'Select',
-    componentName: 'select',
-    path: '/elements/select',
-  },
-  {
     name: 'Table',
     componentName: 'table',
     path: '/elements/table',
