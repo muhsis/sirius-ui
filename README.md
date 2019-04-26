@@ -1,32 +1,7 @@
-# mcrm-ui
+# @muhsis/ui
 
 This is a design system / React UI library. It works with styled-components and
 styled-system.
-
-- [x] Prepare commit hooks.
-- [ ] Parameterize all themable values
-- [ ] Refactor color system
-- [ ] Go over theming system
-- [x] Decision for build system. (Build system is fine.)
-- [ ] Complete gatsby documentation system
-- [ ] Syntax highlighting?
-- [ ] Dynamic prop type tables
-- [x] Icons, icons, icons..
-- [x] Css grid system
-- [ ] Flexbox system?
-- [ ] Create a tool for exporting all icons. (Since we cannot write it by hand.)
-- [ ] Elements
-  - [x] avatar -> image avatar, initials avatar
-  - [x] badge
-  - [x] button
-  - [ ] checkbox
-  - [ ] form?? -> form group, form control, form text
-  - [ ] image
-  - [ ] input?? (should this be under forms)
-  - [ ] radio
-  - [ ] select (regular styled select element)
-  - [ ] table
-  - [ ] typography
 
 ## Icons
 
