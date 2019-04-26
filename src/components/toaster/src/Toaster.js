@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import ToastManager from './ToastManager'
 
-const ID = 'mcrm-toaster'
+const ID = 'muhsis-toaster'
 const isBrowser =
   typeof window !== 'undefined' && typeof window.document !== 'undefined'
 
