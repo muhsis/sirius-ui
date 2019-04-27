@@ -28,29 +28,26 @@ const sizeStyles = {
   `,
 }
 
-function createStyledComponent(variant, size, loading, block, props) {
-  const sizeStyle = sizeStyles[size]
+const ScButton = styled.button`
+  display: inline-block;
+  border: ${p => p.theme.btnBorderWidth}px solid transparent;
+  font-family: ${p => p.theme.fontFamily};
+  cursor: pointer;
 
-  const ScButton = styled.button`
-    display: inline-block;
-    border: ${p => p.theme.btnBorderWidth}px solid transparent;
-    font-family: ${p => p.theme.fontFamily};
-    cursor: pointer;
+  ${p => transitionBase(p)};
+  ${p => btnVariant(p.variant)(p)};
+  ${p => sizeStyles[p.size](p)};
 
-    ${p => transitionBase(p)};
-    ${p => btnVariant(variant)(p)};
-    ${p => sizeStyle(p)};
-
-    ${p =>
-      p.loading &&
-      `
+  ${p =>
+    p.loading &&
+    `
         opacity: ${p.theme.btnDisabledOpacity};
         cursor: not-allowed;
       `}
 
-    ${p =>
-      p.block &&
-      `
+  ${p =>
+    p.block &&
+    `
         display: block;
         width: 100%;
       `}
@@ -58,19 +55,20 @@ function createStyledComponent(variant, size, loading, block, props) {
     /* When used as link */
     text-decoration: none;
 
-    &:disabled {
-      cursor: not-allowed;
-      opacity: ${p => p.theme.btnDisabledOpacity};
-    }
+  &:disabled {
+    cursor: not-allowed;
+    opacity: ${p => p.theme.btnDisabledOpacity};
+  }
 
-    & span svg {
-      position: relative;
-      top: 2px;
-    }
+  & span svg {
+    position: relative;
+    top: 2px;
+  }
 
-    ${space}
-  `
+  ${space}
+`
 
+function createStyledComponent(variant, size, loading, block, props) {
   return (
     <ScButton {...props}>
       {loading && (

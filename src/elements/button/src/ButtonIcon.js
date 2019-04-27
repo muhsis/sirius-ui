@@ -28,44 +28,42 @@ const sizeStyles = {
   `,
 }
 
-function createStyledComponent(variant, size, loading, props) {
-  const sizeStyle = sizeStyles[size]
+const ScButton = styled.button`
+  display: inline-block;
+  background-color: ${p => p.theme.colors.white};
+  border: 1px solid ${p => p.theme.colors.smoke};
+  font-family: ${p => p.theme.fontFamily};
+  cursor: pointer;
 
-  const ScButton = styled.button`
-    display: inline-block;
-    background-color: ${p => p.theme.colors.white};
-    border: 1px solid ${p => p.theme.colors.smoke};
-    font-family: ${p => p.theme.fontFamily};
-    cursor: pointer;
+  ${p => transitionBase(p)};
+  ${p => btnIconVariant(p.variant)(p)};
+  ${p => sizeStyles[p.size](p)};
 
-    ${p => transitionBase(p)};
-    ${p => btnIconVariant(variant)(p)};
-    ${p => sizeStyle(p)};
-
-    ${p =>
-      p.loading &&
-      `
-        opacity: ${p.theme.btnDisabledOpacity};
-        cursor: not-allowed;
-      `}
-
-    /* When used as link */
-    text-decoration: none;
-
-    &:disabled {
+  ${p =>
+    p.loading &&
+    `
+      opacity: ${p.theme.btnDisabledOpacity};
       cursor: not-allowed;
-      opacity: ${p => p.theme.btnDisabledOpacity};
-    }
+    `}
 
-    & svg {
-      font-size: 1.25rem;
-      margin: 0;
-      padding: 0;
-    }
+  /* When used as link */
+  text-decoration: none;
 
-    ${space}
-  `
+  &:disabled {
+    cursor: not-allowed;
+    opacity: ${p => p.theme.btnDisabledOpacity};
+  }
 
+  & svg {
+    font-size: 1.25rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  ${space}
+`
+
+function createStyledComponent(variant, size, loading, props) {
   return (
     <ScButton {...props}>
       {loading && (

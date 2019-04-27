@@ -28,44 +28,42 @@ const sizeStyles = {
   `,
 }
 
-function createStyledComponent(variant, size, loading, props) {
-  const sizeStyle = sizeStyles[size]
+const ScButton = styled.a`
+  display: inline-block;
+  border-width: ${p => p.theme.btnBorderWidth};
+  font-family: ${p => p.theme.fontFamily};
+  cursor: pointer;
 
-  const ScButton = styled.a`
-    display: inline-block;
-    border-width: ${p => p.theme.btnBorderWidth};
-    font-family: ${p => p.theme.fontFamily};
-    cursor: pointer;
+  ${p => transitionBase(p)};
+  ${p => btnVariant(p.variant)(p)};
+  ${p => sizeStyles[p.size](p)};
 
-    ${p => transitionBase(p)};
-    ${p => btnVariant(variant)(p)};
-    ${p => sizeStyle(p)};
-
-    ${p =>
-      p.loading &&
-      `
-        opacity: ${p.theme.btnDisabledOpacity};
-        cursor: not-allowed;
-      `}
-
-    ${p =>
-      p.block &&
-      `
-        display: block;
-        width: 100%;
-      `}
-
-    /* When used as link */
-    text-decoration: none;
-
-    &:disabled {
+  ${p =>
+    p.loading &&
+    `
+      opacity: ${p.theme.btnDisabledOpacity};
       cursor: not-allowed;
-      opacity: ${p => p.theme.btnDisabledOpacity};
-    }
+    `}
 
-    ${space}
-  `
+  ${p =>
+    p.block &&
+    `
+      display: block;
+      width: 100%;
+    `}
 
+  /* When used as link */
+  text-decoration: none;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: ${p => p.theme.btnDisabledOpacity};
+  }
+
+  ${space}
+`
+
+function createStyledComponent(variant, size, loading, props) {
   return (
     <ScButton {...props}>
       {loading && (
