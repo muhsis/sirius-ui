@@ -20,7 +20,7 @@ const components = [
   {
     name: 'Tab',
     source: sourceTab,
-    underDevelopment: true,
+    underDevelopment: false,
     examples: [
       {
         title: 'Basic Tab Example',

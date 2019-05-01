@@ -1,8 +1,8 @@
 <Box>
   <TabGroup>
     {['Traits', 'Event History', 'Identities'].map((tab, index) => (
-      <Tab key={tab} id={tab} isSelected={index === 0}>
-        {tab}
+      <Tab label={tab}>
+        {tab} Content.
       </Tab>
     ))}
   </TabGroup>
