@@ -6,7 +6,7 @@ import Toast from './Toast'
 const ScToastWrapper = styled.span`
   max-width: 500px;
   margin: 0 auto;
-  top: 0;
+  top: 0.5rem;
   right: 0;
   left: 0;
   position: fixed;

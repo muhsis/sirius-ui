@@ -12,23 +12,23 @@ const animationEasing = {
 }
 
 const openAnimation = keyframes`
-  from: {
-    opacity: 0,
-    transform: translateY(-120%)
-  },
-  to: {
-    transform: translateY(0)
+  0% {
+    opacity: 0;
+    transform: translateY(-120%);
+  }
+  100% {
+    transform: translateY(0);
   }
 `
 
 const closeAnimation = keyframes`
-  from: {
-    transform: scale(1),
-    opacity: 1
-  },
-  to: {
-    transform: scale(0.9),
-    opacity: 0
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0;
   }
 `
 
