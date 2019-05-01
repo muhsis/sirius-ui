@@ -119,6 +119,7 @@ class Divider extends PureComponent {
      * You can add text or content in the center of a divider.
      */
     text: PropTypes.node,
+    ...space.propTypes,
   }
 
   static defaultProps = {
