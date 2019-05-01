@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `MCRM UI`,
+    title: `Muhsis UI`,
     description: `Design system & UI library for React.`,
     author: `dev@muhsis`,
   },

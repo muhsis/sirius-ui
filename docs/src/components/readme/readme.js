@@ -32,28 +32,26 @@ class Readme extends PureComponent {
 
         <Box my={4}>
           <Table>
-            <TableHead>
-              <TableRow>
-                <TableHeaderCell>Component Name</TableHeaderCell>
-                <TableHeaderCell textAlign="center">
-                  Development Status
-                </TableHeaderCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
+            <thead>
+              <tr>
+                <th>Component Name</th>
+                <th>Development Status</th>
+              </tr>
+            </thead>
+            <tbody>
               {components.map(component => (
-                <TableRow key={component.name}>
+                <tr key={component.name}>
                   <TableCell>{component.name}</TableCell>
-                  <TableCell textAlign="center">
+                  <TableCell>
                     {component.underDevelopment ? (
-                      <Tag variant="secondary">IN PROGRESS</Tag>
+                      <Tag variant="primary">IN PROGRESS</Tag>
                     ) : (
                       <Tag variant="success">DONE</Tag>
                     )}
                   </TableCell>
-                </TableRow>
+                </tr>
               ))}
-            </TableBody>
+            </tbody>
           </Table>
         </Box>
 
