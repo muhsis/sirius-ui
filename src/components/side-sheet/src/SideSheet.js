@@ -12,20 +12,20 @@ const animationEasing = {
 }
 
 const slideInAnimation = keyframes`
-  from: {
-    transform: translateX(100%)
-  },
-  to: {
-    transform: translateX(0)
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
   }
 `
 
 const slideOutAnimation = keyframes`
-  from: {
-    transform: translateX(0)
-  },
-  to: {
-    transform: translateX(100%)
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
   }
 `
 
@@ -34,18 +34,16 @@ const ScSideSheetContainer = styled.div`
   height: 100vh;
   right: 0;
   width: ${p => p.width}px;
-  transition: transform 240ms;
 
   &[data-state='entering'],
   &[data-state='entered'] {
-    /* animation: ${slideInAnimation} ${ANIMATION_DURATION}ms
-      ${animationEasing.deceleration} both; */
+    animation: ${slideInAnimation} ${ANIMATION_DURATION}ms
+      ${animationEasing.deceleration} both;
   }
 
   &[data-state='exiting'] {
-    transform: translateX(100%);
-    /* animation: ${slideOutAnimation} ${ANIMATION_DURATION}ms
-      ${animationEasing.acceleration} both; */
+    animation: ${slideOutAnimation} ${ANIMATION_DURATION}ms
+      ${animationEasing.acceleration} both;
   }
 `
 
