@@ -1,2 +1,1 @@
-export { default as LinearProgress } from './src/LinearProgress'
-export { default as CircularProgress } from './src/CircularProgress'
+export { default as Progress } from './src/Progress'
