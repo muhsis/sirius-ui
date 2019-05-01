@@ -1,7 +1,8 @@
 import React from 'react'
-import { Table } from '../'
+import { Table, TableCell } from '../'
 import { Box } from '../../box'
-import { Paragraph, Code } from '../../typography'
+import { Tag } from '../../tag'
+import { Paragraph, Code, Link } from '../../typography'
 
 /* eslint-disable import/no-unresolved, import/no-webpack-loader-syntax */
 import sourceTable from '!raw-loader!../src/Table'
@@ -18,7 +19,7 @@ const introduction = (
   </Paragraph>
 )
 
-const scope = { Box, Table }
+const scope = { Box, Table, TableCell, Tag, Link }
 
 const components = [
   {

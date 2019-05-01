@@ -1,3 +1,48 @@
 <Box>
-  <Table></Table>
+  <Table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Tags</th>
+        <th align="right">Balance</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <TableCell><Link href="#">John Brown</Link></TableCell>
+        <TableCell>john@corp.com</TableCell>
+        <TableCell>
+          <Tag variant="warning">Under Review</Tag>
+        </TableCell>
+        <TableCell isNumber>
+          $25.55
+        </TableCell>
+      </tr>
+
+      <tr>
+        <TableCell><Link href="#">Jim Green</Link></TableCell>
+        <TableCell>jim@corp.com</TableCell>
+        <TableCell>
+          <Tag variant="danger">Closed</Tag>
+        </TableCell>
+        <TableCell isNumber color="warning">
+          899.00 ₺
+        </TableCell>
+      </tr>
+
+      <tr>
+        <TableCell><Link href="#">Joe Black</Link></TableCell>
+        <TableCell>joe@corp.com</TableCell>
+        <TableCell>
+          <Tag mr={1}>Open</Tag>
+          <Tag variant="primary">In Progress</Tag>
+        </TableCell>
+        <TableCell isNumber color="success">
+          1,250.75 ₺
+        </TableCell>
+      </tr>
+    </tbody>
+  </Table>
 </Box>
