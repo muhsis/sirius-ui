@@ -15,21 +15,21 @@ const animationEasing = {
 }
 
 const fadeInAnimation = keyframes`
-  from: {
-    opacity: 0,
-  },
-  to: {
-    opacity: 1,
-  },
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 `
 
 const fadeOutAnimation = keyframes`
-  from: {
-    opacity: 1,
-  },
-  to: {
-    opacity: 0,
-  },
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 `
 
 const ScOverlay = styled.div`
@@ -41,6 +41,7 @@ const ScOverlay = styled.div`
   z-index: 20;
 
   &::before {
+    content: ' ';
     background-color: rgba(67, 90, 111, 0.7);
     left: 0;
     top: 0;
@@ -48,7 +49,6 @@ const ScOverlay = styled.div`
     display: block;
     width: 100%;
     height: 100%;
-    content: ' ';
   }
 
   &[data-state='entering']::before,
