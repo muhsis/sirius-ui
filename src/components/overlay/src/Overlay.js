@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Transition } from 'react-transition-group'
-import styled, { withTheme, keyframes } from 'styled-components'
+import styled, { withTheme, keyframes, css } from 'styled-components'
 
 import safeInvoke from '../../../lib/safe-invoke'
 import preventBodyScroll from '../../../lib/prevent-body-scroll'
@@ -41,6 +41,14 @@ const ScOverlay = styled.div`
   right: 0;
   bottom: 0;
   z-index: 20;
+
+  ${p =>
+    p.centerContent &&
+    css`
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+    `}
 
   &::before {
     content: ' ';
@@ -99,6 +107,11 @@ class Overlay extends Component {
      * Boolean indicating if pressing the esc key should close the overlay.
      */
     shouldCloseOnEscape: PropTypes.bool,
+
+    /**
+     * Boolean indicating if the content in the overlay will be centered.
+     */
+    centerContent: PropTypes.bool,
   }
 
   static defaultProps = {
@@ -111,6 +124,7 @@ class Overlay extends Component {
     shouldCloseOnClick: true,
     shouldCloseOnEscape: true,
     preventBodyScrolling: false,
+    centerContent: false,
   }
 
   constructor(props) {
@@ -262,7 +276,7 @@ class Overlay extends Component {
   }
 
   render() {
-    const { isShown, children } = this.props
+    const { isShown, centerContent, children } = this.props
 
     const { exiting, exited } = this.state
     if (exited) return null
@@ -284,6 +298,7 @@ class Overlay extends Component {
           {state => (
             <ScOverlay
               onClick={this.handleBackdropClick}
+              centerContent={centerContent}
               ref={this.onContainerRef}
               data-state={state}
             >
