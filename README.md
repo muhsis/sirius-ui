@@ -1,4 +1,4 @@
-# @muhsis/ui
+# @muhsisbt/ui
 
 This is a design system / React UI library. It works with styled-components and
 styled-system.
