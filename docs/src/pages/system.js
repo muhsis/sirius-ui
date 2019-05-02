@@ -4,6 +4,7 @@ import {
   Box,
   Text,
   Paragraph,
+  Heading,
   SideSheet,
   Button,
   ButtonIcon,
@@ -15,6 +16,8 @@ import {
   Select,
   TextInput,
   TextArea,
+  Dialog,
+  CornerDialog,
 } from '../../../src'
 
 const colourOptions = [
@@ -34,11 +37,23 @@ class SystemPage extends Component {
   constructor(props) {
     super(props)
 
+    this.openCornerDialog = this.openCornerDialog.bind(this)
+    this.openDialog = this.openDialog.bind(this)
     this.openSideSheet = this.openSideSheet.bind(this)
     this.closeSideSheet = this.closeSideSheet.bind(this)
     this.state = {
       isShown: false,
+      isDialogShown: false,
+      isCornerDialogShown: false,
     }
+  }
+
+  openDialog() {
+    this.setState({ isDialogShown: true })
+  }
+
+  openCornerDialog() {
+    this.setState({ isCornerDialogShown: true })
   }
 
   openSideSheet() {
@@ -101,6 +116,143 @@ class SystemPage extends Component {
             <IconBell />
           </ButtonIcon>
         </Box>
+
+        <Box p={3} ml={250}>
+          <Button variant="success" onClick={this.openCornerDialog}>
+            Open Corner Dialog
+          </Button>
+
+          <CornerDialog
+            title="Welcome to this new feature"
+            isShown={this.state.isCornerDialogShown}
+            onCloseComplete={() =>
+              this.setState({ isCornerDialogShown: false })
+            }
+          >
+            The corner dialog component is used for new feature announcements
+            and feedback requests from the user. Fusce dapibus, tellus ac cursus
+            commodo, tortor mauris condimentum nibh, ut fermentum massa justo
+            sit amet risus. Praesent commodo cursus magna, vel scelerisque nisl
+            consectetur et. Donec sed odio dui. Donec id elit non mi porta
+            gravida at eget metus. Cras mattis consectetur purus sit amet
+            fermentum. Vestibulum id ligula porta felis euismod semper.
+          </CornerDialog>
+        </Box>
+
+        <Box p={3} ml={250}>
+          <Button variant="secondary" onClick={this.openDialog}>
+            Open Dialog
+          </Button>
+
+          <Dialog
+            isShown={this.state.isDialogShown}
+            onCloseComplete={() => this.setState({ isDialogShown: false })}
+            preventBodyScrolling
+            header={({ close }) => (
+              <>
+                <Heading variant="h6" m={0} p={0}>
+                  <IconBell mr={2} /> Custom Title
+                </Heading>
+                <Button size="sm" ml="auto" variant="dark" onClick={close}>
+                  Close Me
+                </Button>
+              </>
+            )}
+            footer={({ close }) => (
+              <>
+                <Button variant="light" mr={1} onClick={close}>
+                  Cancel Me!
+                </Button>
+                <Button>Take Action</Button>
+              </>
+            )}
+          >
+            {({ close }) => (
+              <>
+                <Paragraph m={0} mb={3}>
+                  Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                  condimentum nibh, ut fermentum massa justo sit amet risus.
+                  Duis mollis, est non commodo luctus, nisi erat porttitor
+                  ligula, eget lacinia odio sem nec elit. Integer posuere erat a
+                  ante venenatis dapibus posuere velit aliquet. Cum sociis
+                  natoque penatibus et magnis dis parturient montes, nascetur
+                  ridiculus mus. Sed posuere consectetur est at lobortis. Donec
+                  ullamcorper nulla non metus auctor fringilla. Duis mollis, est
+                  non commodo luctus, nisi erat porttitor ligula, eget lacinia
+                  odio sem nec elit. Duis mollis, est non commodo luctus, nisi
+                  erat porttitor ligula, eget lacinia odio sem nec elit. Aenean
+                  eu leo quam. Pellentesque ornare sem lacinia quam venenatis
+                  vestibulum. Nullam id dolor id nibh ultricies vehicula ut id
+                  elit. Donec sed odio dui. Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit. Praesent commodo cursus magna,
+                  vel scelerisque nisl consectetur et. Vestibulum id ligula
+                  porta felis euismod semper. Aenean eu leo quam. Pellentesque
+                  ornare sem lacinia quam venenatis vestibulum. Praesent commodo
+                  cursus magna, vel scelerisque nisl consectetur et. Donec
+                  ullamcorper nulla non metus auctor fringilla. Integer posuere
+                  erat a ante venenatis dapibus posuere velit aliquet. Etiam
+                  porta sem malesuada magna mollis euismod. Praesent commodo
+                  cursus magna, vel scelerisque nisl consectetur et.
+                </Paragraph>
+                <Paragraph m={0} mb={3}>
+                  Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                  condimentum nibh, ut fermentum massa justo sit amet risus.
+                  Duis mollis, est non commodo luctus, nisi erat porttitor
+                  ligula, eget lacinia odio sem nec elit. Integer posuere erat a
+                  ante venenatis dapibus posuere velit aliquet. Cum sociis
+                  natoque penatibus et magnis dis parturient montes, nascetur
+                  ridiculus mus. Sed posuere consectetur est at lobortis. Donec
+                  ullamcorper nulla non metus auctor fringilla. Duis mollis, est
+                  non commodo luctus, nisi erat porttitor ligula, eget lacinia
+                  odio sem nec elit. Duis mollis, est non commodo luctus, nisi
+                  erat porttitor ligula, eget lacinia odio sem nec elit. Aenean
+                  eu leo quam. Pellentesque ornare sem lacinia quam venenatis
+                  vestibulum. Nullam id dolor id nibh ultricies vehicula ut id
+                  elit. Donec sed odio dui. Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit. Praesent commodo cursus magna,
+                  vel scelerisque nisl consectetur et. Vestibulum id ligula
+                  porta felis euismod semper. Aenean eu leo quam. Pellentesque
+                  ornare sem lacinia quam venenatis vestibulum. Praesent commodo
+                  cursus magna, vel scelerisque nisl consectetur et. Donec
+                  ullamcorper nulla non metus auctor fringilla. Integer posuere
+                  erat a ante venenatis dapibus posuere velit aliquet. Etiam
+                  porta sem malesuada magna mollis euismod. Praesent commodo
+                  cursus magna, vel scelerisque nisl consectetur et.
+                </Paragraph>
+                <Paragraph m={0} mb={3}>
+                  Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                  condimentum nibh, ut fermentum massa justo sit amet risus.
+                  Duis mollis, est non commodo luctus, nisi erat porttitor
+                  ligula, eget lacinia odio sem nec elit. Integer posuere erat a
+                  ante venenatis dapibus posuere velit aliquet. Cum sociis
+                  natoque penatibus et magnis dis parturient montes, nascetur
+                  ridiculus mus. Sed posuere consectetur est at lobortis. Donec
+                  ullamcorper nulla non metus auctor fringilla. Duis mollis, est
+                  non commodo luctus, nisi erat porttitor ligula, eget lacinia
+                  odio sem nec elit. Duis mollis, est non commodo luctus, nisi
+                  erat porttitor ligula, eget lacinia odio sem nec elit. Aenean
+                  eu leo quam. Pellentesque ornare sem lacinia quam venenatis
+                  vestibulum. Nullam id dolor id nibh ultricies vehicula ut id
+                  elit. Donec sed odio dui. Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit. Praesent commodo cursus magna,
+                  vel scelerisque nisl consectetur et. Vestibulum id ligula
+                  porta felis euismod semper. Aenean eu leo quam. Pellentesque
+                  ornare sem lacinia quam venenatis vestibulum. Praesent commodo
+                  cursus magna, vel scelerisque nisl consectetur et. Donec
+                  ullamcorper nulla non metus auctor fringilla. Integer posuere
+                  erat a ante venenatis dapibus posuere velit aliquet. Etiam
+                  porta sem malesuada magna mollis euismod. Praesent commodo
+                  cursus magna, vel scelerisque nisl consectetur et.
+                </Paragraph>
+                <Box>
+                  <Button block variant="warning" onClick={close}>
+                    Close From Content
+                  </Button>
+                </Box>
+              </>
+            )}
+          </Dialog>
+        </Box>
         <Box p={3} ml={250}>
           <Button onClick={this.openSideSheet}>Show Side Sheet</Button>
           <SideSheet
@@ -108,6 +260,102 @@ class SystemPage extends Component {
             onCloseComplete={this.closeSideSheet}
           >
             <Paragraph m={3}>Basic Example</Paragraph>
+            <Paragraph m={3}>
+              Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+              nibh, ut fermentum massa justo sit amet risus. Duis mollis, est
+              non commodo luctus, nisi erat porttitor ligula, eget lacinia odio
+              sem nec elit. Integer posuere erat a ante venenatis dapibus
+              posuere velit aliquet. Cum sociis natoque penatibus et magnis dis
+              parturient montes, nascetur ridiculus mus. Sed posuere consectetur
+              est at lobortis. Donec ullamcorper nulla non metus auctor
+              fringilla. Duis mollis, est non commodo luctus, nisi erat
+              porttitor ligula, eget lacinia odio sem nec elit. Duis mollis, est
+              non commodo luctus, nisi erat porttitor ligula, eget lacinia odio
+              sem nec elit. Aenean eu leo quam. Pellentesque ornare sem lacinia
+              quam venenatis vestibulum. Nullam id dolor id nibh ultricies
+              vehicula ut id elit. Donec sed odio dui. Lorem ipsum dolor sit
+              amet, consectetur adipiscing elit. Praesent commodo cursus magna,
+              vel scelerisque nisl consectetur et. Vestibulum id ligula porta
+              felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem
+              lacinia quam venenatis vestibulum. Praesent commodo cursus magna,
+              vel scelerisque nisl consectetur et. Donec ullamcorper nulla non
+              metus auctor fringilla. Integer posuere erat a ante venenatis
+              dapibus posuere velit aliquet. Etiam porta sem malesuada magna
+              mollis euismod. Praesent commodo cursus magna, vel scelerisque
+              nisl consectetur et.
+            </Paragraph>
+            <Paragraph m={3}>
+              Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+              nibh, ut fermentum massa justo sit amet risus. Duis mollis, est
+              non commodo luctus, nisi erat porttitor ligula, eget lacinia odio
+              sem nec elit. Integer posuere erat a ante venenatis dapibus
+              posuere velit aliquet. Cum sociis natoque penatibus et magnis dis
+              parturient montes, nascetur ridiculus mus. Sed posuere consectetur
+              est at lobortis. Donec ullamcorper nulla non metus auctor
+              fringilla. Duis mollis, est non commodo luctus, nisi erat
+              porttitor ligula, eget lacinia odio sem nec elit. Duis mollis, est
+              non commodo luctus, nisi erat porttitor ligula, eget lacinia odio
+              sem nec elit. Aenean eu leo quam. Pellentesque ornare sem lacinia
+              quam venenatis vestibulum. Nullam id dolor id nibh ultricies
+              vehicula ut id elit. Donec sed odio dui. Lorem ipsum dolor sit
+              amet, consectetur adipiscing elit. Praesent commodo cursus magna,
+              vel scelerisque nisl consectetur et. Vestibulum id ligula porta
+              felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem
+              lacinia quam venenatis vestibulum. Praesent commodo cursus magna,
+              vel scelerisque nisl consectetur et. Donec ullamcorper nulla non
+              metus auctor fringilla. Integer posuere erat a ante venenatis
+              dapibus posuere velit aliquet. Etiam porta sem malesuada magna
+              mollis euismod. Praesent commodo cursus magna, vel scelerisque
+              nisl consectetur et.
+            </Paragraph>
+            <Paragraph m={3}>
+              Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+              nibh, ut fermentum massa justo sit amet risus. Duis mollis, est
+              non commodo luctus, nisi erat porttitor ligula, eget lacinia odio
+              sem nec elit. Integer posuere erat a ante venenatis dapibus
+              posuere velit aliquet. Cum sociis natoque penatibus et magnis dis
+              parturient montes, nascetur ridiculus mus. Sed posuere consectetur
+              est at lobortis. Donec ullamcorper nulla non metus auctor
+              fringilla. Duis mollis, est non commodo luctus, nisi erat
+              porttitor ligula, eget lacinia odio sem nec elit. Duis mollis, est
+              non commodo luctus, nisi erat porttitor ligula, eget lacinia odio
+              sem nec elit. Aenean eu leo quam. Pellentesque ornare sem lacinia
+              quam venenatis vestibulum. Nullam id dolor id nibh ultricies
+              vehicula ut id elit. Donec sed odio dui. Lorem ipsum dolor sit
+              amet, consectetur adipiscing elit. Praesent commodo cursus magna,
+              vel scelerisque nisl consectetur et. Vestibulum id ligula porta
+              felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem
+              lacinia quam venenatis vestibulum. Praesent commodo cursus magna,
+              vel scelerisque nisl consectetur et. Donec ullamcorper nulla non
+              metus auctor fringilla. Integer posuere erat a ante venenatis
+              dapibus posuere velit aliquet. Etiam porta sem malesuada magna
+              mollis euismod. Praesent commodo cursus magna, vel scelerisque
+              nisl consectetur et.
+            </Paragraph>
+            <Paragraph m={3}>
+              Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+              nibh, ut fermentum massa justo sit amet risus. Duis mollis, est
+              non commodo luctus, nisi erat porttitor ligula, eget lacinia odio
+              sem nec elit. Integer posuere erat a ante venenatis dapibus
+              posuere velit aliquet. Cum sociis natoque penatibus et magnis dis
+              parturient montes, nascetur ridiculus mus. Sed posuere consectetur
+              est at lobortis. Donec ullamcorper nulla non metus auctor
+              fringilla. Duis mollis, est non commodo luctus, nisi erat
+              porttitor ligula, eget lacinia odio sem nec elit. Duis mollis, est
+              non commodo luctus, nisi erat porttitor ligula, eget lacinia odio
+              sem nec elit. Aenean eu leo quam. Pellentesque ornare sem lacinia
+              quam venenatis vestibulum. Nullam id dolor id nibh ultricies
+              vehicula ut id elit. Donec sed odio dui. Lorem ipsum dolor sit
+              amet, consectetur adipiscing elit. Praesent commodo cursus magna,
+              vel scelerisque nisl consectetur et. Vestibulum id ligula porta
+              felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem
+              lacinia quam venenatis vestibulum. Praesent commodo cursus magna,
+              vel scelerisque nisl consectetur et. Donec ullamcorper nulla non
+              metus auctor fringilla. Integer posuere erat a ante venenatis
+              dapibus posuere velit aliquet. Etiam porta sem malesuada magna
+              mollis euismod. Praesent commodo cursus magna, vel scelerisque
+              nisl consectetur et.
+            </Paragraph>
           </SideSheet>
         </Box>
         <Box p={3} ml={250}>

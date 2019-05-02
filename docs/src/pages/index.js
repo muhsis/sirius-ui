@@ -29,7 +29,11 @@ const toaster = new Toaster(theme)
 
 class IndexPage extends Component {
   paginationOnChange = value => {
-    console.log('Pager changed', value)
+    toaster.info(
+      'Hello world!',
+      'Maecenas faucibus mollis interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    )
+    console.log('Pager changed', value, toaster)
   }
 
   render() {
