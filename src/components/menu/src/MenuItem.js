@@ -4,6 +4,7 @@ import { colorYik } from '../../../theming/color'
 const MenuItem = styled.button`
   border: none;
   border-radius: ${p => p.theme.borderRadius};
+  font-size: ${p => p.theme.fontSizeBase};
   outline: none;
   cursor: pointer;
   text-align: left;
@@ -11,7 +12,7 @@ const MenuItem = styled.button`
   width: 100%;
   box-shadow: none;
   color: ${p => p.theme.colors.shaft};
-  padding: 0.75rem;
+  padding: 0.6rem 0.75rem;
   transition: color 0.15s, background-color 0.15s;
 
   & svg {
