@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import { Transition } from 'react-transition-group'
 import styled, { withTheme, keyframes } from 'styled-components'
 
+import safeInvoke from '../../../lib/safe-invoke'
+import preventBodyScroll from '../../../lib/prevent-body-scroll'
 import { Portal } from '../../portal'
 
 const ANIMATION_DURATION = 240
@@ -68,13 +70,35 @@ class Overlay extends Component {
   static propTypes = {
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
     isShown: PropTypes.bool,
-    containerProps: PropTypes.object,
+
+    /**
+     * Function called when overlay is about to close.
+     * Return `false` to prevent the sheet from closing.
+     * type: `Function -> Boolean`
+     */
+    onBeforeClose: PropTypes.func,
+
     onExit: PropTypes.func,
     onExiting: PropTypes.func,
     onExited: PropTypes.func,
     onEnter: PropTypes.func,
     onEntering: PropTypes.func,
     onEntered: PropTypes.func,
+
+    /**
+     * Whether or not to prevent body scrolling outside the context of the overlay
+     */
+    preventBodyScrolling: PropTypes.bool,
+
+    /**
+     * Boolean indicating if clicking the overlay should close the overlay.
+     */
+    shouldCloseOnClick: PropTypes.bool,
+
+    /**
+     * Boolean indicating if pressing the esc key should close the overlay.
+     */
+    shouldCloseOnEscape: PropTypes.bool,
   }
 
   static defaultProps = {
@@ -84,6 +108,9 @@ class Overlay extends Component {
     onEnter: () => {},
     onEntering: () => {},
     onEntered: () => {},
+    shouldCloseOnClick: true,
+    shouldCloseOnEscape: true,
+    preventBodyScrolling: false,
   }
 
   constructor(props) {
@@ -95,13 +122,15 @@ class Overlay extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.isShown && !this.props.isShown) {
+  componentDidUpdate(prevProps) {
+    if (!prevProps.isShown && this.props.isShown) {
+      // eslint-disable-next-line react/no-did-update-set-state
       this.setState({ exited: false })
     }
   }
 
   componentWillUnmount() {
+    this.handleBodyScroll(false)
     document.body.removeEventListener('keydown', this.onEsc, false)
   }
 
@@ -170,13 +199,27 @@ class Overlay extends Component {
 
   onEsc = e => {
     // Esc key
-    if (e.keyCode === 27) {
+    if (e.keyCode === 27 && this.props.shouldCloseOnEscape) {
       this.close()
     }
   }
 
   close = () => {
-    this.setState({ exiting: true })
+    const shouldClose = safeInvoke(this.props.onBeforeClose)
+    if (shouldClose !== false) {
+      this.setState({ exiting: true })
+    }
+  }
+
+  handleBodyScroll = preventScroll => {
+    if (this.props.preventBodyScrolling) {
+      preventBodyScroll(preventScroll)
+    }
+  }
+
+  handleEnter = () => {
+    this.handleBodyScroll(true)
+    safeInvoke(this.props.onEnter)
   }
 
   handleEntering = node => {
@@ -188,6 +231,11 @@ class Overlay extends Component {
     this.previousActiveElement = document.activeElement
     this.bringFocusInsideOverlay()
     this.props.onEntered(node)
+  }
+
+  handleExit = () => {
+    this.handleBodyScroll(false)
+    safeInvoke(this.props.onExit)
   }
 
   handleExiting = node => {
@@ -202,7 +250,7 @@ class Overlay extends Component {
   }
 
   handleBackdropClick = e => {
-    if (e.target !== e.currentTarget) {
+    if (e.target !== e.currentTarget || !this.props.shouldCloseOnClick) {
       return
     }
 
@@ -214,13 +262,7 @@ class Overlay extends Component {
   }
 
   render() {
-    const {
-      containerProps = {},
-      isShown,
-      children,
-      onExit,
-      onEnter,
-    } = this.props
+    const { isShown, children } = this.props
 
     const { exiting, exited } = this.state
     if (exited) return null
@@ -232,10 +274,10 @@ class Overlay extends Component {
           unmountOnExit
           timeout={ANIMATION_DURATION}
           in={isShown && !exiting}
-          onExit={onExit}
+          onExit={this.handleExit}
           onExiting={this.handleExiting}
           onExited={this.handleExited}
-          onEnter={onEnter}
+          onEnter={this.handleEnter}
           onEntering={this.handleEntering}
           onEntered={this.handleEntered}
         >
@@ -244,7 +286,6 @@ class Overlay extends Component {
               onClick={this.handleBackdropClick}
               ref={this.onContainerRef}
               data-state={state}
-              {...containerProps}
             >
               {typeof children === 'function'
                 ? children({ state, close: this.close })
