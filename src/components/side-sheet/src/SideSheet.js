@@ -86,6 +86,7 @@ class SideSheet extends PureComponent {
         isShown={isShown}
         onExited={onCloseComplete}
         onEntered={onOpenComplete}
+        preventBodyScrolling
       >
         {({ state, close }) => (
           <ScSideSheetContainer width={width} data-state={state}>
