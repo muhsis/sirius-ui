@@ -71,7 +71,6 @@
     "styled-system": "^3.2.1"
   },
   "dependencies": {
-    "@reactions/component": "^2.0.2",
     "babel-jest": "^24.1.0",
     "dom-helpers": "^3.4.0",
     "jest": "^24.1.0",
