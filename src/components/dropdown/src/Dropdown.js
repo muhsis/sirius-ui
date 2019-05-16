@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import styled, { withTheme, keyframes } from 'styled-components'
+import styled, { withTheme, keyframes, css } from 'styled-components'
 import { Transition } from 'react-transition-group'
 
 const ANIMATION_DURATION = 200
@@ -48,6 +48,18 @@ const ScDropdownContent = styled.div`
   margin-top: 0.5rem;
   z-index: 10;
 
+  ${p =>
+    p.direction === 'right' &&
+    css`
+      right: 0;
+    `}
+
+  ${p =>
+    p.direction === 'left' &&
+    css`
+      left: 0;
+    `}
+
   min-width: ${p => p.width}px;
 
   &[data-state='entering'],
@@ -78,11 +90,17 @@ class Dropdown extends PureComponent {
      * Width of the Dropdown.
      */
     width: PropTypes.number,
+
+    /**
+     * Direction of dropdown content
+     */
+    direction: PropTypes.oneOf(['right', 'left']),
   }
 
   static defaultProps = {
     isShown: false,
     width: 200,
+    direction: 'right',
   }
 
   constructor(props) {
@@ -124,7 +142,7 @@ class Dropdown extends PureComponent {
 
   render() {
     const { isShown } = this.state
-    const { children, content, width } = this.props
+    const { children, content, width, direction } = this.props
 
     return (
       <ScDropdown onClick={this.handleShow} ref={this.setWrapperRef}>
@@ -139,7 +157,12 @@ class Dropdown extends PureComponent {
           {state => (
             <>
               {isShown && (
-                <ScDropdownContent role="menu" data-state={state} width={width}>
+                <ScDropdownContent
+                  role="menu"
+                  data-state={state}
+                  width={width}
+                  direction={direction}
+                >
                   {typeof content === 'function'
                     ? content({ close: this.handleHide })
                     : content}
