@@ -46,7 +46,7 @@ const ScDropdownContent = styled.div`
   position: absolute;
   top: 100%;
   margin-top: 0.5rem;
-  z-index: 10;
+  z-index: 12;
 
   ${p =>
     p.direction === 'right' &&
