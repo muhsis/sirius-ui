@@ -25,7 +25,7 @@ const ScBlankSlate = styled.div`
 `
 
 const ScBlankSlateDetails = styled.div`
-  max-width: 300px;
+  max-width: 400px;
   z-index: 10;
 `
 
