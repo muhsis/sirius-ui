@@ -8,9 +8,9 @@ const Code = styled.code`
   box-shadow: 0 0 0 1px ${p => lighten(0.4, p.theme.brand.primary)};
   color: ${p => p.theme.brand.primary};
   font-family: ${p => p.theme.fontFamilyMonospace};
-  font-size: ${p => p.theme.fontSizeSm};
+  font-size: ${p => p.theme.fontSizeBase};
   font-weight: 500;
-  padding: 2px 4px;
+  padding: 1px 2px;
 
   ${space}
 `
