@@ -18,6 +18,9 @@ These are the topics that we need to write documentation for.
 
 ## Current Release
 
+### v0.8.9
+- [x] Fix `PropTypes.oneOf` bug for `InputGroupText` component.
+
 ### v0.8.8
 - [x] Inherit `Media` component from `Box`
 - [x] Toggle visibility of `Dropdown` component's content window rather than only opening.

@@ -33,7 +33,7 @@ const ScInputGroupText = styled.div`
 
 class InputGroupText extends PureComponent {
   static propTypes = {
-    type: PropTypes.oneOf('append', 'prepend'),
+    type: PropTypes.oneOf(['append', 'prepend']),
   }
 
   static defaultProps = {
