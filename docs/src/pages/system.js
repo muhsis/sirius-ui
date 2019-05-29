@@ -13,7 +13,7 @@ import {
   ListViewItem,
   Media,
   MediaItem,
-  Select,
+  Combobox,
   TextInput,
   TextArea,
   Dialog,
@@ -77,7 +77,7 @@ class SystemPage extends Component {
         <Box p={3} ml={250}>
           <TextArea rows="5" placeholder="Hey, Ho!" mb={3} />
           <TextInput value="Shit" />
-          <Select
+          <Combobox
             isMulti
             isDisabled={false}
             isLoading={false}
@@ -89,7 +89,7 @@ class SystemPage extends Component {
         </Box>
         <Box p={3} ml={250}>
           <TextInput size="sm" value="Shit" />
-          <Select
+          <Combobox
             size="sm"
             isDisabled={false}
             isLoading={false}
@@ -101,7 +101,7 @@ class SystemPage extends Component {
         </Box>
         <Box p={3} ml={250}>
           <TextInput size="lg" value="Shit" />
-          <Select
+          <Combobox
             size="lg"
             isDisabled={false}
             isLoading={false}

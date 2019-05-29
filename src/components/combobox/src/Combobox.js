@@ -129,7 +129,7 @@ const ScReactSelect = styled(ReactSelect)`
   }
 `
 
-class Select extends PureComponent {
+class Combobox extends PureComponent {
   static propTypes = {
     size: PropTypes.oneOf(['sm', 'md', 'lg']),
     ...space.propTypes,
@@ -150,4 +150,4 @@ class Select extends PureComponent {
   }
 }
 
-export default withTheme(Select)
+export default withTheme(Combobox)
