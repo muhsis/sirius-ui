@@ -16,6 +16,7 @@ const ScMenuItem = styled.button`
   color: ${p => p.theme.colors.shaft};
   padding: 0.5rem 0.75rem;
   transition: color 0.15s, background-color 0.15s;
+  text-decoration: none;
 
   & svg {
     color: ${p => p.theme.colors[p.variant]};
@@ -23,6 +24,7 @@ const ScMenuItem = styled.button`
 
   &:hover {
     background-color: ${p => p.theme.tints[p.variant]};
+    text-decoration: none;
   }
 
   &:active {
@@ -57,9 +59,13 @@ class MenuItem extends PureComponent {
   }
 
   render() {
-    const { variant, children } = this.props
+    const { variant, children, ...props } = this.props
 
-    return <ScMenuItem variant={variant}>{children}</ScMenuItem>
+    return (
+      <ScMenuItem variant={variant} {...props}>
+        {children}
+      </ScMenuItem>
+    )
   }
 }
 
