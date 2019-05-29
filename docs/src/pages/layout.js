@@ -44,7 +44,7 @@ class LayoutPage extends Component {
           <Dropdown
             content={
               <Menu>
-                <MenuItem>
+                <MenuItem as="a" href="#" target="_blank">
                   <IconAddress mr={3} />
                   Sample Menu Item
                 </MenuItem>

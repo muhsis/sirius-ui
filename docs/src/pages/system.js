@@ -18,6 +18,9 @@ import {
   TextArea,
   Dialog,
   CornerDialog,
+  InputGroup,
+  InputGroupText,
+  FormGroup,
 } from '../../../src'
 
 const colourOptions = [
@@ -63,6 +66,10 @@ class SystemPage extends Component {
     })
   }
 
+  handleListViewSelected = () => {
+    console.log('Handling list view selection!')
+  }
+
   closeSideSheet() {
     this.setState({
       isShown: false,
@@ -74,7 +81,32 @@ class SystemPage extends Component {
       <Layout>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
         <Sidebar />
+
         <Box p={3} ml={250}>
+          <Box mb={5}>
+            <FormGroup>
+              <InputGroup>
+                <InputGroupText>@</InputGroupText>
+                <TextInput type="text" />
+              </InputGroup>
+            </FormGroup>
+
+            <FormGroup>
+              <InputGroup>
+                <TextInput type="text" placeholder="Recipient's username" />
+                <InputGroupText type="append">.muhsis.com</InputGroupText>
+              </InputGroup>
+            </FormGroup>
+
+            <FormGroup>
+              <InputGroup>
+                <InputGroupText>$</InputGroupText>
+                <TextInput type="text" placeholder="Recipient's username" />
+                <InputGroupText type="append">.00</InputGroupText>
+              </InputGroup>
+            </FormGroup>
+          </Box>
+
           <TextArea rows="5" placeholder="Hey, Ho!" mb={3} />
           <TextInput value="Shit" />
           <Combobox
@@ -381,8 +413,13 @@ class SystemPage extends Component {
                 <MediaItem ml={2}>Menu</MediaItem>
               </Media>
             </ListViewItem>
-            <ListViewItem>Listview item.</ListViewItem>
-            <ListViewItem>Listview item.</ListViewItem>
+            <ListViewItem
+              clickable
+              handleSelected={this.handleListViewSelected}
+            >
+              Listview item.
+            </ListViewItem>
+            <ListViewItem clickable>Listview item.</ListViewItem>
           </ListView>
         </Box>
       </Layout>
