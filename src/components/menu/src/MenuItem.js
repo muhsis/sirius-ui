@@ -14,7 +14,7 @@ const ScMenuItem = styled.button`
   width: 100%;
   box-shadow: none;
   color: ${p => p.theme.colors.shaft};
-  padding: 0.6rem 0.75rem;
+  padding: 0.5rem 0.75rem;
   transition: color 0.15s, background-color 0.15s;
 
   & svg {
