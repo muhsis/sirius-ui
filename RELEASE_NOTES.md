@@ -7,9 +7,6 @@ Here you can find a list of tasks that are too small to open a Jira story/task.
 - [ ] Better grayscale system.
 - [ ] Better tint bgs system.
 - [ ] Change default font sizes.
-- [ ] We have css grid component. Now we need flexbox.
-- [ ] We need prop tables for elements and components.
-- [ ] Move elevation styles to common functionality.
 
 ## Documentation Topics
 
@@ -21,4 +18,14 @@ These are the topics that we need to write documentation for.
 
 ## Current Release
 
-- [x] Current completed item may go here.
+### v0.8.8
+- [x] Inherit `Media` component from `Box`
+- [x] Toggle visibility of `Dropdown` component's content window rather than only opening.
+- [x] Move elevation styles to constants
+- [x] `MenuItem` component takes `variant` property now.
+- [x] Reduce `MenuItem` spacing.
+- [x] Ability to apply `as` prop to `MenuItem` component.
+- [x] Reduce spacing for description list items.
+- [x] Rename `Select` component to `Combobox`.
+- [x] Make `ListViewItem` component clickable.
+- [x] Add `InputGroup` and `InputGroupText` components.
