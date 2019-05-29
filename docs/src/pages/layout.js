@@ -52,16 +52,16 @@ class LayoutPage extends Component {
                   <IconChat mr={3} />
                   Sample Menu Item
                 </MenuItem>
-                <MenuItem>
+                <MenuItem variant="warning">
                   <IconUser mr={3} />
                   Sample Menu Item
                 </MenuItem>
                 <MenuDivider />
-                <MenuItem>
+                <MenuItem variant="success">
                   <IconAircraft mr={3} />
                   Sample Menu Item
                 </MenuItem>
-                <MenuItem>
+                <MenuItem variant="danger">
                   <IconLogOut mr={3} /> Çıkış Yap
                 </MenuItem>
               </Menu>
