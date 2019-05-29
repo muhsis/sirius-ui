@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import styled, { css, withTheme } from 'styled-components'
 import { space } from 'styled-system'
 import { controlFocus, transitionBase } from '../../../theming'
+import { InputGroup } from '../../form'
 
 const sizeStyles = {
   sm: p => css`
@@ -74,6 +75,23 @@ const ScInput = styled.input`
 
   ${p => transitionBase(p)};
   ${p => sizeStyles[p.size](p)};
+
+  ${InputGroup} & {
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+    margin-bottom: 0;
+  }
+
+  ${InputGroup} &:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  ${InputGroup} &:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 
   ${space}
 `
