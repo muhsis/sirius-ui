@@ -106,12 +106,12 @@ class Dropdown extends PureComponent {
   constructor(props) {
     super(props)
 
-    this.setWrapperRef = this.setWrapperRef.bind(this)
-    this.handleClickOutside = this.handleClickOutside.bind(this)
-
     this.state = {
       isShown: this.props.isShown || false,
     }
+
+    this.setWrapperRef = this.setWrapperRef.bind(this)
+    this.handleClickOutside = this.handleClickOutside.bind(this)
   }
 
   componentDidMount() {
@@ -130,6 +130,11 @@ class Dropdown extends PureComponent {
     this.setState({ isShown: false })
   }
 
+  handleToggle = () => {
+    const { isShown } = this.state
+    this.setState({ isShown: !isShown })
+  }
+
   handleClickOutside(event) {
     if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
       this.setState({ isShown: false })
@@ -145,7 +150,7 @@ class Dropdown extends PureComponent {
     const { children, content, width, direction } = this.props
 
     return (
-      <ScDropdown onClick={this.handleShow} ref={this.setWrapperRef}>
+      <ScDropdown onClick={this.handleToggle} ref={this.setWrapperRef}>
         {children}
 
         <Transition
