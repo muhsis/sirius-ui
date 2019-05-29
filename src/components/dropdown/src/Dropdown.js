@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import styled, { withTheme, keyframes, css } from 'styled-components'
 import { Transition } from 'react-transition-group'
+import { Elevations } from '../../../constants'
 
 const ANIMATION_DURATION = 200
 const animationEasing = {
@@ -47,6 +48,8 @@ const ScDropdownContent = styled.div`
   top: 100%;
   margin-top: 0.5rem;
   z-index: 12;
+
+  ${Elevations[1]};
 
   ${p =>
     p.direction === 'right' &&
