@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 import { Container, Content, Layout, SEO, Sidebar } from '../components'
 import {
   Heading,
@@ -19,15 +21,34 @@ import {
   Progress,
   Timeline,
   TimelineItem,
+  ListView,
+  ListViewItem,
+  ButtonIcon,
   IconCheck,
   IconTextDocument,
   IconAircraft,
+  Media,
+  MediaItem,
+  IconDotsThreeHorizontal,
+  Dropdown,
+  Menu,
+  MenuItem,
+  MenuDivider,
+  IconAddress,
+  IconLogOut,
+  Text,
 } from '../../../src'
 console.log('DT', DataTable)
 
 const toaster = new Toaster(theme)
 
+const ScLink = styled(Link)``
+
 class IndexPage extends Component {
+  itemSelected = () => {
+    console.log('item selected!')
+  }
+
   paginationOnChange = value => {
     toaster.info(
       'Hello world!',
@@ -49,6 +70,66 @@ class IndexPage extends Component {
               developed with <a href="#">Styled Components 💅</a> and{' '}
               <a href="#">Styled System</a>.
             </Paragraph>
+
+            <Box mt={4}>
+              <ListView>
+                <ListViewItem>
+                  <Media>
+                    <MediaItem mr="auto">
+                      <Text as={ScLink} to="/colors">
+                        Item clickable element
+                      </Text>
+                    </MediaItem>
+                    <MediaItem>
+                      <ButtonIcon type="button">
+                        <IconDotsThreeHorizontal />
+                      </ButtonIcon>
+                    </MediaItem>
+                  </Media>
+                </ListViewItem>
+
+                <ListViewItem clickable handleSelected={this.itemSelected}>
+                  <Media>
+                    <MediaItem mr="auto">Item unclickable element</MediaItem>
+                    <MediaItem>
+                      <ButtonIcon type="button">
+                        <IconDotsThreeHorizontal />
+                      </ButtonIcon>
+                    </MediaItem>
+                  </Media>
+                </ListViewItem>
+
+                <ListViewItem clickable handleSelected={this.itemSelected}>
+                  <Media>
+                    <MediaItem mr="auto">Clickable element</MediaItem>
+                    <MediaItem>
+                      <Dropdown
+                        content={
+                          <Menu>
+                            <MenuItem as="a" href="#" target="_blank">
+                              <IconAddress mr={3} />
+                              Sample Menu Item
+                            </MenuItem>
+                            <MenuDivider />
+                            <MenuItem variant="success">
+                              <IconAircraft mr={3} />
+                              Sample Menu Item
+                            </MenuItem>
+                            <MenuItem variant="danger">
+                              <IconLogOut mr={3} /> Çıkış Yap
+                            </MenuItem>
+                          </Menu>
+                        }
+                      >
+                        <ButtonIcon type="button">
+                          <IconDotsThreeHorizontal />
+                        </ButtonIcon>
+                      </Dropdown>
+                    </MediaItem>
+                  </Media>
+                </ListViewItem>
+              </ListView>
+            </Box>
 
             <Box mt={4}>
               <Progress percentage={10} mb={2} />
