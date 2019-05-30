@@ -5,8 +5,14 @@ import styled, { withTheme, css } from 'styled-components'
 const ScListViewItem = styled.div`
   background-color: ${p => p.theme.colors.white};
   border-bottom: 1px solid ${p => p.theme.colors.smoke};
+  display: block;
   padding: 1rem;
+  text-decoration: none;
   transition: background-color 0.15s;
+
+  &:hover {
+    text-decoration: none;
+  }
 
   ${p =>
     p.clickable &&
@@ -59,12 +65,12 @@ class ListViewItem extends PureComponent {
   }
 
   handleClick = () => {
-    this.props.handleSelected()
+    if (this.props.handleSelected) this.props.handleSelected()
   }
 
   render() {
     return (
-      <ScListViewItem {...this.props} onClick={this.handleClick}>
+      <ScListViewItem onClick={this.handleClick} {...this.props}>
         {this.props.children}
       </ScListViewItem>
     )
