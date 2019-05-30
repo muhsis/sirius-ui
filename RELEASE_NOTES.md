@@ -18,6 +18,12 @@ These are the topics that we need to write documentation for.
 
 ## Current Release
 
+### v0.8.10
+- [x] Add line-height to `MenuItem` component.
+- [x] Ability to render `ListViewItem` component as anchor tag.
+- [x] Change default numeric font to monospace 'IBM Plex Mono'
+- [x] Fix `BlankSlate` component's spacing and positioning issues.
+
 ### v0.8.9
 - [x] Fix `PropTypes.oneOf` bug for `InputGroupText` component.
 
