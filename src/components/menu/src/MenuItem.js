@@ -10,6 +10,7 @@ const ScMenuItem = styled.button`
   outline: none;
   cursor: pointer;
   text-align: left;
+  line-height: 1.5;
   display: block;
   width: 100%;
   box-shadow: none;
