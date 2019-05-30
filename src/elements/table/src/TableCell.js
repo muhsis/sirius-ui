@@ -13,7 +13,6 @@ const TableCell = styled.td`
     css`
       font-family: ${p => p.theme.fontFamilyMonospace};
       font-weight: 500;
-      text-align: right;
     `}
 
   ${color}
