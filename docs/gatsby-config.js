@@ -32,7 +32,10 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Mukta:400,500,600,700,800:latin-ext'],
+          families: [
+            'Mukta:400,500,600,700,800:latin-ext',
+            'IBM Plex Mono:500',
+          ],
         },
       },
     },
