@@ -11,7 +11,11 @@ const ScBlankSlateContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 `
 
 const ScBlankSlate = styled.div`
@@ -19,7 +23,7 @@ const ScBlankSlate = styled.div`
   display: flex;
   flex: 1 1 auto;
   width: 100%;
-  left: 2rem;
+  padding: 1rem 3rem;
   flex-direction: row;
   align-items: center;
 `
