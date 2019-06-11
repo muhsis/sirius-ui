@@ -6,7 +6,7 @@ import { Transition } from 'react-transition-group'
 
 import { Button } from '../../../elements/button'
 import { Text } from '../../../elements/typography'
-import { IconNew } from '../../../icons'
+import { IconWarning } from '../../../icons'
 
 const ANIMATION_DURATION = 200
 const getZoomInAnimation = direction => {
@@ -250,6 +250,19 @@ class PopConfirm extends Component {
      * Text of cancel button text
      */
     cancelButtonText: PropTypes.string,
+    /**
+     * Contextual color option.
+     */
+    variant: PropTypes.oneOf([
+      'primary',
+      'secondary',
+      'success',
+      'info',
+      'warning',
+      'danger',
+      'light',
+      'dark',
+    ]),
   }
 
   static defaultProps = {
@@ -257,6 +270,7 @@ class PopConfirm extends Component {
     isShown: false,
     okButtonText: 'Ok',
     cancelButtonText: 'Cancel',
+    variant: 'secondary',
   }
 
   componentDidMount() {
@@ -302,6 +316,7 @@ class PopConfirm extends Component {
       direction,
       okButtonText,
       cancelButtonText,
+      variant,
       theme,
     } = this.props
 
@@ -322,8 +337,8 @@ class PopConfirm extends Component {
               theme={theme}
             >
               <ScPopConfirmHeader theme={theme}>
-                <Text color="danger" mr={3} fontSize="1.5rem">
-                  <IconNew />
+                <Text color={variant} mr={3} fontSize="1.5rem">
+                  <IconWarning />
                 </Text>
                 <ScPopConfirmText>{title}</ScPopConfirmText>
               </ScPopConfirmHeader>
@@ -336,7 +351,11 @@ class PopConfirm extends Component {
                 >
                   {cancelButtonText}
                 </Button>
-                <Button size="sm" onClick={this.handleConfirm}>
+                <Button
+                  size="sm"
+                  variant={variant}
+                  onClick={this.handleConfirm}
+                >
                   {okButtonText}
                 </Button>
               </ScPopConfirmActions>
