@@ -88,7 +88,7 @@ class ListViewItem extends PureComponent {
               {showcase}
             </MediaItem>
           )}
-          <MediaItem onClick={this.handleClick} mr="auto">
+          <MediaItem onClick={this.handleClick} mr="auto" flex="1">
             {children}
           </MediaItem>
           {actions && <MediaItem ml={3}>{actions}</MediaItem>}
