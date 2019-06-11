@@ -10,6 +10,10 @@ import {
   minWidth,
   minHeight,
 } from 'styled-system'
+
+import CardHeader from './CardHeader'
+import CardFooter from './CardFooter'
+import { ImageFluid } from '../../../elements/image'
 import { Elevations } from '../../../constants'
 
 const ScCard = styled.div`
@@ -28,14 +32,27 @@ const ScCard = styled.div`
   ${zIndex}
 `
 
+const ScCardCover = styled.div`
+  & > img {
+    vertical-align: middle;
+    border-style: none;
+    border-top-left-radius: ${p => p.theme.borderRadius};
+    border-top-right-radius: ${p => p.theme.borderRadius};
+  }
+`
+
 const ScCardBody = styled.div`
-  padding: 1rem 1.5rem;
+  padding: 1rem;
 
   ${textAlign}
 `
 
 class Card extends PureComponent {
   static propTypes = {
+    cover: PropTypes.string,
+    title: PropTypes.node,
+    actions: PropTypes.node,
+    footer: PropTypes.node,
     elevation: PropTypes.number,
     children: PropTypes.node,
   }
@@ -45,9 +62,20 @@ class Card extends PureComponent {
   }
 
   render() {
+    const { title, actions, cover, footer, children, ...props } = this.props
     return (
-      <ScCard {...this.props}>
-        <ScCardBody {...this.props}>{this.props.children}</ScCardBody>
+      <ScCard {...props}>
+        {title && <CardHeader title={title}>{actions}</CardHeader>}
+
+        {cover && (
+          <ScCardCover>
+            <ImageFluid src={cover} />
+          </ScCardCover>
+        )}
+
+        <ScCardBody>{children}</ScCardBody>
+
+        {footer && <CardFooter>{footer}</CardFooter>}
       </ScCard>
     )
   }

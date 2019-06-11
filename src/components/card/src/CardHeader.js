@@ -6,11 +6,10 @@ const ScCardHeader = styled.div`
   border-bottom: 1px solid rgb(228, 231, 235);
   display: flex;
   align-items: center;
-  padding: 1rem;
-  margin: -1rem -1.5rem 1.5rem -1.5rem;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
 `
 
-const ScCardHeaderTitle = styled.h3`
+const ScCardHeaderTitle = styled.h4`
   line-height: 1;
   font-weight: 600;
   margin: 0;
@@ -23,7 +22,7 @@ const ScCardHeaderActions = styled.div`
 
 class CardHeader extends PureComponent {
   static propTypes = {
-    title: PropTypes.string,
+    title: PropTypes.node,
     children: PropTypes.node,
   }
 

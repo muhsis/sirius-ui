@@ -8,8 +8,8 @@ const ScCardFooter = styled.div`
   border-bottom-right-radius: ${p => p.theme.borderRadius};
   display: flex;
   align-items: center;
-  padding: 1rem;
-  margin: 1.5rem -1.5rem -1rem -1.5rem;
+  justify-content: center;
+  padding: 0.75rem 1rem;
 `
 
 class CardFooter extends PureComponent {
