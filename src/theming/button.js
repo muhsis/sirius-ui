@@ -30,24 +30,53 @@ export const btnLineHeightLg = inputBtnLineHeightLg
 export const btnBorderWidth = 1
 export const btnDisabledOpacity = 0.7
 
-export const btnVariant = mixin('btnVariant', variant => p => {
+export const btnVariant = mixin('btnVariant', (variant, outline) => p => {
   const color = colorVariant(variant)(p)
   return css`
-    color: ${colorYik(color)(p)};
-    background-color: ${color};
+    ${!outline &&
+      `
+      color: ${colorYik(color)(p)};
+      background-color: ${color};
+    `}
+
+    ${outline &&
+      `
+      color: ${color};
+      border-color: ${color};
+      background-color: ${p.theme.colors.white};
+    `}
 
     &:focus {
       ${buttonFocus(color)(p)};
+
+      ${!outline &&
+        `
+        color: ${colorYik(color)(p)};
+      `}
+
+      ${outline &&
+        `
+        color:  ${darken(0.05, color)};
+      `}
       /* for links */
-      color: ${colorYik(color)(p)};
       text-decoration: none;
     }
 
     &:not(:disabled):hover,
     &:not(:disabled):active {
-      background-color: ${darken(0.05, color)};
+      ${!outline &&
+        `
+        background-color: ${darken(0.05, color)};
+        color: ${colorYik(color)(p)};
+      `}
+
+      ${outline &&
+        `
+        background-color: ${p.theme.tints[variant]};
+        color: ${darken(0.05, color)};
+      `}
+
       /* for links */
-      color: ${colorYik(color)(p)};
       text-decoration: none;
     }
   `

@@ -35,7 +35,7 @@ const ScButton = styled.button`
   cursor: pointer;
 
   ${p => transitionBase(p)};
-  ${p => btnVariant(p.variant)(p)};
+  ${p => btnVariant(p.variant, p.outline)(p)};
   ${p => sizeStyles[p.size](p)};
 
   ${p =>
@@ -68,9 +68,9 @@ const ScButton = styled.button`
   ${space}
 `
 
-function createStyledComponent(variant, size, loading, block, props) {
+function createStyledComponent(variant, size, loading, block, outline, props) {
   return (
-    <ScButton {...props}>
+    <ScButton outline={outline} {...props}>
       {loading && (
         <>
           <Spinner mr={1} /> Yükleniyor
@@ -111,6 +111,7 @@ class Button extends PureComponent {
      * Whether button will be a block element.
      */
     block: PropTypes.bool,
+    outline: PropTypes.bool,
     ...space.propTypes,
   }
 
@@ -127,6 +128,7 @@ class Button extends PureComponent {
       this.props.size,
       this.props.loading,
       this.props.block,
+      this.props.outline,
       ...this.props,
     )
   }
