@@ -18,16 +18,28 @@ These are the topics that we need to write documentation for.
 
 ## Current Release
 
+### v0.8.11
+
+- [x] Add outline option to `Button` component.
+- [x] `Card` component visual and functional improvements.
+- [x] Added variant option to `Popconfirm` component.
+- [x] Added missing `IconWarning` component.
+- [x] Acceptable functionality for clickable `ListViewItem` component.
+- [x] Exclude actions to trigger click event for `ListViewItem`.
+
 ### v0.8.10
+
 - [x] Add line-height to `MenuItem` component.
 - [x] Ability to render `ListViewItem` component as anchor tag.
 - [x] Change default numeric font to monospace 'IBM Plex Mono'
 - [x] Fix `BlankSlate` component's spacing and positioning issues.
 
 ### v0.8.9
+
 - [x] Fix `PropTypes.oneOf` bug for `InputGroupText` component.
 
 ### v0.8.8
+
 - [x] Inherit `Media` component from `Box`
 - [x] Toggle visibility of `Dropdown` component's content window rather than only opening.
 - [x] Move elevation styles to constants
