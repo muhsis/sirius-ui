@@ -18,6 +18,10 @@ These are the topics that we need to write documentation for.
 
 ## Current Release
 
+### v0.8.12
+
+- [x] Add flex: 1 to `ListViewItem` body element.
+
 ### v0.8.11
 
 - [x] Add outline option to `Button` component.
