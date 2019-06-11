@@ -73,60 +73,63 @@ class IndexPage extends Component {
 
             <Box mt={4}>
               <ListView>
-                <ListViewItem>
-                  <Media>
-                    <MediaItem mr="auto">
-                      <Text as={ScLink} to="/colors">
-                        Item clickable element
-                      </Text>
-                    </MediaItem>
-                    <MediaItem>
+                <ListViewItem
+                  actions={
+                    <ButtonIcon type="button">
+                      <IconDotsThreeHorizontal />
+                    </ButtonIcon>
+                  }
+                >
+                  This item does not have click event handler.
+                </ListViewItem>
+
+                <ListViewItem
+                  clickable
+                  handleSelected={this.itemSelected}
+                  actions={
+                    <ButtonIcon type="button">
+                      <IconDotsThreeHorizontal />
+                    </ButtonIcon>
+                  }
+                >
+                  This item have click event handler.
+                </ListViewItem>
+
+                <ListViewItem
+                  clickable
+                  handleSelected={this.itemSelected}
+                  showcase={
+                    <Text color="primary" fontSize="2rem">
+                      <IconAircraft />
+                    </Text>
+                  }
+                  actions={
+                    <Dropdown
+                      content={
+                        <Menu>
+                          <MenuItem as="a" href="#" target="_blank">
+                            <IconAddress mr={3} />
+                            Sample Menu Item
+                          </MenuItem>
+                          <MenuDivider />
+                          <MenuItem variant="success">
+                            <IconAircraft mr={3} />
+                            Sample Menu Item
+                          </MenuItem>
+                          <MenuItem variant="danger">
+                            <IconLogOut mr={3} /> Çıkış Yap
+                          </MenuItem>
+                        </Menu>
+                      }
+                    >
                       <ButtonIcon type="button">
                         <IconDotsThreeHorizontal />
                       </ButtonIcon>
-                    </MediaItem>
-                  </Media>
-                </ListViewItem>
-
-                <ListViewItem clickable handleSelected={this.itemSelected}>
-                  <Media>
-                    <MediaItem mr="auto">Item unclickable element</MediaItem>
-                    <MediaItem>
-                      <ButtonIcon type="button">
-                        <IconDotsThreeHorizontal />
-                      </ButtonIcon>
-                    </MediaItem>
-                  </Media>
-                </ListViewItem>
-
-                <ListViewItem clickable handleSelected={this.itemSelected}>
-                  <Media>
-                    <MediaItem mr="auto">Clickable element</MediaItem>
-                    <MediaItem>
-                      <Dropdown
-                        content={
-                          <Menu>
-                            <MenuItem as="a" href="#" target="_blank">
-                              <IconAddress mr={3} />
-                              Sample Menu Item
-                            </MenuItem>
-                            <MenuDivider />
-                            <MenuItem variant="success">
-                              <IconAircraft mr={3} />
-                              Sample Menu Item
-                            </MenuItem>
-                            <MenuItem variant="danger">
-                              <IconLogOut mr={3} /> Çıkış Yap
-                            </MenuItem>
-                          </Menu>
-                        }
-                      >
-                        <ButtonIcon type="button">
-                          <IconDotsThreeHorizontal />
-                        </ButtonIcon>
-                      </Dropdown>
-                    </MediaItem>
-                  </Media>
+                    </Dropdown>
+                  }
+                >
+                  This item also have click event handler, also a dropdown
+                  element and an icon.
                 </ListViewItem>
               </ListView>
             </Box>

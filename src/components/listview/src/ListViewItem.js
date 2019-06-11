@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import styled, { withTheme, css } from 'styled-components'
 
+import { Media, MediaItem } from '../../media'
+
 const ScListViewItem = styled.div`
   background-color: ${p => p.theme.colors.white};
   border-bottom: 1px solid ${p => p.theme.colors.smoke};
@@ -55,7 +57,15 @@ class ListViewItem extends PureComponent {
     /**
      * Children of list view item.
      */
-    children: PropTypes.node,
+    children: PropTypes.node.isRequired,
+    /**
+     * Left-hand side of list view item.
+     */
+    showcase: PropTypes.node,
+    /**
+     * This is the place where you put the menu.
+     */
+    actions: PropTypes.node,
   }
 
   static defaultProps = {
@@ -69,9 +79,20 @@ class ListViewItem extends PureComponent {
   }
 
   render() {
+    const { showcase, children, actions, ...props } = this.props
     return (
-      <ScListViewItem onClick={this.handleClick} {...this.props}>
-        {this.props.children}
+      <ScListViewItem {...props}>
+        <Media>
+          {showcase && (
+            <MediaItem onClick={this.handleClick} mr={3}>
+              {showcase}
+            </MediaItem>
+          )}
+          <MediaItem onClick={this.handleClick} mr="auto">
+            {children}
+          </MediaItem>
+          {actions && <MediaItem ml={3}>{actions}</MediaItem>}
+        </Media>
       </ScListViewItem>
     )
   }
