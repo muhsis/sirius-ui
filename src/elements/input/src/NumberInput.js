@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import styled, { css, withTheme } from 'styled-components'
-import { space, width } from 'styled-system'
+import { space, width, color } from 'styled-system'
 import NumberFormat from 'react-number-format'
 
 import { controlFocus, transitionBase } from '../../../theming'
@@ -38,7 +38,7 @@ const sizeStyles = {
 
 const ScNumberInput = styled(NumberFormat)`
   color: ${p => p.theme.inputTextColor};
-  font-family: ${p => p.theme.fontFamily};
+  font-family: ${p => p.theme.fontFamilyMonospace};
   display: block;
   width: 100%;
 
@@ -78,6 +78,7 @@ const ScNumberInput = styled(NumberFormat)`
 
   ${space}
   ${width}
+  ${color}
 `
 
 function createStyledComponent(size, inline, props) {
