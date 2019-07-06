@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import styled, { withTheme } from 'styled-components'
 import Datetime from 'react-datetime'
 import { TextInput } from '../../..'
@@ -230,20 +231,45 @@ const ScDatetime = styled(Datetime)`
 `
 
 class DatePicker extends Component {
+  static propTypes = {
+    size: PropTypes.oneOf(['sm', 'md', 'lg']),
+    transparent: PropTypes.bool,
+    width: PropTypes.number,
+    placeholder: PropTypes.string,
+  }
+
+  static defaultProps = {
+    size: 'md',
+    transparent: false,
+    width: 'auto',
+  }
+
   renderInput = props => {
+    const { size, transparent, width, placeholder } = this.props
+
     return (
       <div>
-        <TextInput inline mr={1} {...props} />
+        <TextInput
+          inline
+          size={size}
+          transparent={transparent}
+          width={width}
+          placeholder={placeholder}
+          mr={1}
+          {...props}
+        />
       </div>
     )
   }
 
   render() {
+    const { theme, ...props } = this.props
     return (
       <ScDatetime
         closeOnSelect
         renderInput={this.renderInput}
-        theme={this.props.theme}
+        theme={theme}
+        {...props}
       />
     )
   }
