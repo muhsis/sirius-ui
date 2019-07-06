@@ -5,6 +5,7 @@ import Datetime from 'react-datetime'
 import { TextInput } from '../../..'
 
 const ScDatetime = styled(Datetime)`
+  display: inline-block;
   position: relative;
 
   &.rdtOpen .rdtPicker {
