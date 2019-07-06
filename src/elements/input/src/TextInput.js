@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import styled, { css, withTheme } from 'styled-components'
-import { space } from 'styled-system'
+import { space, layout } from 'styled-system'
 import { controlFocus, transitionBase } from '../../../theming'
 import { InputGroup } from '../../form'
 
@@ -45,7 +45,7 @@ const ScInput = styled.input`
   background-color: white;
   background-clip: padding-box;
   border: ${p => p.theme.inputBorderWidth} solid
-    ${p => p.theme.inputBorderColor};
+    ${p => (!p.transparent ? p.theme.inputBorderColor : 'transparent')};
 
   ${p =>
     p.inline &&
@@ -62,6 +62,10 @@ const ScInput = styled.input`
     color: ${p => p.theme.inputPlaceholderText};
     /* Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526. */
     opacity: 1;
+  }
+
+  &:hover {
+    border-color: ${p => p.theme.inputBorderColor};
   }
 
   &:focus {
@@ -94,10 +98,13 @@ const ScInput = styled.input`
   }
 
   ${space}
+  ${layout}
 `
 
-function createStyledComponent(size, inline, props) {
-  return <ScInput size={size} inline={inline} {...props} />
+function createStyledComponent(size, inline, transparent, props) {
+  return (
+    <ScInput size={size} inline={inline} transparent={transparent} {...props} />
+  )
 }
 
 class TextInput extends PureComponent {
@@ -110,18 +117,25 @@ class TextInput extends PureComponent {
      * Pass this prop if the input is display: inline-block and width: auto.
      */
     inline: PropTypes.bool,
+    /**
+     * Pass this prop if input is transparent. (Shows border when hovered.)
+     */
+    transparent: PropTypes.bool,
     ...space.propTypes,
+    ...layout.propTypes,
   }
 
   static defaultProps = {
     size: 'md',
     inline: false,
+    transparent: false,
   }
 
   render() {
     return createStyledComponent(
       this.props.size,
       this.props.inline,
+      this.props.transparent,
       ...this.props,
     )
   }
