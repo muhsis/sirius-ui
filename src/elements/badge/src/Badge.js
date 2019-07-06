@@ -37,7 +37,15 @@ const ScBadgeContainer = styled.div`
   ${space}
 `
 
-function createStyledComponent(variant, children, count, isDot, text, props) {
+function createStyledComponent(
+  variant,
+  children,
+  count,
+  isDot,
+  text,
+  interval,
+  props,
+) {
   const variantStyle = getVariantStyle(variant, props)
   const pulseAnimation = getPulseAnimation(variant, props)
 
@@ -73,7 +81,7 @@ function createStyledComponent(variant, children, count, isDot, text, props) {
         transform: none;
         right: unset;
         box-shadow: 0 0 0 0 ${p => rgba(p.theme.colors[variant], 0.4)};
-        animation: ${pulseAnimation} 6s infinite;
+        animation: ${pulseAnimation} ${interval}ms infinite;
       `}
 
     ${children &&
@@ -141,6 +149,10 @@ class Badge extends PureComponent {
     count: PropTypes.number,
     isDot: PropTypes.bool,
     text: PropTypes.string,
+    /**
+     * Animation interval in miliseconds.
+     */
+    interval: PropTypes.number,
     variant: PropTypes.oneOf([
       'primary',
       'secondary',
@@ -156,6 +168,7 @@ class Badge extends PureComponent {
 
   static defaultProps = {
     count: 0,
+    interval: 6000,
     variant: 'danger',
     isDot: false,
   }
@@ -167,6 +180,7 @@ class Badge extends PureComponent {
       this.props.count,
       this.props.isDot,
       this.props.text,
+      this.props.interval,
       ...this.props,
     )
   }
