@@ -107,7 +107,7 @@ class SystemPage extends Component {
             </FormGroup>
           </Box>
 
-          <TextArea rows="5" placeholder="Hey, Ho!" mb={3} />
+          <TextArea rows={5} placeholder="Hey, Ho!" mb={3} />
           <TextInput value="Shit" />
           <Combobox
             isMulti

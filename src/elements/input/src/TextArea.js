@@ -29,16 +29,18 @@ const ScTextarea = styled.textarea`
   display: block;
   width: 100%;
   border-width: ${p => p.theme.inputBorderWidth};
-  border-color: ${p => p.theme.inputBorderColor};
+  border-color: ${p =>
+    !p.transparent ? p.theme.inputBorderColor : 'transparent'};
   border-style: solid;
   background-clip: padding-box;
   height: auto;
   overflow: auto;
-  resize: vertical;
   min-height: 60px;
   line-height: ${p => p.theme.inputLineHeight};
   color: ${p => p.theme.inputTextColor};
   font-family: ${p => p.theme.fontFamily};
+
+  resize: ${p => (p.autoResize ? 'none' : 'vertical')};
 
   &::placeholder {
     color: ${p => p.theme.inputPlaceholderText};
@@ -46,6 +48,10 @@ const ScTextarea = styled.textarea`
 
   &:focus {
     ${p => controlFocus(p.theme.colors.primary)(p)}
+  }
+
+  &:hover {
+    border-color: ${p => p.theme.inputBorderColor};
   }
 
   &:disabled {
@@ -59,22 +65,39 @@ const ScTextarea = styled.textarea`
   ${space}
 `
 
-function createStyledComponent(size, props) {
-  return <ScTextarea size={size} {...props} />
-}
-
 class TextArea extends PureComponent {
   static propTypes = {
+    rows: PropTypes.number,
+    autoResize: PropTypes.bool,
+    transparent: PropTypes.bool,
     size: PropTypes.oneOf(['sm', 'md', 'lg']),
     ...space.propTypes,
   }
 
   static defaultProps = {
+    rows: 3,
+    autoResize: false,
     size: 'md',
   }
 
+  handleChange = event => {
+    if (!this.props.autoResize) return
+
+    const lineHeight = 22
+    // eslint-disable-next-line no-bitwise
+    const currentRows = ~~(event.target.scrollHeight / lineHeight)
+    const { rows } = this.props
+
+    event.target.rows = currentRows <= rows ? rows : currentRows
+    if (currentRows >= rows) {
+      event.target.scrollTop = event.target.scrollHeight
+    }
+  }
+
   render() {
-    return createStyledComponent(this.props.size, ...this.props)
+    const { rows, ...props } = this.props
+
+    return <ScTextarea rows={rows} {...props} onChange={this.handleChange} />
   }
 }
 TextArea.displayName = 'TextArea'

@@ -1,5 +1,5 @@
 <form>
-  <SelectInput class="form-control" id="exampleFormControlSelect2" size="sm" mb={2}>
+  <SelectInput size="sm" mb={2}>
     <option>Option Nr. 1</option>
     <option>Option Nr. 2</option>
     <option>Option Nr. 3</option>
@@ -7,7 +7,7 @@
     <option>Option Nr. 5</option>
   </SelectInput>
 
-  <SelectInput class="form-control" id="exampleFormControlSelect3" mb={2}>
+  <SelectInput mb={2}>
     <option>Option Nr. 1</option>
     <option>Option Nr. 2</option>
     <option>Option Nr. 3</option>
@@ -15,7 +15,7 @@
     <option>Option Nr. 5</option>
   </SelectInput>
 
-  <SelectInput class="form-control" id="exampleFormControlSelect3" size="lg">
+  <SelectInput size="lg">
     <option>Option Nr. 1</option>
     <option>Option Nr. 2</option>
     <option>Option Nr. 3</option>

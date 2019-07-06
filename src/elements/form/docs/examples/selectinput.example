@@ -1,5 +1,5 @@
 <form>
-  <SelectInput class="form-control" id="exampleFormControlSelect1">
+  <SelectInput>
     <option>Option Nr. 1</option>
     <option>Option Nr. 2</option>
     <option>Option Nr. 3</option>

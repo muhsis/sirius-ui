@@ -20,7 +20,7 @@
     <FormGroup>
       <FormLabel mb={0}>Another Field</FormLabel>
       <FormHint mt={0}>You can use FormHint to give message about input to inputs in general.</FormHint>
-      <TextArea name="anotherField" id="anotherField" rows="3"></TextArea>
+      <TextArea name="anotherField" id="anotherField" rows={3}></TextArea>
     </FormGroup>
 
     <Button type="button" mr={1}>Submit</Button>
