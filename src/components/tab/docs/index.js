@@ -1,6 +1,6 @@
 import React from 'react'
 import { Tab, TabGroup } from '..'
-import { Paragraph, Code, Box, Button } from '../../..'
+import { Paragraph, Code, Box, Button, Text, IconAddUser } from '../../..'
 
 /* eslint-disable import/no-unresolved, import/no-webpack-loader-syntax */
 import sourceTab from '!raw-loader!../src/Tab'
@@ -14,7 +14,7 @@ const introduction = (
   <Paragraph>Tabs make it easy to switch between different views.</Paragraph>
 )
 
-const scope = { Box, Button, TabGroup, Tab }
+const scope = { Box, Button, TabGroup, Tab, Text, IconAddUser }
 
 const components = [
   {

@@ -6,7 +6,7 @@ const ScTab = styled.div``
 
 class Tab extends PureComponent {
   static propTypes = {
-    label: PropTypes.string,
+    label: PropTypes.node,
   }
 
   render() {

@@ -49,7 +49,7 @@ const ScTabNavItem = styled.span`
 `
 
 const ScTabBody = styled.div`
-  padding: 1rem 0.5rem 0;
+  padding: 1rem 0 0;
 `
 
 class TabGroup extends PureComponent {
