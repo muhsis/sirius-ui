@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import {
   space,
+  layout,
   width,
   color,
   display,
@@ -37,6 +38,7 @@ const ScBox = styled.div`
   box-sizing: border-box;
 
   ${space}
+  ${layout}
   ${width}
   ${color}
   ${display}
@@ -74,6 +76,7 @@ const ScBox = styled.div`
 class Box extends PureComponent {
   static propTypes = {
     ...space.propTypes,
+    ...layout.propTypes,
     ...width.propTypes,
     ...color.propTypes,
     ...display.propTypes,
