@@ -18,6 +18,28 @@ These are the topics that we need to write documentation for.
 
 ## Current Release
 
+### v0.8.14
+
+- [ ] Add stepper component.
+- [ ] `Dropdown` component now closes when escape key is pressed.
+- [ ] ListView columns header?
+- [ ] ListView item should have more than one child and flex layout.
+- [ ] We need to have some kind of detail indicator for LVI.
+- [ ] New Table styles. (HelpScout)
+
+### v0.8.13
+
+- [x] Update styled-system version to `5.0.12` from `3.2.1`.
+- [x] Added `autoResize` and `transparent` options to `TextArea` component.
+- [x] `Badge` component now gets `interval` as prop.
+- [x] Fix `TabGroup` content spacing.
+- [x] `Tab` component can have `label` prop as node.
+- [x] `NumberInput` has monospace font now.
+- [x] Add new `layout` property to `Box` component.
+- [x] Add `Popover` component. Missing documentation though.
+- [x] Add `AutoresizeInput` component.
+- [x] `DatePicker` improvements.
+
 ### v0.8.12
 
 - [x] Add flex: 1 to `ListViewItem` body element.
