@@ -5,37 +5,36 @@ import { space } from 'styled-system'
 
 import { Spinner } from '../../../components/spinner'
 import { transitionBase } from '../../../theming'
-import { btnVariant } from '../../../theming/button'
 
 const sizeStyles = {
   sm: p => css`
-    padding: ${p.theme.btnPaddingYSm} ${p.theme.btnPaddingXSm};
     font-size: ${p.theme.fontSizeSm};
     border-radius: ${p.theme.borderRadiusSm};
     line-height: ${p.theme.btnLineHeightSm};
   `,
   md: p => css`
-    padding: ${p.theme.btnPaddingY} ${p.theme.btnPaddingX};
     font-size: ${p.theme.fontSizeBase};
     border-radius: ${p.theme.borderRadiusSm};
     line-height: ${p.theme.btnLineHeight};
   `,
   lg: p => css`
-    padding: ${p.theme.btnPaddingYLg} ${p.theme.btnPaddingXLg};
     font-size: ${p.theme.fontSizeLg};
     border-radius: ${p.theme.borderRadiusLg};
     line-height: ${p.theme.btnLineHeightLg};
   `,
 }
 
-const ScButton = styled.a`
+const ScButton = styled.button`
   display: inline-block;
   border-width: ${p => p.theme.btnBorderWidth};
   font-family: ${p => p.theme.fontFamily};
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: ${p => p.theme.colors[p.variant]};
   cursor: pointer;
 
   ${p => transitionBase(p)};
-  ${p => btnVariant(p.variant)(p)};
   ${p => sizeStyles[p.size](p)};
 
   ${p =>
@@ -45,15 +44,13 @@ const ScButton = styled.a`
       cursor: not-allowed;
     `}
 
-  ${p =>
-    p.block &&
-    `
-      display: block;
-      width: 100%;
-    `}
-
   /* When used as link */
   text-decoration: none;
+
+  &:active,
+  &:focus {
+    background-color: ${p => p.theme.tints[p.variant]};
+  }
 
   &:disabled {
     cursor: not-allowed;
@@ -65,7 +62,7 @@ const ScButton = styled.a`
 
 function createStyledComponent(variant, size, loading, props) {
   return (
-    <ScButton {...props}>
+    <ScButton variant={variant} size={size} {...props}>
       {loading && (
         <>
           <Spinner mr={1} /> Yükleniyor
