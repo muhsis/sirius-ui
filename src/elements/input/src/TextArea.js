@@ -4,24 +4,33 @@ import styled, { css, withTheme } from 'styled-components'
 import { space } from 'styled-system'
 import { controlFocus, transitionBase } from '../../../theming'
 
+const lineHeights = {
+  sm: 21.5,
+  md: 22,
+  lg: 24,
+}
+
 const sizeStyles = {
   sm: p => css`
     padding: ${p.theme.inputPaddingYSm} ${p.theme.inputPaddingXSm};
     font-size: ${p.theme.fontSizeSm};
     line-height: ${p.theme.inputLineHeightSm};
     border-radius: ${p.theme.borderRadiusSm};
+    min-height: ${lineHeights[p.size] * p.rows}px;
   `,
   md: p => css`
     padding: ${p.theme.inputPaddingY} ${p.theme.inputPaddingX};
     font-size: ${p.theme.fontSizeBase};
     line-height: ${p.theme.inputLineHeight};
     border-radius: ${p.theme.borderRadius};
+    min-height: ${lineHeights[p.size] * p.rows}px;
   `,
   lg: p => css`
     padding: ${p.theme.inputPaddingYLg} ${p.theme.inputPaddingXLg};
     font-size: ${p.theme.fontSizeLg};
     line-height: ${p.theme.inputLineHeightLg};
     border-radius: ${p.theme.borderRadiusLg};
+    min-height: ${lineHeights[p.size] * p.rows}px;
   `,
 }
 
@@ -34,8 +43,7 @@ const ScTextarea = styled.textarea`
   border-style: solid;
   background-clip: padding-box;
   height: auto;
-  overflow: auto;
-  min-height: 60px;
+  overflow: ${p => (p.autoResize ? 'hidden' : 'auto')};
   line-height: ${p => p.theme.inputLineHeight};
   color: ${p => p.theme.inputTextColor};
   font-family: ${p => p.theme.fontFamily};
@@ -75,7 +83,7 @@ class TextArea extends PureComponent {
   }
 
   static defaultProps = {
-    rows: 3,
+    rows: 2,
     autoResize: false,
     size: 'md',
   }
@@ -83,9 +91,8 @@ class TextArea extends PureComponent {
   handleChange = event => {
     if (!this.props.autoResize) return
 
-    const lineHeight = 22
-    // eslint-disable-next-line no-bitwise
-    const currentRows = ~~(event.target.scrollHeight / lineHeight)
+    const lineHeight = lineHeights[this.props.size]
+    const currentRows = Math.ceil(event.target.scrollHeight / lineHeight)
     const { rows } = this.props
 
     event.target.rows = currentRows <= rows ? rows : currentRows
