@@ -1,7 +1,22 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import styled, { withTheme } from 'styled-components'
+import styled, { css, withTheme } from 'styled-components'
 import { colorYik } from '../../../theming/color'
+
+const sizeStyles = {
+  sm: p => css`
+    padding: 0.4rem 0.5rem;
+    font-size: ${p.theme.fontSizeSm};
+  `,
+  md: p => css`
+    padding: 0.5rem 0.75rem;
+    font-size: ${p.theme.fontSizeBase};
+  `,
+  lg: () => css`
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  `,
+}
 
 const ScMenuItem = styled.button`
   border: none;
@@ -18,6 +33,8 @@ const ScMenuItem = styled.button`
   padding: 0.5rem 0.75rem;
   transition: color 0.15s, background-color 0.15s;
   text-decoration: none;
+
+  ${p => sizeStyles[p.size]};
 
   & svg {
     color: ${p => p.theme.colors[p.variant]};
@@ -53,6 +70,7 @@ class MenuItem extends PureComponent {
       'light',
       'dark',
     ]),
+    size: PropTypes.oneOf(['sm', 'md', 'lg']),
   }
 
   static defaultProps = {
@@ -60,10 +78,10 @@ class MenuItem extends PureComponent {
   }
 
   render() {
-    const { variant, children, ...props } = this.props
+    const { variant, size, children, ...props } = this.props
 
     return (
-      <ScMenuItem variant={variant} {...props}>
+      <ScMenuItem variant={variant} size={size} {...props}>
         {children}
       </ScMenuItem>
     )
