@@ -8,10 +8,10 @@ export const inputSelectPaddingY = '.23rem'
 export const inputSelectPaddingX = '.875rem'
 export const inputBtnLineHeight = lineHeightBase
 
-export const inputBtnPaddingYSm = '.15rem'
-export const inputBtnPaddingXSm = '.5rem'
+export const inputBtnPaddingYSm = '0'
+export const inputBtnPaddingXSm = '.25rem'
 export const inputSelectPaddingYSm = '0'
-export const inputSelectPaddingXSm = '.5rem'
+export const inputSelectPaddingXSm = '.25rem'
 export const inputBtnLineHeightSm = lineHeightSm
 
 export const inputBtnPaddingYLg = '.5rem'
