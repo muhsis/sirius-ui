@@ -18,7 +18,7 @@ These are the topics that we need to write documentation for.
 
 ## Current Release
 
-### v0.8.14
+### v0.8.15
 
 - [ ] Add stepper component.
 - [ ] `Dropdown` component now closes when escape key is pressed.
@@ -26,6 +26,20 @@ These are the topics that we need to write documentation for.
 - [ ] ListView item should have more than one child and flex layout.
 - [ ] We need to have some kind of detail indicator for LVI.
 - [ ] New Table styles. (HelpScout)
+
+### v0.8.14
+
+- [x] Fix `TextArea` component line height for autoResize functionality.
+- [x] `TextInput`, `AutoresizeInput` and `DatePicker` gets typography props now.
+- [x] `NumberInput` component can be transparent and be used with `InputGroup` component now.
+- [x] Add `AutoresizeNumberInput` component for resizable money/number input functionality.
+- [x] `Combobox` component now takes transparent option.
+- [x] Add size option to `Menu` component.
+- [x] Add minimal variant to `TextInput` component.
+- [x] Change `ButtonLink` component to be more usable.
+- [x] You can apply maxWidth to `AutosizeInput` now.
+- [x] `InputGroupText` component now gets size option.
+- [x] `Dropdown` component now gets placement option.
 
 ### v0.8.13
 
