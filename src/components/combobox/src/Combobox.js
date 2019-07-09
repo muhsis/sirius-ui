@@ -40,13 +40,33 @@ const sizeStyles = {
   `,
 }
 
+const optionSizeStyles = {
+  sm: p => css`
+    padding: 0.25rem 0.5rem;
+    font-size: ${p.theme.fontSizeSm};
+  `,
+  md: p => css`
+    padding: ${p.theme.inputSelectPaddingY} ${p.theme.inputSelectPaddingX};
+    font-size: ${p.theme.fontSizeBase};
+  `,
+  lg: p => css`
+    padding: ${p.theme.inputSelectPaddingYLg} ${p.theme.inputSelectPaddingXLg};
+    font-size: ${p.theme.fontSizeLg};
+  `,
+}
+
 const ScReactSelect = styled(ReactSelect)`
   ${space}
 
   & .select__control {
     border-width: ${p => p.theme.inputBorderWidth};
-    border-color: ${p => p.theme.inputBorderColor};
+    border-color: ${p =>
+      !p.transparent ? p.theme.inputBorderColor : 'transparent'};
     min-height: unset;
+
+    &:hover {
+      border-color: ${p => p.theme.inputBorderColor};
+    }
 
     ${p => sizeBorderStyles[p.size](p)};
   }
@@ -89,7 +109,19 @@ const ScReactSelect = styled(ReactSelect)`
 
   & .select__dropdown-indicator {
     color: ${p => p.theme.colors.silver};
-    padding: 0 0.5rem;
+
+    ${p =>
+      p.size === 'sm' &&
+      `
+      padding: 0 0.25rem;
+    `}
+
+    ${p =>
+      p.size === 'md' ||
+      (p.size === 'lg' &&
+        `
+      padding: 0 0.5rem;
+    `)}
   }
 
   & .select__menu {
@@ -99,6 +131,7 @@ const ScReactSelect = styled(ReactSelect)`
   & .select__option {
     cursor: pointer;
     transition: background-color 0.15s, color 0.15s;
+    ${p => optionSizeStyles[p.size](p)};
 
     &:hover {
       background-color: ${p => p.theme.tints.primary};
@@ -132,11 +165,16 @@ const ScReactSelect = styled(ReactSelect)`
 class Combobox extends PureComponent {
   static propTypes = {
     size: PropTypes.oneOf(['sm', 'md', 'lg']),
+    /**
+     * Pass this prop if input is transparent. (Shows border when hovered.)
+     */
+    transparent: PropTypes.bool,
     ...space.propTypes,
   }
 
   static defaultProps = {
     size: 'md',
+    transparent: false,
   }
 
   render() {
