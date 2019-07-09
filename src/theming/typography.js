@@ -4,7 +4,7 @@ export const fontFamilyBase =
 export const fontFamilyDisplay =
   '"Mukta", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
 export const fontFamilyMonospace =
-  '"IBM Plex Mono", "SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace'
+  '"Titillium Web", "SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace'
 export const fontFamily = fontFamilyBase
 
 export const fontSizeBase = '.925rem'
