@@ -246,7 +246,7 @@ class DatePicker extends Component {
   }
 
   renderInput = props => {
-    const { size, transparent, width, placeholder } = this.props
+    const { size, transparent, width, placeholder, ...otherProps } = this.props
 
     return (
       <div>
@@ -258,6 +258,7 @@ class DatePicker extends Component {
           placeholder={placeholder}
           mr={1}
           {...props}
+          {...otherProps}
         />
       </div>
     )
