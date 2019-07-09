@@ -34,7 +34,7 @@ module.exports = {
         google: {
           families: [
             'Mukta:400,500,600,700,800:latin-ext',
-            'IBM Plex Mono:500',
+            'Titillium Web:400,600',
           ],
         },
       },

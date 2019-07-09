@@ -42,6 +42,7 @@ class LayoutPage extends Component {
         <Sidebar />
         <Box p={3} ml={250} mb={5}>
           <Dropdown
+            placement="bottom-left"
             content={
               <Menu>
                 <MenuItem as="a" href="#" target="_blank">

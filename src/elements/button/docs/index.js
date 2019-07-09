@@ -4,7 +4,13 @@ import ButtonLink from '../src/ButtonLink'
 import ButtonIcon from '../src/ButtonIcon'
 import { Box } from '../../box'
 import { Paragraph, Code } from '../../typography'
-import { IconClipboard } from '../../../icons'
+import {
+  IconClipboard,
+  IconTrash,
+  IconSquaredPlus,
+  IconSquaredCross,
+  IconEdit,
+} from '../../../icons'
 
 // Code examples
 import exampleBasic from './examples/basic.example'
@@ -28,7 +34,17 @@ const introduction = (
   </Paragraph>
 )
 
-const scope = { Button, ButtonLink, ButtonIcon, Box, IconClipboard }
+const scope = {
+  Button,
+  ButtonLink,
+  ButtonIcon,
+  Box,
+  IconClipboard,
+  IconTrash,
+  IconSquaredPlus,
+  IconSquaredCross,
+  IconEdit,
+}
 
 const components = [
   {

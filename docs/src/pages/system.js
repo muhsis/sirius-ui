@@ -86,8 +86,8 @@ class SystemPage extends Component {
           <Box mb={5}>
             <FormGroup>
               <InputGroup>
-                <InputGroupText>@</InputGroupText>
-                <TextInput type="text" />
+                <InputGroupText size="sm">Açıklama</InputGroupText>
+                <TextInput type="text" size="sm" />
               </InputGroup>
             </FormGroup>
 
