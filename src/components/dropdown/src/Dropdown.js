@@ -32,6 +32,68 @@ const closeAnimation = keyframes`
   }
 `
 
+const getDirectionalStyles = direction => {
+  switch (direction) {
+    case 'right-top':
+      return css`
+        left: 100%;
+        top: 0;
+        margin-left: 0.5rem;
+      `
+    case 'right-bottom':
+      return css`
+        left: 100%;
+        bottom: 0;
+        margin-left: 0.5rem;
+      `
+
+    case 'left-top':
+      return css`
+        right: 100%;
+        top: 0;
+        margin-right: 0.5rem;
+      `
+
+    case 'left-bottom':
+      return css`
+        right: 100%;
+        bottom: 0;
+        margin-right: 0.5rem;
+      `
+    case 'bottom-left':
+      return css`
+        top: 100%;
+        left: 0;
+        margin-top: 0.5rem;
+      `
+
+    case 'bottom-right':
+      return css`
+        top: 100%;
+        right: 0;
+        margin-top: 0.5rem;
+      `
+
+    case 'top-left':
+      return css`
+        bottom: 100%;
+        left: 0;
+        margin-bottom: 0.5rem;
+      `
+
+    case 'top-right':
+      return css`
+        bottom: 100%;
+        right: 0;
+        margin-bottom: 0.5rem;
+      `
+  }
+
+  return css`
+    margin-top: 0.5rem;
+  `
+}
+
 const ScDropdown = styled.div`
   display: inline-block;
   position: relative;
@@ -45,23 +107,10 @@ const ScDropdownContent = styled.div`
   border: 1px solid ${p => p.theme.colors.smoke};
   border-radius: ${p => p.theme.borderRadius};
   position: absolute;
-  top: 100%;
-  margin-top: 0.5rem;
   z-index: 12;
 
   ${Elevations[1]};
-
-  ${p =>
-    p.direction === 'right' &&
-    css`
-      right: 0;
-    `}
-
-  ${p =>
-    p.direction === 'left' &&
-    css`
-      left: 0;
-    `}
+  ${p => getDirectionalStyles(p.placement)};
 
   min-width: ${p => p.width}px;
 
@@ -95,15 +144,24 @@ class Dropdown extends PureComponent {
     width: PropTypes.number,
 
     /**
-     * Direction of dropdown content
+     * Positioning of the Dropdown.
      */
-    direction: PropTypes.oneOf(['right', 'left']),
+    placement: PropTypes.oneOf([
+      'left-top',
+      'left-bottom',
+      'right-top',
+      'right-bottom',
+      'top-left',
+      'top-right',
+      'bottom-left',
+      'bottom-right',
+    ]),
   }
 
   static defaultProps = {
     isShown: false,
     width: 200,
-    direction: 'right',
+    placement: 'bottom-right',
   }
 
   constructor(props) {
@@ -150,7 +208,7 @@ class Dropdown extends PureComponent {
 
   render() {
     const { isShown } = this.state
-    const { children, content, width, direction } = this.props
+    const { children, content, width, placement } = this.props
 
     return (
       <ScDropdown onClick={this.handleToggle} ref={this.setWrapperRef}>
@@ -169,7 +227,7 @@ class Dropdown extends PureComponent {
                   role="menu"
                   data-state={state}
                   width={width}
-                  direction={direction}
+                  placement={placement}
                 >
                   {typeof content === 'function'
                     ? content({ close: this.handleHide })
