@@ -1,10 +1,11 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import styled, { css, withTheme } from 'styled-components'
-import { space, width, color } from 'styled-system'
+import { space, layout, color, typography } from 'styled-system'
 import NumberFormat from 'react-number-format'
 
 import { controlFocus, transitionBase } from '../../../theming'
+import { InputGroup } from '../../form'
 
 const sizeStyles = {
   sm: p => css`
@@ -39,6 +40,7 @@ const sizeStyles = {
 const ScNumberInput = styled(NumberFormat)`
   color: ${p => p.theme.inputTextColor};
   font-family: ${p => p.theme.fontFamilyMonospace};
+  font-weight: 600;
   display: block;
   width: 100%;
 
@@ -46,7 +48,7 @@ const ScNumberInput = styled(NumberFormat)`
   background-color: white;
   background-clip: padding-box;
   border: ${p => p.theme.inputBorderWidth} solid
-    ${p => p.theme.inputBorderColor};
+    ${p => (!p.transparent ? p.theme.inputBorderColor : 'transparent')};
   text-align: right;
 
   ${p =>
@@ -68,6 +70,10 @@ const ScNumberInput = styled(NumberFormat)`
     ${p => controlFocus(p.theme.colors.primary)(p)}
   }
 
+  &:hover {
+    border-color: ${p => p.theme.inputBorderColor};
+  }
+
   &:disabled {
     background-color: ${p => p.theme.inputDisabledBgColor};
     color: ${p => p.theme.inputDisabledText};
@@ -76,13 +82,38 @@ const ScNumberInput = styled(NumberFormat)`
   ${p => transitionBase(p)};
   ${p => sizeStyles[p.size](p)};
 
+  ${InputGroup} & {
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+    margin-bottom: 0;
+  }
+
+  ${InputGroup} &:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  ${InputGroup} &:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
   ${space}
-  ${width}
+  ${layout}
+  ${typography}
   ${color}
 `
 
-function createStyledComponent(size, inline, props) {
-  return <ScNumberInput size={size} inline={inline} {...props} />
+function createStyledComponent(size, inline, transparent, props) {
+  return (
+    <ScNumberInput
+      size={size}
+      inline={inline}
+      transparent={transparent}
+      {...props}
+    />
+  )
 }
 
 class NumberInput extends PureComponent {
@@ -96,22 +127,30 @@ class NumberInput extends PureComponent {
      */
     inline: PropTypes.bool,
     /**
+     * Pass this prop if input is transparent. (Shows border when hovered.)
+     */
+    transparent: PropTypes.bool,
+    /**
      * NumberFormat component prop types.
      */
     ...NumberFormat.propTypes,
     ...space.propTypes,
-    ...width.propTypes,
+    ...layout.propTypes,
+    ...color.propTypes,
+    ...typography.propTypes,
   }
 
   static defaultProps = {
     size: 'md',
     inline: false,
+    transparent: false,
   }
 
   render() {
     return createStyledComponent(
       this.props.size,
       this.props.inline,
+      this.props.transparent,
       ...this.props,
     )
   }
