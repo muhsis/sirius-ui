@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import styled, { css, withTheme } from 'styled-components'
-import { space, layout } from 'styled-system'
+import { space, layout, typography, color } from 'styled-system'
 import { controlFocus, transitionBase } from '../../../theming'
 import { InputGroup } from '../../form'
 
@@ -80,6 +80,24 @@ const ScInput = styled.input`
   ${p => transitionBase(p)};
   ${p => sizeStyles[p.size](p)};
 
+  /* Apply minimal input styles last. */
+  ${p =>
+    p.minimal &&
+    css`
+      border: none;
+      border-radius: 0;
+      border-bottom: ${p => p.theme.inputBorderWidth} solid transparent;
+
+      &:hover {
+        border-bottom-color: ${p => p.theme.inputBorderColor};
+      }
+
+      &:focus {
+        box-shadow: none;
+        border-bottom-color: ${p => p.theme.colors.primary};
+      }
+    `}
+
   ${InputGroup} & {
     position: relative;
     flex: 1 1 auto;
@@ -99,11 +117,19 @@ const ScInput = styled.input`
 
   ${space}
   ${layout}
+	${typography}
+	${color}
 `
 
-function createStyledComponent(size, inline, transparent, props) {
+function createStyledComponent(size, inline, transparent, minimal, props) {
   return (
-    <ScInput size={size} inline={inline} transparent={transparent} {...props} />
+    <ScInput
+      size={size}
+      inline={inline}
+      transparent={transparent}
+      minimal={minimal}
+      {...props}
+    />
   )
 }
 
@@ -121,14 +147,21 @@ class TextInput extends PureComponent {
      * Pass this prop if input is transparent. (Shows border when hovered.)
      */
     transparent: PropTypes.bool,
+    /**
+     * Pass this prop if input has a border-bottom only and no hover&focus effects.
+     */
+    minimal: PropTypes.bool,
     ...space.propTypes,
     ...layout.propTypes,
+    ...typography.propTypes,
+    ...color.propTypes,
   }
 
   static defaultProps = {
     size: 'md',
     inline: false,
     transparent: false,
+    minimal: false,
   }
 
   render() {
@@ -136,6 +169,7 @@ class TextInput extends PureComponent {
       this.props.size,
       this.props.inline,
       this.props.transparent,
+      this.props.minimal,
       ...this.props,
     )
   }
