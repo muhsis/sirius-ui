@@ -1,14 +1,5 @@
 import styled, { withTheme } from 'styled-components'
-import {
-  space,
-  display,
-  color,
-  fontSize,
-  fontWeight,
-  letterSpacing,
-  lineHeight,
-  textAlign,
-} from 'styled-system'
+import { space, display, color, typography } from 'styled-system'
 
 const Text = styled.span`
   font-family: ${p => p.theme.fontFamily};
@@ -18,11 +9,7 @@ const Text = styled.span`
   ${space}
   ${display}
   ${color}
-  ${fontSize}
-  ${fontWeight}
-  ${letterSpacing}
-  ${lineHeight}
-  ${textAlign}
+  ${typography}
 `
 
 Text.displayName = 'Text'
@@ -30,11 +17,7 @@ Text.propTypes = {
   ...space.propTypes,
   ...display.propTypes,
   ...color.propTypes,
-  ...fontSize.propTypes,
-  ...fontWeight.propTypes,
-  ...letterSpacing.propTypes,
-  ...lineHeight.propTypes,
-  ...textAlign.propTypes,
+  ...typography.propTypes,
 }
 
 export default withTheme(Text)
