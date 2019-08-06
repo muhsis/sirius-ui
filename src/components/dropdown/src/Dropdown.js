@@ -144,6 +144,11 @@ class Dropdown extends PureComponent {
     width: PropTypes.number,
 
     /**
+     * Boolean indicating if pressing the esc key should close the dropdown menu.
+     */
+    shouldCloseOnEscape: PropTypes.bool,
+
+    /**
      * Positioning of the Dropdown.
      */
     placement: PropTypes.oneOf([
@@ -162,6 +167,7 @@ class Dropdown extends PureComponent {
     isShown: false,
     width: 200,
     placement: 'bottom-right',
+    shouldCloseOnEscape: true,
   }
 
   constructor(props) {
@@ -177,6 +183,7 @@ class Dropdown extends PureComponent {
 
   componentDidMount() {
     document.addEventListener('mousedown', this.handleClickOutside)
+    document.body.addEventListener('keydown', this.onEsc, false)
   }
 
   componentWillUnmount() {
@@ -199,6 +206,13 @@ class Dropdown extends PureComponent {
   handleClickOutside(event) {
     if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
       this.setState({ isShown: false })
+    }
+  }
+
+  onEsc = e => {
+    // Esc key
+    if (e.keyCode === 27 && this.props.shouldCloseOnEscape) {
+      this.handleHide()
     }
   }
 
