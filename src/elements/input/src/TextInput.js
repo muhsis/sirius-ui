@@ -54,6 +54,15 @@ const ScInput = styled.input`
       width: auto;
     `}
 
+  ${p =>
+    !p.minimal &&
+    !p.transparent &&
+    p.hasError &&
+    css`
+      border-color: ${p => p.theme.colors.secondary};
+      color: ${p => p.theme.colors.secondary};
+    `}
+
   &[type='number'] {
     padding-right: 6px;
   }
@@ -98,6 +107,23 @@ const ScInput = styled.input`
       }
     `}
 
+  ${p =>
+    !p.transparent &&
+    p.minimal &&
+    p.hasError &&
+    css`
+      border-bottom-color: ${p => p.theme.colors.secondary};
+      color: ${p => p.theme.colors.secondary};
+    `}
+
+   ${p =>
+     !p.minimal &&
+     p.transparent &&
+     p.hasError &&
+     css`
+       color: ${p => p.theme.colors.secondary};
+     `}
+
   ${InputGroup} & {
     position: relative;
     flex: 1 1 auto;
@@ -121,12 +147,20 @@ const ScInput = styled.input`
 	${color}
 `
 
-function createStyledComponent(size, inline, transparent, minimal, props) {
+function createStyledComponent(
+  size,
+  inline,
+  transparent,
+  hasError,
+  minimal,
+  props,
+) {
   return (
     <ScInput
       size={size}
       inline={inline}
       transparent={transparent}
+      hasError={hasError}
       minimal={minimal}
       {...props}
     />
@@ -148,6 +182,10 @@ class TextInput extends PureComponent {
      */
     transparent: PropTypes.bool,
     /**
+     * Pass this prop if input is transparent. (Shows border when hovered.)
+     */
+    hasError: PropTypes.bool,
+    /**
      * Pass this prop if input has a border-bottom only and no hover&focus effects.
      */
     minimal: PropTypes.bool,
@@ -161,6 +199,7 @@ class TextInput extends PureComponent {
     size: 'md',
     inline: false,
     transparent: false,
+    hasError: false,
     minimal: false,
   }
 
@@ -169,6 +208,7 @@ class TextInput extends PureComponent {
       this.props.size,
       this.props.inline,
       this.props.transparent,
+      this.props.hasError,
       this.props.minimal,
       ...this.props,
     )
