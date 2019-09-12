@@ -7,6 +7,27 @@ Here you can find a list of tasks that are too small to open a Jira story/task.
 - [ ] Better grayscale system.
 - [ ] Better tint bgs system.
 - [ ] Change default font sizes.
+- [ ] Remove extra empty folders.
+- [ ] Deploy to netlify.
+- [ ] Need to refactor dependencies. I guess we need to add some of the components (styled-components, styled-system, react, react-dom) as peer dependencies since they are exposed to the consuming code.
+- [ ] Update React version to 16.9.0.
+- [ ] Update styled-components version to 4.3.2.
+- [ ] Update styled-system to 5.1.1.
+- [ ] Rename CSS cell and grid components.
+- [ ] Missing documentation pages.
+  - [ ] Combobox
+  - [ ] Corner dialog.
+  - [ ] Date picker.
+  - [ ] Dialog.
+  - [ ] Dropdown.
+  - [ ] ListView.
+  - [ ] Pagination.
+  - [ ] Popconfirm.
+  - [ ] Popover.
+  - [ ] Progress.
+  - [ ] Side Sheet.
+  - [ ] Timeline.
+  - [ ] Toaster.
 
 ## Documentation Topics
 
@@ -18,14 +39,24 @@ These are the topics that we need to write documentation for.
 
 ## Current Release
 
-### v0.8.15
+### v0.8.16
 
 - [ ] Add stepper component.
-- [ ] `Dropdown` component now closes when escape key is pressed.
 - [ ] ListView columns header?
 - [ ] ListView item should have more than one child and flex layout.
 - [ ] We need to have some kind of detail indicator for LVI.
 - [ ] New Table styles. (HelpScout)
+- [ ] Responsive tables.
+- [ ] Filtering tools?
+- [ ] Fix close icon/button in toast containers.
+- [ ] Fix close icon/button in corner dialogs.
+- [ ] Complete showcase site documentation pages.
+
+### v0.8.15
+
+- [x] `Dropdown` component now closes when escape key is pressed.
+- [x] `TextInput` takes `hasError` property.
+- [x] `ListItem` takes typography values now.
 
 ### v0.8.14
 
