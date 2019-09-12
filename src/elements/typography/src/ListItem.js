@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import styled, { withTheme } from 'styled-components'
-import { space } from 'styled-system'
+import { space, typography } from 'styled-system'
 
 import Text from './Text'
 
@@ -17,6 +17,9 @@ const ScListItem = styled.li`
     `
     list-style-type: none;
   `}
+
+  ${space}
+  ${typography}
 `
 
 class ListItem extends PureComponent {
