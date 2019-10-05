@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import styled, { withTheme } from 'styled-components'
 
 const ScFormGroup = styled.div`
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   text-align: left;
 `
 

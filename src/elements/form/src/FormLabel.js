@@ -4,7 +4,7 @@ import { space } from 'styled-system'
 
 const ScFormLabel = styled.label`
   display: block;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.25rem;
   font-size: ${p => p.theme.fontSizeBase};
   font-weight: 500;
 

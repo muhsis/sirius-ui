@@ -1,7 +1,6 @@
-# @muhsisbt/ui
+# Sirius UI
 
-This is a design system / React UI library. It works with styled-components and
-styled-system.
+Sirius UI is a design system / React UI library. It works with styled-components and styled-system. Published package at Github named `@muhsis/sirius-ui`.
 
 ## Icons
 

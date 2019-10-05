@@ -1,11 +1,3 @@
-export {
-  ThemeProvider,
-  createGlobalStyle,
-  css,
-  keyframes,
-} from 'styled-components'
-export { default as styled } from 'styled-components'
-
 // Components
 export * from './components/alert'
 export * from './components/blank-slate'

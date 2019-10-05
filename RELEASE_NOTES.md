@@ -39,8 +39,6 @@ These are the topics that we need to write documentation for.
 
 ## Current Release
 
-### v0.8.16
-
 - [ ] Add stepper component.
 - [ ] ListView columns header?
 - [ ] ListView item should have more than one child and flex layout.
@@ -51,6 +49,17 @@ These are the topics that we need to write documentation for.
 - [ ] Fix close icon/button in toast containers.
 - [ ] Fix close icon/button in corner dialogs.
 - [ ] Complete showcase site documentation pages.
+
+- [ ] UI Kit tasks. 0.8.16
+  - [ ] Understand peer dependencies fully. Need to remove from peer dependencies. (styled-components, styled-system, polished)
+  - [x] Update styled-components, styled-system and polished on ui kit.
+  - [x] Rename ui kit to sirius. (Create a new npm package if necessary.)
+  - [ ] Button loading prop error!!!!
+  - [ ] Do not export styled, css, etc.
+
+### v0.8.16
+
+- [x] Fix spacing for `<FormGroup>` and `<FormLabel>` components.
 
 ### v0.8.15
 
