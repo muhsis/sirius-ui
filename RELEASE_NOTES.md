@@ -1,40 +1,3 @@
-# Tasks
-
-Here you can find a list of tasks that are too small to open a Jira story/task.
-
-- [x] Remove unnecessary packages.
-- [ ] Refactor color system. Final decision on Sketch, and transfer here.
-- [ ] Better grayscale system.
-- [ ] Better tint bgs system.
-- [ ] Change default font sizes.
-- [ ] Remove extra empty folders.
-- [ ] Deploy to netlify.
-- [ ] Need to refactor dependencies. I guess we need to add some of the components (styled-components, styled-system, react, react-dom) as peer dependencies since they are exposed to the consuming code.
-- [ ] Update React version to 16.9.0.
-- [ ] Update styled-components version to 4.3.2.
-- [ ] Update styled-system to 5.1.1.
-- [ ] Rename CSS cell and grid components.
-- [ ] Missing documentation pages.
-  - [ ] Combobox
-  - [ ] Corner dialog.
-  - [ ] Date picker.
-  - [ ] Dialog.
-  - [ ] Dropdown.
-  - [ ] ListView.
-  - [ ] Pagination.
-  - [ ] Popconfirm.
-  - [ ] Popover.
-  - [ ] Progress.
-  - [ ] Side Sheet.
-  - [ ] Timeline.
-  - [ ] Toaster.
-
-## Documentation Topics
-
-These are the topics that we need to write documentation for.
-
-- [ ] Which folder does what? File structure.
-
 # Release Notes
 
 ## Current Release
@@ -45,17 +8,20 @@ These are the topics that we need to write documentation for.
 - [ ] We need to have some kind of detail indicator for LVI.
 - [ ] New Table styles. (HelpScout)
 - [ ] Responsive tables.
-- [ ] Filtering tools?
+- [ ] Filtering tools.
 - [ ] Fix close icon/button in toast containers.
 - [ ] Fix close icon/button in corner dialogs.
-- [ ] Complete showcase site documentation pages.
+- [ ] New documentation and playground system.
 
-- [ ] UI Kit tasks. 0.8.16
-  - [ ] Understand peer dependencies fully. Need to remove from peer dependencies. (styled-components, styled-system, polished)
-  - [x] Update styled-components, styled-system and polished on ui kit.
-  - [x] Rename ui kit to sirius. (Create a new npm package if necessary.)
-  - [ ] Button loading prop error!!!!
-  - [ ] Do not export styled, css, etc.
+### v0.9.1
+  - [x] Remove `styled-components`, `styled-system`, `polished` from peer dependencies.
+  - [x] Update `styled-components`, `styled-system`, `polished` versions.
+  - [x] Rename ui kit to Sirius!
+  - [x] Don't export everything on index.
+
+### v0.9.0
+
+- [x] Move package to Github package registry from npm.
 
 ### v0.8.16
 
