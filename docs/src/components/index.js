@@ -1,6 +1,0 @@
-export * from './layout'
-export * from './playground'
-export * from './prop-types-table'
-export * from './readme'
-export * from './seo'
-export * from './sidebar'
