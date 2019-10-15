@@ -2,19 +2,17 @@
 
 ## Current Release
 
-- [!] Listview.
-  - [ ] Columns.
-  - [ ] Should have more than one child and flex layout.
-  - [ ] Detail indicator. (Detail button can be done in mfin-app.)
-  - [ ] Filtering tools.
 - [ ] New Table styles. (HelpScout. What's wrong with current one?)
   - [ ] Responsive.
 - [ ] Fix close icon/button in toast containers.
 - [ ] Fix close icon/button in corner dialogs.
-- [!] New documentation and playground system. Playground screen for now.
 - [ ] `TextArea` is problematic when used as a controlled input.
 - [ ] React warning for non-transparent attribute.
-- [ ] Remove list view.
+
+### v0.9.3
+  - [x] Clear warnings for `ButtonIcon` and `ButtonLink`, by creating the component properly.
+  - [x] Clear warnings for `SelectInput`, by creating the component properly.
+  - [x] Remove `ListView` and sub components.
 
 ### v0.9.2
   - [x] Clear warnings for `TextInput`, by creating the component properly.
