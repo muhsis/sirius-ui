@@ -62,7 +62,7 @@ const ScButton = styled.button`
 
 function createStyledComponent(variant, size, loading, props) {
   return (
-    <ScButton variant={variant} size={size} {...props}>
+    <ScButton variant={variant} size={size} disabled={loading} {...props}>
       {loading && (
         <>
           <Spinner mr={1} /> Yükleniyor
@@ -97,12 +97,9 @@ class ButtonLink extends PureComponent {
   }
 
   render() {
-    return createStyledComponent(
-      this.props.variant,
-      this.props.size,
-      this.props.loading,
-      ...this.props,
-    )
+    const { variant, size, loading, ...buttonProps } = this.props
+
+    return createStyledComponent(variant, size, loading, ...buttonProps)
   }
 }
 ButtonLink.displayName = 'Button'
