@@ -2,16 +2,23 @@
 
 ## Current Release
 
-- [ ] Add stepper component.
-- [ ] ListView columns header?
-- [ ] ListView item should have more than one child and flex layout.
-- [ ] We need to have some kind of detail indicator for LVI.
-- [ ] New Table styles. (HelpScout)
-- [ ] Responsive tables.
-- [ ] Filtering tools.
+- [!] Listview.
+  - [ ] Columns.
+  - [ ] Should have more than one child and flex layout.
+  - [ ] Detail indicator. (Detail button can be done in mfin-app.)
+  - [ ] Filtering tools.
+- [ ] New Table styles. (HelpScout. What's wrong with current one?)
+  - [ ] Responsive.
 - [ ] Fix close icon/button in toast containers.
 - [ ] Fix close icon/button in corner dialogs.
-- [ ] New documentation and playground system.
+- [!] New documentation and playground system. Playground screen for now.
+- [ ] `TextArea` is problematic when used as a controlled input.
+- [ ] React warning for non-transparent attribute.
+- [ ] Remove list view.
+
+### v0.9.2
+  - [x] Clear warnings for `TextInput`, by creating the component properly.
+  - [x] Clear warnings for `Button`, by creating the component properly.
 
 ### v0.9.1
   - [x] Remove `styled-components`, `styled-system`, `polished` from peer dependencies.
