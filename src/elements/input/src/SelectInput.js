@@ -102,11 +102,9 @@ class SelectInput extends PureComponent {
   }
 
   render() {
-    return createStyledComponent(
-      this.props.size,
-      this.props.inline,
-      ...this.props,
-    )
+    const { size, inline, ...inputProps } = this.props
+
+    return createStyledComponent(size, inline, ...inputProps)
   }
 }
 SelectInput.displayName = 'SelectInput'
