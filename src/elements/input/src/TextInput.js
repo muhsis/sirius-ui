@@ -204,13 +204,22 @@ class TextInput extends PureComponent {
   }
 
   render() {
+    const {
+      size,
+      inline,
+      transparent,
+      hasError,
+      minimal,
+      ...inputProps
+    } = this.props
+
     return createStyledComponent(
-      this.props.size,
-      this.props.inline,
-      this.props.transparent,
-      this.props.hasError,
-      this.props.minimal,
-      ...this.props,
+      size,
+      inline,
+      transparent,
+      hasError,
+      minimal,
+      ...inputProps,
     )
   }
 }

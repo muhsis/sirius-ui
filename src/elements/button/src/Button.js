@@ -70,7 +70,14 @@ const ScButton = styled.button`
 
 function createStyledComponent(variant, size, loading, block, outline, props) {
   return (
-    <ScButton outline={outline} {...props}>
+    <ScButton
+      variant={variant}
+      size={size}
+      block={block}
+      outline={outline}
+      disabled={loading}
+      {...props}
+    >
       {loading && (
         <>
           <Spinner mr={1} /> Yükleniyor
@@ -123,13 +130,22 @@ class Button extends PureComponent {
   }
 
   render() {
+    const {
+      variant,
+      size,
+      loading,
+      block,
+      outline,
+      ...buttonProps
+    } = this.props
+
     return createStyledComponent(
-      this.props.variant,
-      this.props.size,
-      this.props.loading,
-      this.props.block,
-      this.props.outline,
-      ...this.props,
+      variant,
+      size,
+      loading,
+      block,
+      outline,
+      ...buttonProps,
     )
   }
 }
