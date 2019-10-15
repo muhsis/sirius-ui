@@ -1,0 +1,10 @@
+<>
+  <Paragraph>There's an <Link href="">inline link element</Link> inside the sentence.</Paragraph>
+  <Paragraph>There's an <Link href="" variant="secondary">inline link element</Link> inside the sentence.</Paragraph>
+  <Paragraph>There's an <Link href="" variant="info">inline link element</Link> inside the sentence.</Paragraph>
+  <Paragraph>There's an <Link href="" variant="success">inline link element</Link> inside the sentence.</Paragraph>
+  <Paragraph>There's an <Link href="" variant="warning">inline link element</Link> inside the sentence.</Paragraph>
+  <Paragraph>There's an <Link href="" variant="danger">inline link element</Link> inside the sentence.</Paragraph>
+  <Paragraph>There's an <Link href="" variant="light">inline link element</Link> inside the sentence.</Paragraph>
+  <Paragraph>There's an <Link href="" variant="dark">inline link element</Link> inside the sentence.</Paragraph>
+</>
