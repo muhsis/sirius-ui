@@ -1,7 +1,9 @@
 import React, { PureComponent } from 'react'
 import styled, { withTheme } from 'styled-components'
 
-const ScFormGroup = styled.div`
+import { Box } from '../../box'
+
+const ScFormGroup = styled(Box)`
   margin-bottom: 1.5rem;
   text-align: left;
 `
