@@ -5,7 +5,6 @@ import cardDocs from '../../../src/components/card/docs'
 import comboboxDocs from '../../../src/components/combobox/docs'
 import dropdownDocs from '../../../src/components/dropdown/docs'
 import loaderDocs from '../../../src/components/loader/docs'
-import listviewDocs from '../../../src/components/listview/docs'
 import popconfirmDocs from '../../../src/components/popconfirm/docs'
 import portalDocs from '../../../src/components/portal/docs'
 import progressDocs from '../../../src/components/progress/docs'
@@ -23,7 +22,6 @@ const mapper = {
   combobox: comboboxDocs,
   dropdown: dropdownDocs,
   loader: loaderDocs,
-  listview: listviewDocs,
   popconfirm: popconfirmDocs,
   portal: portalDocs,
   progress: progressDocs,

@@ -50,11 +50,6 @@ module.exports = [
     path: '/components/loader',
   },
   {
-    name: 'List View',
-    componentName: 'listview',
-    path: '/components/listview',
-  },
-  {
     name: 'Pagination',
     componentName: 'pagination',
     path: '/components/pagination',

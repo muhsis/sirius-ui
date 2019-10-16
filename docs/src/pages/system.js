@@ -9,10 +9,6 @@ import {
   Button,
   ButtonIcon,
   IconBell,
-  ListView,
-  ListViewItem,
-  Media,
-  MediaItem,
   Combobox,
   TextInput,
   TextArea,
@@ -402,25 +398,6 @@ class SystemPage extends Component {
             eget lacinia odio sem nec elit. Maecenas sed diam eget risus varius
             blandit sit amet non magna.
           </Text>
-
-          <ListView mt={4}>
-            <ListViewItem>
-              <Media>
-                <MediaItem mr={2}>Icon</MediaItem>
-                <MediaItem flex="1" bg="red" px={3}>
-                  Item content.
-                </MediaItem>
-                <MediaItem ml={2}>Menu</MediaItem>
-              </Media>
-            </ListViewItem>
-            <ListViewItem
-              clickable
-              handleSelected={this.handleListViewSelected}
-            >
-              Listview item.
-            </ListViewItem>
-            <ListViewItem clickable>Listview item.</ListViewItem>
-          </ListView>
         </Box>
       </Layout>
     )
