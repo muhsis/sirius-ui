@@ -147,12 +147,9 @@ class NumberInput extends PureComponent {
   }
 
   render() {
-    return createStyledComponent(
-      this.props.size,
-      this.props.inline,
-      this.props.transparent,
-      ...this.props,
-    )
+    const { size, inline, transparent, ...inputProps } = this.props
+
+    return createStyledComponent(size, inline, transparent, ...inputProps)
   }
 }
 NumberInput.displayName = 'NumberInput'
