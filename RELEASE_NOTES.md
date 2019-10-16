@@ -9,6 +9,10 @@
 - [ ] `TextArea` is problematic when used as a controlled input.
 - [ ] React warning for non-transparent attribute.
 
+### v0.9.4
+  - [x] Properly create `NumberInput` component.
+  - [x] Inherit `FormGroup` from `Box` component so we can use `flex` property in flexbox form rows.
+
 ### v0.9.3
   - [x] Clear warnings for `ButtonIcon` and `ButtonLink`, by creating the component properly.
   - [x] Clear warnings for `SelectInput`, by creating the component properly.
