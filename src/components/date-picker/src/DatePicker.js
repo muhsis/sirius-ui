@@ -249,18 +249,13 @@ class DatePicker extends Component {
     const { size, transparent, width, placeholder, ...otherProps } = this.props
 
     return (
-      <div>
-        <TextInput
-          inline
-          size={size}
-          transparent={transparent}
-          width={width}
-          placeholder={placeholder}
-          mr={1}
-          {...props}
-          {...otherProps}
-        />
-      </div>
+      <TextInput
+        size={size}
+        transparent={transparent}
+        placeholder={placeholder}
+        {...props}
+        {...otherProps}
+      />
     )
   }
 

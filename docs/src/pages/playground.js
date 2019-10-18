@@ -23,7 +23,7 @@ const PlaygroundPage = () => {
       <Container>
         <SEO title="Playground" keywords={[`gatsby`, `application`, `react`]} />
 
-        <Box maxWidth={360}>
+        <Box maxWidth={360} bg="blue">
           <DatePicker
             dateFormat="DD/MM/YYYY"
             value={startsAt}
