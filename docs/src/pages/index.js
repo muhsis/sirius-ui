@@ -1,46 +1,22 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Container, Content, Layout, SEO, Sidebar } from '../components'
 import {
   Heading,
   Paragraph,
   Code,
-  Toaster,
-  theme,
   Box,
-  DataTable,
-  NumberInput,
-  TextInput,
-  Button,
-  DatePicker,
   Tab,
   TabGroup,
   Pagination,
   Progress,
   Timeline,
   TimelineItem,
-  ListView,
-  ListViewItem,
-  ButtonIcon,
   IconCheck,
   IconTextDocument,
   IconAircraft,
-  Media,
-  MediaItem,
-  IconDotsThreeHorizontal,
-  Dropdown,
-  Menu,
-  MenuItem,
-  MenuDivider,
-  IconAddress,
-  IconLogOut,
-  Text,
 } from '../../../src'
-console.log('DT', DataTable)
-
-const toaster = new Toaster(theme)
 
 const ScLink = styled(Link)``
 
@@ -50,11 +26,7 @@ class IndexPage extends Component {
   }
 
   paginationOnChange = value => {
-    toaster.info(
-      'Hello world!',
-      'Maecenas faucibus mollis interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    )
-    console.log('Pager changed', value, toaster)
+    console.log('Pager changed', value)
   }
 
   render() {
@@ -71,68 +43,7 @@ class IndexPage extends Component {
               <a href="#">Styled System</a>.
             </Paragraph>
 
-            <Box mt={4}>
-              <ListView>
-                <ListViewItem
-                  actions={
-                    <ButtonIcon type="button">
-                      <IconDotsThreeHorizontal />
-                    </ButtonIcon>
-                  }
-                >
-                  This item does not have click event handler.
-                </ListViewItem>
-
-                <ListViewItem
-                  clickable
-                  handleSelected={this.itemSelected}
-                  actions={
-                    <ButtonIcon type="button">
-                      <IconDotsThreeHorizontal />
-                    </ButtonIcon>
-                  }
-                >
-                  This item have click event handler.
-                </ListViewItem>
-
-                <ListViewItem
-                  clickable
-                  handleSelected={this.itemSelected}
-                  showcase={
-                    <Text color="primary" fontSize="2rem">
-                      <IconAircraft />
-                    </Text>
-                  }
-                  actions={
-                    <Dropdown
-                      content={
-                        <Menu>
-                          <MenuItem as="a" href="#" target="_blank">
-                            <IconAddress mr={3} />
-                            Sample Menu Item
-                          </MenuItem>
-                          <MenuDivider />
-                          <MenuItem variant="success">
-                            <IconAircraft mr={3} />
-                            Sample Menu Item
-                          </MenuItem>
-                          <MenuItem variant="danger">
-                            <IconLogOut mr={3} /> Çıkış Yap
-                          </MenuItem>
-                        </Menu>
-                      }
-                    >
-                      <ButtonIcon type="button">
-                        <IconDotsThreeHorizontal />
-                      </ButtonIcon>
-                    </Dropdown>
-                  }
-                >
-                  This item also have click event handler, also a dropdown
-                  element and an icon.
-                </ListViewItem>
-              </ListView>
-            </Box>
+            <Box mt={4}></Box>
 
             <Box mt={4}>
               <Progress percentage={10} mb={2} />
