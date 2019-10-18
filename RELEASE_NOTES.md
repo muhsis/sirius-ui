@@ -6,6 +6,9 @@
 - [ ] Fix close icon/button in corner dialogs.
 - [ ] `TextArea` is problematic when used as a controlled input.
 
+### v0.9.6
+  - [x] Add forgotten componentDidUpdate method for `Stepper` component.
+
 ### v0.9.5
   - [x] Reduce the spacing and size of `Switch` component.
   - [x] Add `Stepper` and `Step` components with dynamic index and state management.
