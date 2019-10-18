@@ -21,7 +21,7 @@ const CheckIcon = ({ size, fill = 'currentColor', ...props }) => (
 const ScSwitchContainer = styled.label`
   display: inline-block;
   position: relative;
-  height: 30px;
+  height: 24px;
 
   ${space}
 
@@ -63,13 +63,13 @@ const ScSwitch = styled.div`
   background-color: ${p => p.theme.colors.smoke};
   border-radius: 9999px;
   transition: all 120ms ease-in-out;
-  height: 30px;
-  width: 58px;
+  height: 24px;
+  width: 46px;
 `
 
 const ScSwitchIconContainer = styled.div`
-  height: 30px;
-  width: 35px;
+  height: 24px;
+  width: 29px;
   opacity: 0;
   display: flex;
   position: absolute;
@@ -80,6 +80,10 @@ const ScSwitchIconContainer = styled.div`
 
   &[data-checked='true'] {
     opacity: 1;
+  }
+
+  & svg {
+    height: 7px;
   }
 `
 
@@ -101,8 +105,8 @@ const ScSwitchHandleWrapper = styled.div`
 const ScSwitchHandle = styled.div`
   background-color: white;
   border-radius: 9999px;
-  height: 26px;
-  width: 26px;
+  height: 20px;
+  width: 20px;
 `
 
 const isControlled = component => {
