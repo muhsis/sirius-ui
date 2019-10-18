@@ -2,12 +2,13 @@
 
 ## Current Release
 
-- [ ] New Table styles. (HelpScout. What's wrong with current one?)
-  - [ ] Responsive.
 - [ ] Fix close icon/button in toast containers.
 - [ ] Fix close icon/button in corner dialogs.
 - [ ] `TextArea` is problematic when used as a controlled input.
-- [ ] React warning for non-transparent attribute.
+
+### v0.9.5
+  - [x] Reduce the spacing and size of `Switch` component.
+  - [x] Add `Stepper` and `Step` components with dynamic index and state management.
 
 ### v0.9.4
   - [x] Properly create `NumberInput` component.
