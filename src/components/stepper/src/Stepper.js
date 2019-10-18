@@ -143,6 +143,17 @@ class Stepper extends PureComponent {
     }
   }
 
+  componentDidUpdate(prevProps) {
+    const { currentIndex } = this.props
+
+    if (
+      prevProps.currentIndex !== currentIndex &&
+      this.state.currentIndex !== currentIndex
+    ) {
+      this.setState({ currentIndex })
+    }
+  }
+
   handleNavClick = (event, index) => {
     const { onChange } = this.props
     if (onChange) {
