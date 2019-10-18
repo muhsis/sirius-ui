@@ -5,7 +5,7 @@ import Datetime from 'react-datetime'
 import { TextInput } from '../../..'
 
 const ScDatetime = styled(Datetime)`
-  display: inline-block;
+  display: block;
   position: relative;
 
   &.rdtOpen .rdtPicker {
@@ -235,7 +235,7 @@ class DatePicker extends Component {
   static propTypes = {
     size: PropTypes.oneOf(['sm', 'md', 'lg']),
     transparent: PropTypes.bool,
-    width: PropTypes.number,
+    width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     placeholder: PropTypes.string,
   }
 
