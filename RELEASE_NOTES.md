@@ -6,6 +6,9 @@
 - [ ] Fix close icon/button in corner dialogs.
 - [ ] `TextArea` is problematic when used as a controlled input.
 
+### v0.9.7
+  - [x] Fix prop type error and make display block for `DatePicker` component.
+
 ### v0.9.6
   - [x] Add forgotten componentDidUpdate method for `Stepper` component.
 

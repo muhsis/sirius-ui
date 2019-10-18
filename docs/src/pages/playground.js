@@ -1,5 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+import moment from 'moment'
+import Datetime from 'react-datetime'
+
 import { Layout, SEO, Sidebar, Container, Content } from '../components'
 import {
   Heading,
@@ -9,62 +12,34 @@ import {
   TextInput,
   Stepper,
   Step,
+  DatePicker,
 } from '../../../src'
 
-const PlaygroundPage = () => (
-  <Layout>
-    <Container>
-      <SEO title="Playground" keywords={[`gatsby`, `application`, `react`]} />
+const PlaygroundPage = () => {
+  const [startsAt, setstartsAt] = useState('01/01/2019')
 
-      <Box maxWidth={960}>
-        <Stepper>
-          <Step title="Firma Bilgileri" description="This is a description.">
-            Step 1 content.
-          </Step>
+  return (
+    <Layout>
+      <Container>
+        <SEO title="Playground" keywords={[`gatsby`, `application`, `react`]} />
 
-          <Step
-            title="Mali Takvim"
-            description="This is a description. Longer one."
-          >
-            Step 2 content.
-          </Step>
+        <Box maxWidth={360}>
+          <DatePicker
+            dateFormat="DD/MM/YYYY"
+            value={startsAt}
+            onChange={value => {
+              console.log('value changed', value.format('DD/MM/YYYY'))
+              setstartsAt(value.format('DD/MM/YYYY'))
+            }}
+          />
+        </Box>
 
-          <Step title="Son Adım." description="This is a description.">
-            Step 3 content.
-          </Step>
-        </Stepper>
-      </Box>
-
-      <Box maxWidth={960} mt={5}>
-        <Stepper currentIndex={1}>
-          <Step title="Firma Bilgileri" isCompleted>
-            Step 1 content.
-          </Step>
-
-          <Step title="Mali Takvim">Step 2 content.</Step>
-
-          <Step title="Son Adım.">Step 3 content.</Step>
-        </Stepper>
-      </Box>
-
-      <Box maxWidth={960} mt={5}>
-        <Stepper
-          currentIndex={1}
-          onChange={index => {
-            console.log('stepper changed with index', index)
-          }}
-        >
-          <Step title="Firma Bilgileri" description="This is a description.">
-            Step 1 content.
-          </Step>
-
-          <Step title="Mali Takvim" description="This is a description.">
-            Step 2 content.
-          </Step>
-        </Stepper>
-      </Box>
-    </Container>
-  </Layout>
-)
+        <Box maxWidth={360} mt={4}>
+          <Datetime />
+        </Box>
+      </Container>
+    </Layout>
+  )
+}
 
 export default PlaygroundPage
