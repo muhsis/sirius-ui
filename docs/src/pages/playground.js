@@ -13,15 +13,34 @@ import {
   Stepper,
   Step,
   DatePicker,
+  NumberInput,
 } from '../../../src'
 
 const PlaygroundPage = () => {
   const [startsAt, setstartsAt] = useState('01/01/2019')
+  const [price, setPrice] = useState({ formattedValue: 25.99 })
 
   return (
     <Layout>
       <Container>
         <SEO title="Playground" keywords={[`gatsby`, `application`, `react`]} />
+
+        <Box maxWidth={360} mb={4}>
+          <NumberInput
+            id="price"
+            name="price"
+            value={price.formattedValue}
+            thousandSeparator={true}
+            suffix={' TL'}
+            textAlign="left"
+            inline
+            width={100}
+            placeholder="Price"
+            onValueChange={values => {
+              setPrice(values)
+            }}
+          />
+        </Box>
 
         <Box maxWidth={360} bg="blue">
           <DatePicker
