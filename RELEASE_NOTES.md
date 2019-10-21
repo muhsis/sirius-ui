@@ -6,6 +6,9 @@
 - [ ] Fix close icon/button in corner dialogs.
 - [ ] `TextArea` is problematic when used as a controlled input.
 
+### v0.9.10
+  - [x] Fix `BlankSlate` component image size.
+
 ### v0.9.9
   - [x] Refactor `NumberInput` component to use `TextInput` as customInput. This solves loads of problems about masked and money inputs we've been experiencing in fe app.
 
