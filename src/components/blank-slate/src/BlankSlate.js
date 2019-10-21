@@ -36,14 +36,14 @@ const ScBlankSlateDetails = styled.div`
 const ScBlankSlateImageContainer = styled.div`
   flex: 1 1 auto;
   z-index: 0;
+  text-align: right;
 `
 
 const ScBlankSlateImage = styled(Image)`
   position: relative;
   z-index: 0;
   margin-top: 0;
-  margin-left: -10%;
-  width: 100%;
+  width: 75%;
   max-width: none;
 `
 
