@@ -170,7 +170,6 @@ class Overlay extends Component {
         document.activeElement,
       )
       if (isFocusOutsideModal) {
-        // Element marked autofocus has higher priority than the other clowns
         const autofocusElement = this.containerElement.querySelector(
           '[autofocus]',
         )

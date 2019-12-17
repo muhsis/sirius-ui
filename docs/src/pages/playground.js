@@ -46,6 +46,7 @@ const PlaygroundPage = () => {
           <DatePicker
             dateFormat="DD/MM/YYYY"
             value={startsAt}
+            position="top"
             onChange={value => {
               console.log('value changed', value.format('DD/MM/YYYY'))
               setstartsAt(value.format('DD/MM/YYYY'))

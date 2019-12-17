@@ -21,13 +21,26 @@ const ScDatetime = styled(Datetime)`
     position: absolute;
     width: 250px;
     padding: 0.25rem;
-    margin-top: 0.5rem;
     z-index: 99999 !important;
     background: ${p => p.theme.colors.white};
     box-shadow: 0 0 1px rgba(67, 90, 111, 0.3),
       0 2px 4px -2px rgba(67, 90, 111, 0.47);
     border: 1px solid ${p => p.theme.colors.smoke};
     border-radius: ${p => p.theme.borderRadius};
+
+    ${p =>
+      p.position === 'bottom' &&
+      `
+      margin-top: 0.5rem;
+    `}
+
+    ${p =>
+      p.position === 'top' &&
+      `
+      margin-bottom: 0.5rem;
+      margin-top: 0;
+      bottom: 100%;
+    `}
   }
 
   .rdtPicker .rdtTimeToggle {
@@ -237,12 +250,14 @@ class DatePicker extends Component {
     transparent: PropTypes.bool,
     width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     placeholder: PropTypes.string,
+    position: PropTypes.oneOf(['top', 'bottom']),
   }
 
   static defaultProps = {
     size: 'md',
     transparent: false,
     width: 'auto',
+    position: 'bottom',
   }
 
   renderInput = props => {
