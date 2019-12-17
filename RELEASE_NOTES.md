@@ -6,6 +6,9 @@
 - [ ] Fix close icon/button in corner dialogs.
 - [ ] `TextArea` is problematic when used as a controlled input.
 
+### v0.9.11
+  - [x] Add `position` option to `DatePicker` component.
+
 ### v0.9.10
   - [x] Fix `BlankSlate` component image size.
 
