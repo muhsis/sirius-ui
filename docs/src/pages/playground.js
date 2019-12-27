@@ -14,6 +14,7 @@ import {
   Step,
   DatePicker,
   NumberInput,
+  ButtonGroup,
 } from '../../../src'
 
 const PlaygroundPage = () => {
@@ -24,6 +25,18 @@ const PlaygroundPage = () => {
     <Layout>
       <Container>
         <SEO title="Playground" keywords={[`gatsby`, `application`, `react`]} />
+
+        <Box mb={5} maxWidth={300}>
+          <ButtonGroup>
+            <Button type="button" outline>
+              First
+            </Button>
+            <Button type="button">Second</Button>
+            <Button type="button" outline>
+              Third
+            </Button>
+          </ButtonGroup>
+        </Box>
 
         <Box maxWidth={360} mb={4}>
           <NumberInput

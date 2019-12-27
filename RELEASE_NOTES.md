@@ -5,44 +5,60 @@
 - [ ] Fix close icon/button in toast containers.
 - [ ] Fix close icon/button in corner dialogs.
 - [ ] `TextArea` is problematic when used as a controlled input.
+- [ ] `Dialog` and `Overlay` component closes when esc key pressed even if `shouldCloseOnOverlayClick` set to `true`.
+
+### v 0.9.12
+
+- [x] Remove width from image in `BlankSlate` component.
+- [x] Need to add a `ButtonGroup` component.
 
 ### v0.9.11
-  - [x] Add `position` option to `DatePicker` component.
+
+- [x] Add `position` option to `DatePicker` component.
 
 ### v0.9.10
-  - [x] Fix `BlankSlate` component image size.
+
+- [x] Fix `BlankSlate` component image size.
 
 ### v0.9.9
-  - [x] Refactor `NumberInput` component to use `TextInput` as customInput. This solves loads of problems about masked and money inputs we've been experiencing in fe app.
+
+- [x] Refactor `NumberInput` component to use `TextInput` as customInput. This solves loads of problems about masked and money inputs we've been experiencing in fe app.
 
 ### v0.9.7
-  - [x] Fix prop type error and make display block for `DatePicker` component.
+
+- [x] Fix prop type error and make display block for `DatePicker` component.
 
 ### v0.9.6
-  - [x] Add forgotten componentDidUpdate method for `Stepper` component.
+
+- [x] Add forgotten componentDidUpdate method for `Stepper` component.
 
 ### v0.9.5
-  - [x] Reduce the spacing and size of `Switch` component.
-  - [x] Add `Stepper` and `Step` components with dynamic index and state management.
+
+- [x] Reduce the spacing and size of `Switch` component.
+- [x] Add `Stepper` and `Step` components with dynamic index and state management.
 
 ### v0.9.4
-  - [x] Properly create `NumberInput` component.
-  - [x] Inherit `FormGroup` from `Box` component so we can use `flex` property in flexbox form rows.
+
+- [x] Properly create `NumberInput` component.
+- [x] Inherit `FormGroup` from `Box` component so we can use `flex` property in flexbox form rows.
 
 ### v0.9.3
-  - [x] Clear warnings for `ButtonIcon` and `ButtonLink`, by creating the component properly.
-  - [x] Clear warnings for `SelectInput`, by creating the component properly.
-  - [x] Remove `ListView` and sub components.
+
+- [x] Clear warnings for `ButtonIcon` and `ButtonLink`, by creating the component properly.
+- [x] Clear warnings for `SelectInput`, by creating the component properly.
+- [x] Remove `ListView` and sub components.
 
 ### v0.9.2
-  - [x] Clear warnings for `TextInput`, by creating the component properly.
-  - [x] Clear warnings for `Button`, by creating the component properly.
+
+- [x] Clear warnings for `TextInput`, by creating the component properly.
+- [x] Clear warnings for `Button`, by creating the component properly.
 
 ### v0.9.1
-  - [x] Remove `styled-components`, `styled-system`, `polished` from peer dependencies.
-  - [x] Update `styled-components`, `styled-system`, `polished` versions.
-  - [x] Rename ui kit to Sirius!
-  - [x] Don't export everything on index.
+
+- [x] Remove `styled-components`, `styled-system`, `polished` from peer dependencies.
+- [x] Update `styled-components`, `styled-system`, `polished` versions.
+- [x] Rename ui kit to Sirius!
+- [x] Don't export everything on index.
 
 ### v0.9.0
 
