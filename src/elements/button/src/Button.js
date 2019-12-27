@@ -7,6 +7,8 @@ import { Spinner } from '../../../components/spinner'
 import { transitionBase } from '../../../theming'
 import { btnVariant } from '../../../theming/button'
 
+import ButtonGroup from './ButtonGroup'
+
 const sizeStyles = {
   sm: p => css`
     padding: ${p.theme.btnPaddingYSm} ${p.theme.btnPaddingXSm};
@@ -63,6 +65,31 @@ const ScButton = styled.button`
   & span svg {
     position: relative;
     top: 2px;
+  }
+
+  ${ButtonGroup} & {
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+    margin-bottom: 0;
+  }
+
+  ${ButtonGroup} &:first-child {
+    border-right: none;
+  }
+
+  ${ButtonGroup} &:last-child {
+    border-left: none;
+  }
+
+  ${ButtonGroup} &:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  ${ButtonGroup} &:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
   }
 
   ${space}
