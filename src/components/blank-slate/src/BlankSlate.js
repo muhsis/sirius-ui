@@ -43,7 +43,6 @@ const ScBlankSlateImage = styled(Image)`
   position: relative;
   z-index: 0;
   margin-top: 0;
-  width: 75%;
   max-width: none;
 `
 
