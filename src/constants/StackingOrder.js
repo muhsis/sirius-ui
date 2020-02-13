@@ -22,9 +22,4 @@ export default {
    * Used for the Overlay and everything that's inside such as Dialog + SideSheet.
    */
   OVERLAY: 20,
-
-  /**
-   * Used for the toasts in the toaster. Appears on top of everything else.
-   */
-  TOASTER: 30,
 }
