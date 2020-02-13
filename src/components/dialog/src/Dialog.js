@@ -40,8 +40,8 @@ const ScDialogWrapper = styled.div`
   box-shadow: 0 0 1px rgba(67, 90, 111, 0.3),
     0 8px 10px -4px rgba(67, 90, 111, 0.47);
 
-  width: ${p => p.width}px;
-  max-width: ${p => p.maxWidth};
+  /* width: ${p => p.width}px; */
+  max-width: ${p => p.width}px;
   max-height: ${p => p.maxHeight};
   margin: ${p => p.marginY} ${p => p.marginX};
 
