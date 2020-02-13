@@ -1,5 +1,5 @@
 import React from 'react'
-import { Table, TableCell } from '../'
+import { Table, TableCell, TableResponsive } from '../'
 import { Box } from '../../box'
 import { Tag } from '../../tag'
 import { Paragraph, Code, Link } from '../../typography'
@@ -19,7 +19,7 @@ const introduction = (
   </Paragraph>
 )
 
-const scope = { Box, Table, TableCell, Tag, Link }
+const scope = { Box, Table, TableResponsive, TableCell, Tag, Link }
 
 const components = [
   {

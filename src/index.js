@@ -25,7 +25,6 @@ export * from './components/stepper'
 export * from './components/switch'
 export * from './components/tab'
 export * from './components/timeline'
-export * from './components/toaster'
 export * from './components/tooltip'
 
 // Elements
