@@ -106,7 +106,7 @@ class Overlay extends Component {
     /**
      * Boolean indicating if pressing the esc key should close the overlay.
      */
-    shouldCloseOnEscape: PropTypes.bool,
+    shouldCloseOnEscapePress: PropTypes.bool,
 
     /**
      * Boolean indicating if the content in the overlay will be centered.
@@ -122,7 +122,7 @@ class Overlay extends Component {
     onEntering: () => {},
     onEntered: () => {},
     shouldCloseOnClick: true,
-    shouldCloseOnEscape: true,
+    shouldCloseOnEscapePress: true,
     preventBodyScrolling: false,
     centerContent: false,
   }
@@ -212,7 +212,7 @@ class Overlay extends Component {
 
   onEsc = e => {
     // Esc key
-    if (e.keyCode === 27 && this.props.shouldCloseOnEscape) {
+    if (e.keyCode === 27 && this.props.shouldCloseOnEscapePress) {
       this.close()
     }
   }
