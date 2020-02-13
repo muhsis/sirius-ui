@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import styled, { withTheme, css } from 'styled-components'
-import { space } from 'styled-system'
+import { space, typography } from 'styled-system'
 
 const variantTags = {
   h1: 'h1',
@@ -26,8 +26,6 @@ const commonHeadingStyle = p => {
     line-height: ${p.theme.headingsLineHeight};
     color: ${p.theme.headingsColor};
     ${fontFamily && `font-family: ${fontFamily}`};
-
-    ${space}
   `
 }
 
@@ -87,6 +85,8 @@ function createStyledComponent(variant, children, props) {
   const style = variantStyles[variant](props)
   const ScHeading = styled[element]`
     ${style}
+    ${space}
+    ${typography}
   `
 
   return <ScHeading {...props}>{children}</ScHeading>
