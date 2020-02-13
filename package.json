@@ -77,8 +77,8 @@
     "react-number-format": "^4.3.0",
     "react-select": "^2.4.2",
     "react-transition-group": "^4.3.0",
-    "styled-components": "^4.4.0",
-    "styled-system": "^5.1.2"
+    "styled-components": "^5.0.1",
+    "styled-system": "^5.1.4"
   },
   "engines": {
     "node": ">=8"
