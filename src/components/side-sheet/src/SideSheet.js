@@ -77,6 +77,8 @@ class SideSheet extends PureComponent {
     isShown: PropTypes.bool,
     onCloseComplete: PropTypes.func,
     onOpenComplete: PropTypes.func,
+    shouldCloseOnEscapePress: PropTypes.bool,
+    shouldCloseOnOverlayClick: PropTypes.bool,
     width: PropTypes.number,
   }
 
@@ -84,6 +86,8 @@ class SideSheet extends PureComponent {
     width: 500,
     onCloseComplete: () => {},
     onOpenComplete: () => {},
+    shouldCloseOnEscapePress: true,
+    shouldCloseOnOverlayClick: true,
   }
 
   render() {
@@ -93,6 +97,8 @@ class SideSheet extends PureComponent {
       children,
       onOpenComplete,
       onCloseComplete,
+      shouldCloseOnEscapePress,
+      shouldCloseOnOverlayClick,
       theme,
     } = this.props
 
@@ -101,6 +107,8 @@ class SideSheet extends PureComponent {
         isShown={isShown}
         onExited={onCloseComplete}
         onEntered={onOpenComplete}
+        shouldCloseOnEscapePress={shouldCloseOnEscapePress}
+        shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
         preventBodyScrolling
       >
         {({ state, close }) => (
