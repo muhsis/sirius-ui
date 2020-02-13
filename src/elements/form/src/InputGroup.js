@@ -1,8 +1,4 @@
 import styled, { withTheme } from 'styled-components'
-// import { TextInput } from '../../input'
-
-// const ScTextInput = styled(TextInput)``
-// console.log('TI', ScTextInput)
 
 const InputGroup = styled.div`
   position: relative;

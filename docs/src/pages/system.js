@@ -176,6 +176,8 @@ class SystemPage extends Component {
             isShown={this.state.isDialogShown}
             onCloseComplete={() => this.setState({ isDialogShown: false })}
             preventBodyScrolling
+            shouldCloseOnOverlayClick={false}
+            shouldCloseOnEscapePress={false}
             header={({ close }) => (
               <>
                 <Heading variant="h6" m={0} p={0}>
@@ -286,6 +288,8 @@ class SystemPage extends Component {
           <SideSheet
             isShown={this.state.isShown}
             onCloseComplete={this.closeSideSheet}
+            shouldCloseOnEscapePress={false}
+            shouldCloseOnOverlayClick={false}
           >
             <Paragraph m={3}>Basic Example</Paragraph>
             <Paragraph m={3}>

@@ -100,11 +100,6 @@ module.exports = [
     path: '/components/tab',
   },
   {
-    name: 'Toaster',
-    componentName: 'toaster',
-    path: '/components/toaster',
-  },
-  {
     name: 'Tooltip',
     componentName: 'tooltip',
     path: '/components/tooltip',
