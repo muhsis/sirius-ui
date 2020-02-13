@@ -1,9 +1,10 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import styled, { keyframes, withTheme } from 'styled-components'
+import styled, { keyframes, withTheme, css } from 'styled-components'
 
 import { Overlay } from '../../overlay'
 import SideSheetClose from './SideSheetClose'
+import { down } from '../../../utils'
 
 const ANIMATION_DURATION = 240
 const animationEasing = {
@@ -45,6 +46,13 @@ const ScSideSheetContainer = styled.div`
     animation: ${slideOutAnimation} ${ANIMATION_DURATION}ms
       ${animationEasing.acceleration} both;
   }
+
+  ${down(
+    'md',
+    css`
+      width: 85%;
+    `,
+  )}
 `
 
 const ScSideSheetContent = styled.div`
@@ -54,6 +62,13 @@ const ScSideSheetContent = styled.div`
   height: 100vh;
   right: 0;
   width: ${p => p.width}px;
+
+  ${down(
+    'md',
+    css`
+      width: 100%;
+    `,
+  )}
 `
 
 class SideSheet extends PureComponent {
