@@ -5,6 +5,10 @@
 - [ ] Fix close icon/button in corner dialogs.
 - [ ] `TextArea` is problematic when used as a controlled input.
 
+### v0.9.14
+
+- [x] Update react, react-dom, styled-components, styled-system and polished packages.
+
 ### v0.9.13
 
 - [x] Make `SideSheet` component responsive.
