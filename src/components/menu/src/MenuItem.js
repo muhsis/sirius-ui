@@ -19,6 +19,7 @@ const sizeStyles = {
 }
 
 const ScMenuItem = styled.button`
+  background-color: transparent;
   border: none;
   border-radius: ${p => p.theme.borderRadius};
   font-size: ${p => p.theme.fontSizeBase};
