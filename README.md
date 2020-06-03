@@ -2,22 +2,6 @@
 
 Sirius UI is a design system / React UI library. It works with styled-components and styled-system. Published package at Github named `@muhsis/sirius-ui`.
 
-## Icons
-
-We use Entypo for our icon library. We transform SVG files to React components to
-inject them into the page. A whole directory can be processed, all SVG files
-(matching .svg or .SVG) are transformed into React components. Just add .svg file
-and run commands below.
-
-```bash
-# Usage: npx @svgr/cli [-d out-dir] [src-dir]
-$ npx @svgr/cli -d icons icons
-icons/web/clock-icon.svg -> icons/web/ClockIcon.js
-icons/web/wifi-icon.svg -> icons/web/WifiIcon.js
-icons/spinner/cog-icon.svg -> icons/spinner/CogIcon.js
-icons/spinner/spinner-icon.svg -> icons/spinner/SpinnerIcon.js
-```
-
 ## Git
 
 We only have `_development` and `master` as main branches. Every branch gets checked

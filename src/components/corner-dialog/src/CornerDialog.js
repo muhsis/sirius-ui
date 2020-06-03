@@ -5,7 +5,6 @@ import { Transition } from 'react-transition-group'
 
 import { Portal } from '../../portal'
 import { Button, Paragraph, Heading } from '../../..'
-import { IconCross } from '../../../icons'
 
 const ANIMATION_DURATION = 240
 const animationEasing = {
@@ -267,7 +266,7 @@ class CornerDialog extends PureComponent {
                 </Heading>
                 {hasClose && (
                   <ScCornerDialogClose onClick={this.handleClose}>
-                    <IconCross />
+                    X
                   </ScCornerDialogClose>
                 )}
               </ScCornerDialogHeader>

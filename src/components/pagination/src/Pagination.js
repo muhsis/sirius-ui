@@ -3,13 +3,6 @@ import PropTypes from 'prop-types'
 import styled, { withTheme, css } from 'styled-components'
 import { Box } from '../../../elements/box'
 
-import {
-  IconChevronLeft,
-  IconChevronRight,
-  IconControllerFastBackward,
-  IconControllerFastForward,
-} from '../../../icons'
-
 const ScPagination = styled.div`
   display: flex;
   align-items: center;
@@ -177,7 +170,7 @@ class Pagination extends Component {
           key="backward-item"
           onClick={this.handleBackward}
         >
-          <IconControllerFastBackward />
+          &laquo;
         </ScPaginationBackwardItem>
       )
 
@@ -186,7 +179,7 @@ class Pagination extends Component {
           key="forward-item"
           onClick={this.handleForward}
         >
-          <IconControllerFastForward />
+          &raquo;
         </ScPaginationForwardItem>
       )
 
@@ -256,7 +249,7 @@ class Pagination extends Component {
             onClick={this.handlePrevious}
             currentPage={this.state.currentPage}
           >
-            <IconChevronLeft />
+            &lt;
           </ScPaginationPreviousItem>
 
           {pages}
@@ -266,7 +259,7 @@ class Pagination extends Component {
             currentPage={this.state.currentPage}
             pageCount={this.state.pageCount}
           >
-            <IconChevronRight />
+            &gt;
           </ScPaginationNextItem>
         </ScPagination>
       </Box>

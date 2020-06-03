@@ -21,7 +21,6 @@ export * from './components/progress'
 export * from './components/side-sheet'
 export * from './components/skeleton'
 export * from './components/spinner'
-export * from './components/stepper'
 export * from './components/switch'
 export * from './components/tab'
 export * from './components/timeline'
@@ -41,9 +40,6 @@ export * from './elements/radio'
 export * from './elements/table'
 export * from './elements/tag'
 export * from './elements/typography'
-
-// Icons
-export * from './icons'
 
 export { default as theme } from './theme'
 export * from './utils'

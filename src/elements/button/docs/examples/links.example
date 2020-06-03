@@ -5,7 +5,6 @@
       Link Button
     </ButtonLink>
     <ButtonLink mr={1} variant="success">
-      <IconSquaredPlus mr={1} />
       Link Button
     </ButtonLink>
     <ButtonLink mr={1} variant="info">

@@ -6,7 +6,23 @@ import { Transition } from 'react-transition-group'
 
 import { Button } from '../../../elements/button'
 import { Text } from '../../../elements/typography'
-import { IconWarning } from '../../../icons'
+
+const IconWarning = ({ fill }) => (
+  <svg
+    fill="none"
+    height="24"
+    stroke={fill}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth="2"
+    viewBox="0 0 24 24"
+    width="24"
+  >
+    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+    <line x1="12" x2="12" y1="9" y2="13" />
+    <line x1="12" x2="12" y1="17" y2="17" />
+  </svg>
+)
 
 const ANIMATION_DURATION = 200
 const getZoomInAnimation = direction => {
@@ -338,7 +354,7 @@ class PopConfirm extends Component {
             >
               <ScPopConfirmHeader theme={theme}>
                 <Text color={variant} mr={3} fontSize="1.5rem">
-                  <IconWarning />
+                  <IconWarning fill={theme.colors.danger} />
                 </Text>
                 <ScPopConfirmText>{title}</ScPopConfirmText>
               </ScPopConfirmHeader>
