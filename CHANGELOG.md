@@ -5,6 +5,12 @@
 - [ ] Fix close icon/button in corner dialogs.
 - [ ] `TextArea` is problematic when used as a controlled input.
 
+### v0.9.15
+
+- [x] Remove icons completely to reduce bundle size.
+- [x] Make `MenuItem`'s background transparent.
+- [x] Remove `Stepper` component.
+
 ### v0.9.14
 
 - [x] Update react, react-dom, styled-components, styled-system and polished packages.
