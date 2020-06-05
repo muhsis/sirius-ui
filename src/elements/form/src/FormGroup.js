@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled, { withTheme } from 'styled-components'
-import { space, typography } from 'styled-system'
+import { space, typography, flex } from 'styled-system'
 
 import { Box } from '../../box'
 
@@ -10,11 +10,13 @@ const ScFormGroup = styled(Box)`
 
   ${space}
   ${typography}
+  ${flex}
 `
 
 class FormGroup extends PureComponent {
   render() {
-    return <ScFormGroup>{this.props.children}</ScFormGroup>
+    const { children, ...props } = this.props
+    return <ScFormGroup {...props}>{children}</ScFormGroup>
   }
 }
 
