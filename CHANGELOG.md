@@ -5,6 +5,10 @@
 - [ ] Fix close icon/button in corner dialogs.
 - [ ] `TextArea` is problematic when used as a controlled input.
 
+### v0.9.16
+
+- [x] Ability to apply `flex` props form `FormGroup` component.
+
 ### v0.9.15
 
 - [x] Remove icons completely to reduce bundle size.
