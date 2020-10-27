@@ -1,0 +1,22 @@
+<>
+  <Box py="10rem" textAlign="center">
+    <Dropdown
+      content={
+        <Menu>
+          <MenuItem as="a" href="#" target="_blank">
+            Dropdown Menu Item
+          </MenuItem>
+          <MenuDivider />
+          <MenuItem as="a" href="#" variant="success">
+            Dropdown Menu Item
+          </MenuItem>
+          <MenuItem as="a" href="#" variant="danger">
+            Dropdown Menu Item
+          </MenuItem>
+        </Menu>
+      }
+    >
+      <Button type="button">Dropdown Menu</Button>
+    </Dropdown>
+  </Box>
+</>

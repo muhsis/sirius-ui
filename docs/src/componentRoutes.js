@@ -39,11 +39,11 @@ module.exports = [
     componentName: 'popover',
     path: '/components/popover',
   },
-  // {
-  //   name: 'Progress',
-  //   componentName: 'progress',
-  //   path: '/components/progress',
-  // },
+  {
+    name: 'Progress',
+    componentName: 'progress',
+    path: '/components/progress',
+  },
   {
     name: 'Skeleton',
     componentName: 'skeleton',
@@ -63,6 +63,11 @@ module.exports = [
     name: 'Tab',
     componentName: 'tab',
     path: '/components/tab',
+  },
+  {
+    name: 'Timeline',
+    componentName: 'timeline',
+    path: '/components/timeline',
   },
   {
     name: 'Tooltip',

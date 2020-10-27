@@ -5,8 +5,7 @@ import { Link } from 'gatsby'
 import elementRoutes from '../../elementRoutes'
 import componentRoutes from '../../componentRoutes'
 import logo from '../../images/logo.svg'
-import { theme } from '../../../../src'
-console.log('Theme', theme)
+import { Box, Tag, Text, theme } from '../../../../src'
 
 const ScSidebar = styled.aside`
   border-right: 2px solid #ebebeb;
@@ -20,6 +19,10 @@ const ScSidebar = styled.aside`
   overflow: hidden;
 `
 
+const ScLink = styled(Link)`
+  text-decoration: none;
+`
+
 const ScSidebarBrand = styled.div`
   padding: 1.5rem 1rem 0.5rem 1rem;
 
@@ -27,7 +30,7 @@ const ScSidebarBrand = styled.div`
     height: 40px;
   }
 
-  & small {
+  & div {
     color: #999;
     display: block;
     margin-top: 0.5rem;
@@ -61,7 +64,7 @@ const ScSidebarNav = styled.nav`
 
   & > a {
     color: ${theme.colors.slate};
-    font-size: 15px;
+    font-size: 16px;
     display: block;
     margin-bottom: 0.25rem;
     text-decoration: none;
@@ -69,18 +72,19 @@ const ScSidebarNav = styled.nav`
   }
 
   & > a:hover {
+    color: ${theme.colors.primary};
     padding-left: 0.25rem;
   }
 
   & > a.is-active {
-    color: ${theme.colors.info};
+    color: ${theme.colors.primary};
     font-weight: 500;
     position: relative;
   }
 
   & > a.is-active:after {
-    color: ${theme.colors.info};
-    top: -3px;
+    color: ${theme.colors.primary};
+    top: -1px;
     content: '•';
     position: absolute;
     right: 5px;
@@ -121,10 +125,6 @@ export default class Sidebar extends PureComponent {
             to: '/colors',
           },
           {
-            label: 'Layout',
-            to: '/layout',
-          },
-          {
             label: 'System',
             to: '/system',
           },
@@ -133,12 +133,12 @@ export default class Sidebar extends PureComponent {
             to: '/typography',
           },
           {
-            label: 'Icons',
-            to: '/icons',
-          },
-          {
             label: 'Theming',
             to: '/theming',
+          },
+          {
+            label: 'Extras',
+            to: '/extras',
           },
         ],
       },
@@ -169,8 +169,16 @@ export default class Sidebar extends PureComponent {
     return (
       <ScSidebar {...props}>
         <ScSidebarBrand>
-          <img src={logo} alt="Muhsis UI" />
-          <small>A design system & UI library for React.</small>
+          <ScLink to="/" style={{ display: 'flex', alignItems: 'center' }}>
+            <img src={logo} alt="Sirius UI" />
+            <Text ml={2} fontSize="22px" color="shaft" fontWeight={600}>
+              Sirius UI
+            </Text>
+          </ScLink>
+          <div style={{ marginTop: '1rem' }}>
+            <Tag variant="primary">v0.8.14</Tag>
+          </div>
+          <div>A design system & UI library for React.</div>
         </ScSidebarBrand>
         <ScSidebarDivider />
         <ScSidebarContent>

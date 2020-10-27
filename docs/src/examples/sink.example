@@ -1,0 +1,12 @@
+<Box>
+  <Box mb={4}>
+    <Box bg="primary" color="snow" p={3} mr={1} display="inline-block" textAlign="center">Primary Box</Box>
+    <Box bg="secondary" color="snow" p={3} mr={1} display="inline-block" textAlign="center">Secondary Box</Box>
+    <Box bg="success" color="snow" p={3} mr={1} display="inline-block" textAlign="center">Success Box</Box>
+    <Box bg="danger" color="snow" p={3} mr={1} display="inline-block" textAlign="center">Danger Box</Box>
+  </Box>
+
+  <Box minHeight={400} bg="snow" display="flex" alignItems="center" justifyContent="center">
+    Flex self-aligned box.
+  </Box>
+</Box>

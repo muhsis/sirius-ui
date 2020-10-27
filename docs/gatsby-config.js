@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Muhsis UI`,
+    title: `Sirius UI`,
     description: `Design system & UI library for React.`,
-    author: `dev@muhsis`,
+    author: `Emre Kılınç<me@emrekilinc.com>`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

@@ -5,6 +5,10 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: ${theme.fontFamily};
+  }
+
+  body {
+    font-size: 1rem;
     line-height: ${theme.lineHeightBase};
   }
 `

@@ -63,9 +63,9 @@ const TypographyPage = () => (
     <Sidebar />
     <Container>
       <Content>
-        <Heading>Typography</Heading>
+        <Heading variant="h2">Typography</Heading>
         <Paragraph>
-          You can find documentation and examples for Muhsis UI typography,
+          You can find documentation and examples for Sirius UI typography,
           including global settings, headings, body texts, lists and more.
         </Paragraph>
 

@@ -16,7 +16,7 @@ const introduction = (
     The <Code>Box</Code> component implementes a basic building block that takes
     a lot of styling options. You can use <Code>Box</Code> component as the main
     building block. This component uses almost every property from
-    styled-system. <Code>Box</Code> is a required component for Muhsis UI to
+    styled-system. <Code>Box</Code> is a required component for Sirius UI to
     work, since it's referenced from other components to be used as building
     block.
   </Paragraph>

@@ -8,7 +8,7 @@
     "commonjs",
     "esm"
   ],
-  "author": "Emre Kılınç <emre@muhsis.com>, Ozan Çakın <ozan@muhsis.com>, Emre Sandıkçı<emre.sandikci@muhsis.com>",
+  "author": "Emre Kılınç <emre@muhsis.com>",
   "license": "MIT",
   "scripts": {
     "build-commonjs": "BABEL_ENV=commonjs babel src --out-dir commonjs --ignore __tests__/,docs/ --source-maps inline",

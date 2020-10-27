@@ -8,6 +8,9 @@ const ScColorBox = styled.div`
   background-color: ${p => p.bg};
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
+  border-top: 1px solid #ebebeb;
+  border-left: 1px solid #ebebeb;
+  border-right: 1px solid #ebebeb;
   height: 125px;
 `
 
@@ -38,10 +41,11 @@ const ColorsPage = () => (
     <Container>
       <Content>
         <Heading variant="h2">Colors</Heading>
-        <Paragraph>
+        <p>
           The color system for a product has many requirements and constraints.
-          There is a need to be intentional and functional with color use.
-        </Paragraph>
+          There is a need to be intentional and functional with color use. You
+          can override every color you see below with theming (or add new ones).
+        </p>
 
         <Box mt={4} mb={3}>
           <Heading variant="h4" mb={3}>

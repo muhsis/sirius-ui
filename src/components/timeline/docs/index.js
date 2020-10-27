@@ -1,43 +1,50 @@
 import React from 'react'
-import { Dropdown } from '..'
+import { Timeline, TimelineItem } from '..'
 import {
   Paragraph,
   Code,
   Box,
   Button,
-  ButtonIcon,
-  Menu,
-  MenuItem,
-  MenuDivider,
+  IconTextDocument,
+  IconCheck,
+  IconAircraft,
 } from '../../..'
 
 /* eslint-disable import/no-unresolved, import/no-webpack-loader-syntax */
-import sourceDropdown from '!raw-loader!../src/Dropdown'
+import sourceTimeline from '!raw-loader!../src/Timeline'
 /* eslint-enable import/no-unresolved, import/no-webpack-loader-syntax */
 
 // Code examples
 import exampleBasic from './examples/basic.example'
 
-const name = 'Dropdown'
+const name = 'Timeline'
 const introduction = (
   <Paragraph>
-    A simple and compact dropdown that can be used for menus.
+    A component to show information lists with a date-ordering look and feel.
   </Paragraph>
 )
 
-const scope = { Box, Button, Dropdown, Menu, MenuItem, MenuDivider }
+const scope = {
+  Box,
+  Button,
+  Timeline,
+  TimelineItem,
+  IconTextDocument,
+  IconCheck,
+  IconAircraft,
+}
 
 const components = [
   {
-    name: 'Dropdown',
-    source: sourceDropdown,
+    name: 'Timeline',
+    source: sourceTimeline,
     underDevelopment: false,
     examples: [
       {
-        title: 'Basic Dropdown Example',
+        title: 'Basic Timeline Example',
         description: (
           <Paragraph>
-            Very basic <Code>Dropdown</Code> component examples.
+            Very basic <Code>Timeline</Code> component examples.
           </Paragraph>
         ),
         codeText: exampleBasic,

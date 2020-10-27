@@ -1,0 +1,8 @@
+<Box>
+  <Pagination
+    pageSize={5}
+    total={223}
+    currentPage={1}
+    onChange={(currentPage) => { alert('Pagination Changed : ' + currentPage)}}
+  />
+</Box>

@@ -1,0 +1,37 @@
+<Box p={5} textAlign="center">
+  <Box mb={3}>
+    <Popover content="Popover" mr={3}>
+      <Button>Popover</Button>
+    </Popover>
+    <Popover content="Popover" placement="left-top" mr={3}>
+      <Button>Popover (left-top)</Button>
+    </Popover>
+    <Popover content="Popover" placement="left-bottom" mr={3}>
+      <Button>Popover (left-bottom)</Button>
+    </Popover>
+    <Popover content="Popover" placement="right-top">
+      <Button>Popover (right-top)</Button>
+    </Popover>
+  </Box>
+
+  <Box mb={3}>
+    <Popover content="Popover" placement="right-bottom" mr={3}>
+      <Button>Popover (right-bottom)</Button>
+    </Popover>
+    <Popover content="Popover" placement="top-left" mr={3}>
+      <Button>Popover (top-left)</Button>
+    </Popover>
+    <Popover content="Popover" placement="top-right">
+      <Button>Popover (top-right)</Button>
+    </Popover>
+  </Box>
+
+  <Box>
+    <Popover content="Popover" placement="bottom-left" mr={3}>
+      <Button>Popover (bottom-left)</Button>
+    </Popover>
+    <Popover content="Popover" placement="bottom-right">
+      <Button>Popover (bottom-right)</Button>
+    </Popover>
+  </Box>
+</Box>

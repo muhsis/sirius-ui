@@ -1,0 +1,10 @@
+<Box>
+  <Progress percentage={10} isStriped mb={2} />
+  <Progress percentage={20} isStriped mb={2} variant="secondary" />
+  <Progress percentage={30} isStriped mb={2} variant="success" />
+  <Progress percentage={40} isStriped mb={2} variant="warning" />
+  <Progress percentage={50} isStriped mb={2} variant="danger" />
+  <Progress percentage={60} isStriped mb={2} variant="info" />
+  <Progress percentage={70} isStriped mb={2} variant="light" />
+  <Progress percentage={80} isStriped mb={2} variant="dark" />
+</Box>

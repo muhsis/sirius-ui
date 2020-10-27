@@ -6,7 +6,6 @@ import '../../css/index.css' // eslint-disable-line import/no-unassigned-import
 
 import { theme, Normalize } from '../../../../src'
 import GlobalStyles from '../../globalStyles'
-console.log('Active theme', theme)
 
 class Layout extends Component {
   render() {
