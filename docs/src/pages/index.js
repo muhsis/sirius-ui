@@ -10,7 +10,6 @@ import {
   Toaster,
   theme,
   Box,
-  DataTable,
   NumberInput,
   TextInput,
   Button,
@@ -38,7 +37,6 @@ import {
   IconLogOut,
   Text,
 } from '../../../src'
-console.log('DT', DataTable)
 
 const toaster = new Toaster(theme)
 

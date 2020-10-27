@@ -14,31 +14,6 @@ module.exports = [
     componentName: 'card',
     path: '/components/card',
   },
-  // {
-  //   name: 'Collapse',
-  //   componentName: 'collapse',
-  //   path: '/components/collapse',
-  // },
-  {
-    name: 'Combobox',
-    componentName: 'combobox',
-    path: '/components/combobox',
-  },
-  {
-    name: 'Corner Dialog',
-    componentName: 'corner-dialog',
-    path: '/components/corner-dialog',
-  },
-  {
-    name: 'Date Picker',
-    componentName: 'date-picker',
-    path: '/components/date-picker',
-  },
-  {
-    name: 'Dialog',
-    componentName: 'dialog',
-    path: '/components/dialog',
-  },
   {
     name: 'Dropdown',
     componentName: 'dropdown',
@@ -48,11 +23,6 @@ module.exports = [
     name: 'Loader',
     componentName: 'loader',
     path: '/components/loader',
-  },
-  {
-    name: 'List View',
-    componentName: 'listview',
-    path: '/components/listview',
   },
   {
     name: 'Pagination',
@@ -69,16 +39,11 @@ module.exports = [
     componentName: 'popover',
     path: '/components/popover',
   },
-  {
-    name: 'Progress',
-    componentName: 'progress',
-    path: '/components/progress',
-  },
-  {
-    name: 'Side Sheet',
-    componentName: 'side-sheet',
-    path: '/components/side-sheet',
-  },
+  // {
+  //   name: 'Progress',
+  //   componentName: 'progress',
+  //   path: '/components/progress',
+  // },
   {
     name: 'Skeleton',
     componentName: 'skeleton',
@@ -90,11 +55,6 @@ module.exports = [
     path: '/components/spinner',
   },
   {
-    name: 'Steps',
-    componentName: 'steps',
-    path: '/components/steps',
-  },
-  {
     name: 'Switch',
     componentName: 'switch',
     path: '/components/switch',
@@ -103,11 +63,6 @@ module.exports = [
     name: 'Tab',
     componentName: 'tab',
     path: '/components/tab',
-  },
-  {
-    name: 'Toaster',
-    componentName: 'toaster',
-    path: '/components/toaster',
   },
   {
     name: 'Tooltip',
